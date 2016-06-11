@@ -1,13 +1,7 @@
-import {Component} from '@angular/core';
-import {NavController} from 'ionic-angular';
+import {NavController, Page} from 'ionic-angular';
+import {HomePage} from '../../pages/home/home';
 
-/*
-  Generated class for the PrincipalPage page.
-
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
-*/
-@Component({
+@Page({
   templateUrl: 'build/pages/principal/principal.html',
 })
 export class PrincipalPage {

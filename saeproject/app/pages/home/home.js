@@ -1,8 +1,7 @@
-import {Component} from '@angular/core';
-import {NavController} from 'ionic-angular';
-import {PrincipalPage} from './pages/principal/principal';
+import {Page, NavController} from 'ionic-angular';
+import {PrincipalPage} from '../../pages/principal/principal';
 
-@Component({
+@Page({
   templateUrl: 'build/pages/home/home.html'
 })
 export class HomePage {
@@ -10,11 +9,11 @@ export class HomePage {
     return [[NavController]];
   }
 
-  constructor(_navController) {
-    this._navController = _navController;
+  constructor(nav) {
+    this.nav = nav;
   }
   entrar(){
-    this.raiz = PrincipalPage;
+    this.nav.setRoot(PrincipalPage);
   }
   /*
     pushPage(){
