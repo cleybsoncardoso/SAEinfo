@@ -1,5 +1,5 @@
 import {Page, NavController} from 'ionic-angular';
-import {PrincipalPage} from '../../pages/principal/principal';
+import {PacientesPage} from '../../pages/pacientes/pacientes';
 import {EsqueciSenhaPage} from '../../pages/esqueci-senha/esqueci-senha';
 
 
@@ -15,9 +15,9 @@ export class HomePage {
   constructor(nav) {
     this.nav = nav;
   }
-  
+
   entrar(){
-    this.nav.setRoot(PrincipalPage);
+    this.nav.setRoot(PacientesPage);
   }
   esqueci(){
     this.nav.setRoot(EsqueciSenhaPage);

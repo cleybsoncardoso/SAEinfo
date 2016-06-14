@@ -2,11 +2,11 @@ import {Component} from '@angular/core';
 import {Platform, ionicBootstrap} from 'ionic-angular';
 import {StatusBar} from 'ionic-native';
 import {HomePage} from './pages/home/home';
-import {PrincipalPage} from './pages/principal/principal';
 
 
 @Component({
-  template: `<ion-nav [root]="rootPage"></ion-nav>`
+  templateUrl: 'build/app.html'
+
 })
 export class MyApp {
   static get parameters() {
