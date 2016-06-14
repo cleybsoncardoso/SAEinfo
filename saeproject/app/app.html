@@ -1,0 +1,22 @@
+<ion-menu id="menu1" [content]= 'conteudo'>
+  <ion-content>
+    <ion-list>
+      <button ion-item (click)="openPage(pacientes)" menuClose>Pacientes</button>
+      <button ion-item (click)="openPage(alterarsenha)" menuClose>Alterar Senha</button>
+      <button ion-item menuClose (click)="sair()">Sair</button>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+
+<ion-menu id="menu2" [content]= 'conteudo'>
+  <ion-content>
+    <ion-list>
+      <button ion-item menuClose>Geral</button>
+      <button ion-item menuClose>Novo Diagnostico</button>
+      <button ion-item menuClose>Aprazentos</button>
+      <button ion-item menuClose>Registros</button>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+
+<ion-nav [root]="rootPage" #conteudo></ion-nav>

@@ -1,0 +1,25 @@
+<ion-toolbar>
+  <ion-title>
+   Novo Paciente
+ </ion-title>
+ <button menuToggle>
+   <ion-icon name="menu"></ion-icon>
+ </button>
+ <ion-buttons end>
+   <button round (click)="cancel()">Cancelar</button>
+ </ion-buttons>
+</ion-toolbar>
+<ion-content>
+        <p style="color:#000000;" class=" ">Registro numero
+            <strong>000001</strong>
+        </p>
+        <h2 style="color:#000000;">{{paciente.nome}} - Leito 02</h2>
+        <p style="color:#000000;">Nascimento: 22/02/1999</p>
+        <p style="color:#000000;"></p>
+        <div style="width: 279px; height: 38px;"></div>
+        <h3 style="color:#000000;">Diagnostico de enfermagem</h3>
+        <ion-list id="paciente-list2">
+            <ion-item>Desobstrução ineficaz de vias aéreas</ion-item>
+            <ion-item>Comunicação verbal prejudicada</ion-item>
+        </ion-list>
+    </ion-content>
