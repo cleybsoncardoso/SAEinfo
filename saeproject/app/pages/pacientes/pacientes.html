@@ -1,9 +1,8 @@
 
 <ion-navbar>
   <ion-title>
-    Bem Vinda Maria2
+    Bem Vinda Maria
   </ion-title>
-
   <button menuToggle>
     <ion-icon name="menu"></ion-icon>
   </button>
@@ -15,6 +14,9 @@
 </ion-navbar>
 
 <ion-content>
+
+
+
   <ion-searchbar [(ngModel)]="searchQuery" (input)="getPacientes($event)" (cancel)="teste($event)"></ion-searchbar>
   <ion-list>
     <ion-item *ngFor="let item of listaPacientes" (click)="openPaciente(item)">
@@ -22,4 +24,17 @@
     </ion-item>
   </ion-list>
   <button fab fab-bottom fab-right (click)="novoPaciente()"><ion-icon name="add"></ion-icon></button>
+  <ion-menu [content]="content">
+     <ion-content>
+       <ion-list>
+         <button ion-item (click)="openPage(loginPage)">
+           Login
+         </button>
+         <button ion-item (click)="openPage(signupPage)">
+           Signup
+         </button>
+       </ion-list>
+     </ion-content>
+   </ion-menu>
+   <ion-nav id="nav" #content [root]="rootPage"></ion-nav>
 </ion-content>
