@@ -1,7 +1,7 @@
-import {Page, NavController, Modal} from 'ionic-angular';
+import {Page, NavController, Modal, MenuController} from 'ionic-angular';
 import {DAOPacientes} from '../../dao/dao-paciente';
-//import {AddPacientePage} from '../add-paciente/add-paciente';
-//import {DadosPacientePage} from '../dados-paciente/dados-paciente';
+import {AddPacientePage} from '../add-paciente/add-paciente';
+import {DadosPacientePage} from '../dados-paciente/dados-paciente';
 
 @Page({
   templateUrl: 'build/pages/pacientes/pacientes.html',
@@ -9,15 +9,21 @@ import {DAOPacientes} from '../../dao/dao-paciente';
 export class PacientesPage {
 
   static get parameters() {
-      return [[NavController]];
+      return [[NavController], [MenuController]];
   }
 
-  constructor(nav) {
-    console.log("cancelei");
+  constructor(nav, menu) {
+    this.menu = menu;
+    this.enableMenu1();
     this.searchQuery = '';
     this.nav = nav;
     this.dao = new DAOPacientes();
     this.listaPacientes = this.dao.getList();
+  }
+
+  enableMenu1(){
+    this.menu.enable(false, 'menu2');
+    this.menu.enable(true, 'menu1');
   }
 
   teste(){

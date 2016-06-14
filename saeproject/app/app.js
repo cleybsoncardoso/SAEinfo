@@ -9,10 +9,6 @@ import {DadosPacientePage} from './pages/dados-paciente/dados-paciente';
 @App({
   templateUrl: 'build/app.html',
   config: {} // http://ionicframework.com/docs/v2/api/config/Config/
-
-
-@Component({
-  templateUrl: 'build/app.html'
 })
 export class MyApp {
 
@@ -25,7 +21,7 @@ export class MyApp {
     this.pacientes = PacientesPage;
     this.alterarsenha = AlterarSenhaPage;
     this.addPaciente = AddPacientePage;
-    this.rootPage = HomePage;
+    this.rootPage = PacientesPage;
     this.mycontent = DadosPacientePage;
     platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
@@ -39,8 +35,6 @@ export class MyApp {
   }
 
   sair(){
-    this.rootPage = HomePage;
   }
-
 
 }
