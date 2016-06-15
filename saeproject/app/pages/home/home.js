@@ -5,7 +5,7 @@ import {EsqueciSenhaPage} from '../../pages/esqueci-senha/esqueci-senha';
 
 
 @Page({
-  templateUrl: 'build/pages/home/home.html'
+  templateUrl: 'build/pages/home/home.html',
 })
 export class HomePage {
   static get parameters() {
