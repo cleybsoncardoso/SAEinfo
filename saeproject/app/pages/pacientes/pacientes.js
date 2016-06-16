@@ -1,43 +1,41 @@
-import {Page, NavController, Modal} from 'ionic-angular';
+import {Page, NavController, Modal, MenuController} from 'ionic-angular';
 import {DAOPacientes} from '../../dao/dao-paciente';
 import {HomePage} from '../../pages/home/home';
 import {AddPacientePage} from '../../pages/add-paciente/add-paciente';
 
-/*
-  Generated class for the PacientesPage page.
-
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
-*/
 @Page({
   templateUrl: 'build/pages/pacientes/pacientes.html',
 })
 export class PacientesPage {
   static get parameters() {
-    return [[NavController]];
+    return [[NavController], [MenuController]];
   }
 
-  constructor(nav) {
-    this.searchQuery = '';
+  constructor(nav, menu) {
     this.nav = nav;
+    this.menu = menu;
+    this.searchQuery = '';
     this.dao = new DAOPacientes();
     this.listaPacientes = this.dao.getList();
   }
 
   novoPaciente(){
-    this.nav.setRoot(AddPacientePage);
-  }
+    let modal = Modal.create(AddPacientePage);
+    this.nav.present(modal);
 
-  openPaciente(paciente){
-    let modal = Modal.create(DadosPacientePage, {parametro: paciente});
-    //this.nav.present(modal);
-    this.nav.push(DadosPacientePage, {parametro: paciente});
-    //this.nav.setRoot(DadosPacientePage, {parametro: paciente});
     modal.onDismiss((paciente) => {
-        this.dao.edit(paciente);
-      })
+      if(paciente){
+        this.dao.insert(paciente);
+        this.atualizar();
+      }
+    })
   }
-
+  /**
+  openPaciente(paciente){
+    this.nav.push(DadosPacientePage, {parametro: paciente});
+  }
+  */
+  
   atualizar(){
     var i;
     for (i = 0; i < this.listaPacientes.length; i++) {

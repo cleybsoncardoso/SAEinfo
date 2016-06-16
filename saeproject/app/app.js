@@ -2,10 +2,12 @@ import {Component} from '@angular/core';
 import {Platform, ionicBootstrap} from 'ionic-angular';
 import {StatusBar} from 'ionic-native';
 import {HomePage} from './pages/home/home';
+import {PacientesPage} from './pages/pacientes/pacientes';
 
 
 @Component({
-  template: `<ion-nav [root]="rootPage"></ion-nav>`
+  templateUrl: 'build/app.html',
+  config: {}
 })
 export class MyApp {
   static get parameters() {
@@ -14,13 +16,18 @@ export class MyApp {
 
   constructor(platform) {
     this.rootPage = HomePage;
-
+    this.paciente = PacientesPage;
     platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
       StatusBar.styleDefault();
     });
   }
+
+  openPage(page){
+    this.rootPage = page;
+  }
+
 }
 
 ionicBootstrap(MyApp);
