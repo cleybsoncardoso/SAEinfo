@@ -1,7 +1,7 @@
 import {Page, NavController, Modal} from 'ionic-angular';
 import {DAOPacientes} from '../../dao/dao-paciente';
-import {PacientesPage} from '../../pages/pacientes/pacientes';
 import {HomePage} from '../../pages/home/home';
+import {AddPacientePage} from '../../pages/add-paciente/add-paciente';
 
 /*
   Generated class for the PacientesPage page.
@@ -25,15 +25,7 @@ export class PacientesPage {
   }
 
   novoPaciente(){
-    let modal = Modal.create(AddPacientePage);
-    this.nav.present(modal);
-
-    modal.onDismiss((paciente) => {
-      if(paciente){
-        this.dao.insert(paciente);
-        atualizar();
-      }
-    })
+    this.nav.setRoot(AddPacientePage);
   }
 
   openPaciente(paciente){
