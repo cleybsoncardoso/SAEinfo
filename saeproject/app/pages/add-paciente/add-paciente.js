@@ -1,21 +1,26 @@
-import {NavController, Page} from 'ionic-angular';
+import {Page, ViewController} from 'ionic-angular';
+import {Paciente} from '../../model/paciente';
 
-
-/*
-  Generated class for the AddPacientePage page.
-
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
-*/
 @Page({
   templateUrl: 'build/pages/add-paciente/add-paciente.html',
 })
 export class AddPacientePage {
   static get parameters() {
-    return [[NavController]];
+      return [[ViewController]];
   }
 
-  constructor(nav) {
-    this.nav = nav;
+  constructor(view) {
+    this.view = view;
+    this.paciente = new Paciente();
   }
+
+  salvar(){
+    this.view.dismiss(this.paciente);
+  }
+
+  cancel(){
+    this.view.dismiss();
+  }
+
+
 }

@@ -1,67 +1,179 @@
-<!--
-  Generated template for the AddPacientePage page.
+<ion-toolbar>
+ <ion-title>
+   Novo Paciente
+ </ion-title>
+ <ion-buttons start>
+   <button round (click)="cancel()">Cancelar</button>
+ </ion-buttons>
+</ion-toolbar>
 
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
--->
-<ion-navbar *navbar>
-  <ion-title>Cadastrar paciente</ion-title>
-</ion-navbar>
+<ion-content>
+  <ion-slides pager>
+    <ion-slide class="slide">
 
-<ion-content padding class="add-paciente">
-  <ion-scroll scrollY="true">
-</ion-scroll>
-  <ion-slides>
-    <ion-slide>
-      <h1>Dados pessoais</h1>
-      <ion-item>
-        <ion-label floating>Nome</ion-label>
-        <ion-input type="text" value=""></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-label floating>Leito</ion-label>
-        <ion-input type="number" value=""></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-label floating>Nome</ion-label>
-        <ion-input type="text" value=""></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-label floating>Leito</ion-label>
-        <ion-input type="number" value=""></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-label floating>Nome</ion-label>
-        <ion-input type="text" value=""></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-label floating>Leito</ion-label>
-        <ion-input type="number" value=""></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-label floating>Nome</ion-label>
-        <ion-input type="text" value=""></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-label floating>Leito</ion-label>
-        <ion-input type="number" value=""></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-label floating>Nome</ion-label>
-        <ion-input type="text" value=""></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-label floating>Leito</ion-label>
-        <ion-input type="number" value=""></ion-input>
-      </ion-item>
-
+      <ion-card class="card">
+          <ion-card-header> Identificação </ion-card-header>
+            <ion-list class="list">
+              <ion-item>
+                <ion-label floating>Nome</ion-label>
+                <ion-input type="text" [(ngModel)]="paciente.nome"></ion-input>
+              </ion-item>
+              <ion-row>
+                <ion-col  width-33>
+                  <ion-item>
+                    <ion-label floating>Idade</ion-label>
+                    <ion-input type="number"></ion-input>
+                  </ion-item>
+                </ion-col>
+                <ion-col>
+                  <ion-item>
+                    <ion-label floating>Sexo</ion-label>
+                    <ion-input type="text"></ion-input>
+                  </ion-item>
+                </ion-col>
+            </ion-row>
+              <ion-item>
+                <ion-label floating>Estado Civil</ion-label>
+                <ion-input type="text"></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-label floating>Religião</ion-label>
+                <ion-input type="text"></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-label floating>Naturalidade</ion-label>
+                <ion-input type="text"></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-label floating>Procedência</ion-label>
+                <ion-input type="text"></ion-input>
+              </ion-item>
+              <ion-row>
+                <ion-col>
+                  <ion-item>
+                    <ion-label floating>Leito</ion-label>
+                    <ion-input type="text"></ion-input>
+                  </ion-item>
+                </ion-col>
+                <ion-col>
+                  <ion-item>
+                    <ion-label stacked>Data Internação</ion-label>
+                    <ion-input type="date"></ion-input>
+                  </ion-item>
+                </ion-col>
+              </ion-row>
+              <ion-item>
+                <ion-label floating>Registro</ion-label>
+                <ion-input type="text"></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-label floating>Setor de Procedência</ion-label>
+                <ion-input type="text"></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-label floating>Diagnóstico Médico</ion-label>
+                <ion-input type="text"></ion-input>
+              </ion-item>
+            </ion-list>
+        </ion-card>
     </ion-slide>
-    <ion-slide>
-      <h1>Slide 2</h1>
+
+    <ion-slide class="slide">
+      <ion-card class="card">
+        <ion-card-header> Entrevista </ion-card-header>
+          <ion-list>
+            <ion-item>
+              <ion-label stacked>Internação Anterior (nº de vezes)</ion-label>
+              <ion-input type="number" [(ngModel)]="paciente.nome"></ion-input>
+            </ion-item>
+            <ion-row>
+              <ion-col>
+                <ion-item>
+                  <ion-label floating>Idade</ion-label>
+                  <ion-input type="number"></ion-input>
+                </ion-item>
+              </ion-col>
+              <ion-col>
+                <ion-item>
+                  <ion-label floating>Sexo</ion-label>
+                  <ion-input type="text"></ion-input>
+                </ion-item>
+              </ion-col>
+          </ion-row>
+            <ion-item>
+              <ion-label floating>Estado Civil</ion-label>
+              <ion-input type="text"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label floating>Religião</ion-label>
+              <ion-input type="text"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label floating>Naturalidade</ion-label>
+              <ion-input type="text"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label floating>Procedência</ion-label>
+              <ion-input type="text"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label stacked>Data Internação</ion-label>
+              <ion-input type="date"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label floating>Registro</ion-label>
+              <ion-input type="text"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label floating>Setor de Procedência</ion-label>
+              <ion-input type="text"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label floating>Leito</ion-label>
+              <ion-input type="text"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label floating>Diagnóstico Médico</ion-label>
+              <ion-input type="text"></ion-input>
+            </ion-item>
+          </ion-list>
+        </ion-card>
     </ion-slide>
-    <ion-slide>
-      <h1>Slide 3</h1>
+
+    <ion-slide style="background-color: white">
+      <ion-item>
+          <ion-label>Username</ion-label>
+        <ion-input></ion-input>
+      </ion-item>
+    <ion-item>
+      <ion-label fixed>Website</ion-label>
+      <ion-input type="url"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Email</ion-label>
+      <ion-input type="email"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>Phone</ion-label>
+      <ion-input type="tel"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Toggle</ion-label>
+      <ion-toggle></ion-toggle>
+    </ion-item>
+    <ion-item>
+      <ion-label>Checkbox</ion-label>
+      <ion-checkbox></ion-checkbox>
+    </ion-item>
+      <button block (click)="salvar()"> Ok </button>
     </ion-slide>
   </ion-slides>
-
+<!--
+<ion-tabs>
+  <ion-tab tabIcon="contact" [root]="tab1"></ion-tab>
+  <ion-tab tabIcon="compass" [root]="tab2"></ion-tab>
+  <ion-tab tabIcon="analytics" [root]="tab3"></ion-tab>
+  <ion-tab tabIcon="settings" [root]="tab4"></ion-tab>
+</ion-tabs>
+-->
 </ion-content>
