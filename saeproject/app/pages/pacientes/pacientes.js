@@ -35,7 +35,7 @@ export class PacientesPage {
     this.nav.push(DadosPacientePage, {parametro: paciente});
   }
   */
-  
+
   atualizar(){
     var i;
     for (i = 0; i < this.listaPacientes.length; i++) {
