@@ -63,9 +63,4 @@ export class PacientesPage {
       return false;
     })
   }
-
-  openPage(){
-    console.log("cancelei");
-    this.nav.setRoot(HomePage);
-  }
 }
