@@ -4,18 +4,20 @@ import {StatusBar} from 'ionic-native';
 import {HomePage} from './pages/home/home';
 import {PacientesPage} from './pages/pacientes/pacientes';
 import {AlterarSenhaPage} from './pages/alterar-senha/alterar-senha';
-
+import {TabsPage} from './pages/tabs/tabs';
 
 @Component({
   templateUrl: 'build/app.html',
   config: {}
 })
 export class MyApp {
+
   static get parameters() {
     return [[Platform]];
   }
 
   constructor(platform) {
+
     this.rootPage = HomePage;
     this.paciente = PacientesPage;
     this.home = HomePage;

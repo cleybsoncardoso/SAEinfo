@@ -1,5 +1,5 @@
-import {Component} from '@angular/core';
-import {NavController} from 'ionic-angular';
+import {Page, NavController} from 'ionic-angular';
+import {PacientesPage} from '../../pages/pacientes/pacientes';
 
 /*
   Generated class for the AlterarSenhaPage page.
@@ -7,7 +7,7 @@ import {NavController} from 'ionic-angular';
   See http://ionicframework.com/docs/v2/components/#navigation for more info on
   Ionic pages and navigation.
 */
-@Component({
+@Page({
   templateUrl: 'build/pages/alterar-senha/alterar-senha.html',
 })
 export class AlterarSenhaPage {
@@ -17,5 +17,16 @@ export class AlterarSenhaPage {
 
   constructor(nav) {
     this.nav = nav;
+    this.senha1 = "";
+    this.senha2 = "";
+  }
+  conferir(){
+    if(this.senha1==this.senha2){
+      this.redirecionar();
+    }
+
+  }
+  redirecionar(){
+    this.nav.setRoot(PacientesPage);
   }
 }

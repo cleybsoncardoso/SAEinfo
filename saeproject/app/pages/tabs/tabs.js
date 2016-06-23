@@ -1,17 +1,19 @@
-import {Component} from 'ionic-angular';
+import {Component} from '@angular/core'
+import {HomePage} from '../../pages/home/home';
 import {AddPacientePage} from '../../pages/add-paciente/add-paciente';
+import {EsqueciSenhaPage} from '../../pages/esqueci-senha/esqueci-senha';
+import {AlterarSenhaPage} from '../../pages/alterar-senha/alterar-senha';
+
 
 @Component({
   templateUrl: 'build/pages/tabs/tabs.html'
 })
 export class TabsPage {
-  // this tells the tabs component which Pages
-  // should be each tab's root Page
-  tab1Root = Page1;
-  tab2Root = Page2;
-  tab3Root = Page3;
-
   constructor() {
-
+    // this tells the tabs component which Pages
+    // should be each tab's root Page
+    this.tab1Root = EsqueciSenhaPage;
+    this.tab2Root = AddPacientePage;
+    this.tab3Root = AlterarSenhaPage;
   }
 }
