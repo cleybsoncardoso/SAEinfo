@@ -1,7 +1,7 @@
 import {Page, NavController, Modal, MenuController} from 'ionic-angular';
 import {DAOPacientes} from '../../dao/dao-paciente';
 import {HomePage} from '../../pages/home/home';
-import {AddPacientePage} from '../../pages/add-paciente/add-paciente';
+import {AddPacientePage2} from '../../pages/add-paciente2/add-paciente2';
 
 @Page({
   templateUrl: 'build/pages/pacientes/pacientes.html',
@@ -20,7 +20,7 @@ export class PacientesPage {
   }
 
   novoPaciente(){
-    let modal = Modal.create(AddPacientePage);
+    let modal = Modal.create(AddPacientePage2);
     this.nav.present(modal);
 
     modal.onDismiss((paciente) => {
