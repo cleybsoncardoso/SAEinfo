@@ -83,7 +83,7 @@
       <ion-card class="card">
         <ion-card-header class="cardheader"> Entrevista </ion-card-header>
           <ion-list>
-            <ion-item>
+            <ion-item style="border-bottom-style: none;">
               <ion-label floating>Internação Anterior (nº de vezes)</ion-label>
               <ion-input type="number"></ion-input>
             </ion-item>
@@ -181,35 +181,115 @@
             <button (click)="removerVacina()">Remover</button>
           </ion-item>
         </ion-list>
+
       </ion-card>
     </ion-slide>
 
-    <ion-slide style="background-color: white">
-      <ion-item>
-          <ion-label>Username</ion-label>
-        <ion-input></ion-input>
-      </ion-item>
-    <ion-item>
-      <ion-label fixed>Website</ion-label>
-      <ion-input type="url"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label floating>Email</ion-label>
-      <ion-input type="email"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label stacked>Phone</ion-label>
-      <ion-input type="tel"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label>Toggle</ion-label>
-      <ion-toggle></ion-toggle>
-    </ion-item>
-    <ion-item>
-      <ion-label>Checkbox</ion-label>
-      <ion-checkbox></ion-checkbox>
-    </ion-item>
-      <button block (click)="salvar()"> Ok </button>
+    <ion-slide class="slide">
+      <ion-card class="card">
+        <ion-card-header class="cardheader"> Avaliação Neurológica </ion-card-header>
+        <ion-list-header class="listtitle">
+          Consciência
+        </ion-list-header>
+        <ion-list no-lines>
+          <ion-item>
+            <ion-label>Alerta</ion-label>
+            <ion-checkbox></ion-checkbox>
+          </ion-item>
+          <ion-item>
+            <ion-label>Letárgico</ion-label>
+            <ion-checkbox></ion-checkbox>
+          </ion-item>
+          <ion-item>
+            <ion-label>Obnubilado</ion-label>
+            <ion-checkbox></ion-checkbox>
+          </ion-item>
+          <ion-item>
+            <ion-label>Torporoso</ion-label>
+            <ion-checkbox></ion-checkbox>
+          </ion-item>
+          <ion-item>
+            <ion-label>Comatoso</ion-label>
+            <ion-checkbox></ion-checkbox>
+          </ion-item>
+          <ion-item>
+            <ion-label>Glasgow</ion-label>
+            <ion-checkbox></ion-checkbox>
+          </ion-item>
+        </ion-list>
+        <ion-list-header class="listtitle">
+          Pupilas
+        </ion-list-header>
+        <ion-list no-lines>
+          <ion-item>
+            <ion-label>Isocórica</ion-label>
+            <ion-checkbox></ion-checkbox>
+          </ion-item>
+          <ion-item>
+            <ion-label>Anisocórica</ion-label>
+            <ion-checkbox></ion-checkbox>
+          </ion-item>
+          <ion-item>
+            <ion-label>Miose</ion-label>
+            <ion-checkbox></ion-checkbox>
+          </ion-item>
+          <ion-item>
+            <ion-label>Midríase</ion-label>
+            <ion-checkbox></ion-checkbox>
+          </ion-item>
+          <ion-item>
+            <ion-label>RFM</ion-label>
+            <ion-checkbox></ion-checkbox>
+          </ion-item>
+        </ion-list>
+        <ion-list-header class="listtitle">
+          Mobilidade Física
+        </ion-list-header>
+        <ion-list no-lines>
+          <ion-item-divider light style="text-align: left; border-radius: 5px;">MMSS</ion-item-divider>
+          <ion-item>
+            <ion-label>Preservada</ion-label>
+            <ion-checkbox></ion-checkbox>
+          </ion-item>
+          <ion-item>
+            <ion-label>Paresia</ion-label>
+            <ion-checkbox></ion-checkbox>
+          </ion-item>
+          <ion-item>
+            <ion-label>Plegia</ion-label>
+            <ion-checkbox></ion-checkbox>
+          </ion-item>
+          <ion-item>
+            <ion-label>Parestesia</ion-label>
+            <ion-checkbox></ion-checkbox>
+          </ion-item>
+          <ion-item-divider light style="text-align: left; border-radius: 5px;">MMII</ion-item-divider>
+          <ion-item>
+            <ion-label>Preservada</ion-label>
+            <ion-checkbox></ion-checkbox>
+          </ion-item>
+          <ion-item>
+            <ion-label>Paresia</ion-label>
+            <ion-checkbox></ion-checkbox>
+          </ion-item>
+          <ion-item>
+            <ion-label>Plegia</ion-label>
+            <ion-checkbox></ion-checkbox>
+          </ion-item>
+          <ion-item>
+            <ion-label>Parestesia</ion-label>
+            <ion-checkbox></ion-checkbox>
+          </ion-item>
+          <ion-item>
+            <ion-label>Movimentos Lentos</ion-label>
+            <ion-checkbox></ion-checkbox>
+          </ion-item>
+          <ion-item>
+            <ion-label>Movimentos Involuntários</ion-label>
+            <ion-checkbox></ion-checkbox>
+          </ion-item>
+        </ion-list>
+      </ion-card>
     </ion-slide>
   </ion-slides>
 </ion-content>
