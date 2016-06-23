@@ -9,23 +9,23 @@
 
 <ion-content>
   <ion-slides pager>
+    <!--Slide Referente aos dados da Identificação -->
     <ion-slide class="slide">
-
       <ion-card class="card">
-          <ion-card-header> Identificação </ion-card-header>
+          <ion-card-header class="cardheader"> Identificação </ion-card-header>
             <ion-list class="list">
               <ion-item>
                 <ion-label floating>Nome</ion-label>
                 <ion-input type="text" [(ngModel)]="paciente.nome"></ion-input>
               </ion-item>
               <ion-row>
-                <ion-col  width-33>
+                <ion-col class="col" width-33>
                   <ion-item>
                     <ion-label floating>Idade</ion-label>
                     <ion-input type="number"></ion-input>
                   </ion-item>
                 </ion-col>
-                <ion-col>
+                <ion-col class="col">
                   <ion-item>
                     <ion-label floating>Sexo</ion-label>
                     <ion-input type="text"></ion-input>
@@ -49,13 +49,13 @@
                 <ion-input type="text"></ion-input>
               </ion-item>
               <ion-row>
-                <ion-col>
+                <ion-col class="col">
                   <ion-item>
                     <ion-label floating>Leito</ion-label>
                     <ion-input type="text"></ion-input>
                   </ion-item>
                 </ion-col>
-                <ion-col>
+                <ion-col class="col">
                   <ion-item>
                     <ion-label stacked>Data Internação</ion-label>
                     <ion-input type="date"></ion-input>
@@ -78,66 +78,110 @@
         </ion-card>
     </ion-slide>
 
+    <!--Slide Referente aos dados da entrevista -->
     <ion-slide class="slide">
       <ion-card class="card">
-        <ion-card-header> Entrevista </ion-card-header>
+        <ion-card-header class="cardheader"> Entrevista </ion-card-header>
           <ion-list>
             <ion-item>
-              <ion-label stacked>Internação Anterior (nº de vezes)</ion-label>
-              <ion-input type="number" [(ngModel)]="paciente.nome"></ion-input>
+              <ion-label floating>Internação Anterior (nº de vezes)</ion-label>
+              <ion-input type="number"></ion-input>
+            </ion-item>
+          </ion-list>
+          <ion-list-header class="listtitle">
+            Antecedentes
+          </ion-list-header>
+          <ion-list no-lines>
+            <ion-row>
+              <ion-col width-50 class="col">
+                <ion-item>
+                  <ion-label class="label">Cardiopatia</ion-label>
+                  <ion-checkbox></ion-checkbox>
+                </ion-item>
+              </ion-col>
+              <ion-col width-50 class="col">
+                <ion-item>
+                  <ion-label>Convulsão</ion-label>
+                  <ion-checkbox></ion-checkbox>
+                </ion-item>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col width-50 class="col">
+                <ion-item>
+                  <ion-label>Asma</ion-label>
+                  <ion-checkbox></ion-checkbox>
+                </ion-item>
+              </ion-col>
+              <ion-col width-50 class="col">
+                <ion-item>
+                  <ion-label>Drogas</ion-label>
+                  <ion-checkbox></ion-checkbox>
+                </ion-item>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col width-50 class="col">
+                <ion-item>
+                  <ion-label>HAS</ion-label>
+                  <ion-checkbox></ion-checkbox>
+                </ion-item>
+              </ion-col>
+              <ion-col width-50 class="col">
+                <ion-item>
+                  <ion-label class="label">Tabagismo</ion-label>
+                  <ion-checkbox></ion-checkbox>
+                </ion-item>
+              </ion-col>
+            </ion-row>
+            <ion-item>
+              <ion-label>Diabetes Mellitus</ion-label>
+              <ion-checkbox></ion-checkbox>
+            </ion-item>
+            <ion-item>
+              <ion-label>Alcoolismo</ion-label>
+              <ion-checkbox></ion-checkbox>
             </ion-item>
             <ion-row>
               <ion-col>
                 <ion-item>
-                  <ion-label floating>Idade</ion-label>
-                  <ion-input type="number"></ion-input>
+                  <ion-label class="outros">Outros:</ion-label>
                 </ion-item>
               </ion-col>
               <ion-col>
                 <ion-item>
-                  <ion-label floating>Sexo</ion-label>
-                  <ion-input type="text"></ion-input>
+                  <div id="outrosAntecetendes"></div>
                 </ion-item>
               </ion-col>
           </ion-row>
-            <ion-item>
-              <ion-label floating>Estado Civil</ion-label>
-              <ion-input type="text"></ion-input>
-            </ion-item>
-            <ion-item>
-              <ion-label floating>Religião</ion-label>
-              <ion-input type="text"></ion-input>
-            </ion-item>
-            <ion-item>
-              <ion-label floating>Naturalidade</ion-label>
-              <ion-input type="text"></ion-input>
-            </ion-item>
-            <ion-item>
-              <ion-label floating>Procedência</ion-label>
-              <ion-input type="text"></ion-input>
-            </ion-item>
-            <ion-item>
-              <ion-label stacked>Data Internação</ion-label>
-              <ion-input type="date"></ion-input>
-            </ion-item>
-            <ion-item>
-              <ion-label floating>Registro</ion-label>
-              <ion-input type="text"></ion-input>
-            </ion-item>
-            <ion-item>
-              <ion-label floating>Setor de Procedência</ion-label>
-              <ion-input type="text"></ion-input>
-            </ion-item>
-            <ion-item>
-              <ion-label floating>Leito</ion-label>
-              <ion-input type="text"></ion-input>
-            </ion-item>
-            <ion-item>
-              <ion-label floating>Diagnóstico Médico</ion-label>
-              <ion-input type="text"></ion-input>
-            </ion-item>
-          </ion-list>
-        </ion-card>
+          <ion-item>
+            <button (click)="addAntecedente()">adicionar item</button>
+            <button (click)="removerAntecedente()">remover</button>
+          </ion-item>
+        </ion-list>
+        <ion-list-header class="listtitle">
+          Alergias
+        </ion-list-header>
+        <ion-list no-lines id="alergias">
+        </ion-list>
+        <ion-list no-lines class="listitem">
+          <ion-item>
+            <button (click)="addAlergia()">Adicionar Alergia</button>
+            <button (click)="removerAlergia()">Remover</button>
+          </ion-item>
+        </ion-list>
+        <ion-list-header class="listtitle">
+          Vacinas
+        </ion-list-header>
+        <ion-list no-lines id="vacinas">
+        </ion-list>
+        <ion-list no-lines class="listitem">
+          <ion-item>
+            <button (click)="addVacina()">Adicionar Vacina</button>
+            <button (click)="removerVacina()">Remover</button>
+          </ion-item>
+        </ion-list>
+      </ion-card>
     </ion-slide>
 
     <ion-slide style="background-color: white">
@@ -168,12 +212,4 @@
       <button block (click)="salvar()"> Ok </button>
     </ion-slide>
   </ion-slides>
-<!--
-<ion-tabs>
-  <ion-tab tabIcon="contact" [root]="tab1"></ion-tab>
-  <ion-tab tabIcon="compass" [root]="tab2"></ion-tab>
-  <ion-tab tabIcon="analytics" [root]="tab3"></ion-tab>
-  <ion-tab tabIcon="settings" [root]="tab4"></ion-tab>
-</ion-tabs>
--->
 </ion-content>

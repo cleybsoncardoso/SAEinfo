@@ -1,3 +1,4 @@
+<!-- Menu 1 - Pacientes e AlterarSenha -->
 <ion-menu id="menu1" [content]= 'conteudo'>
   <ion-content>
     <ion-list>
@@ -16,7 +17,7 @@
           Alterar Senha
       </button>
       <!-- Botao Menu 1 Sair -->
-      <button ion-item (click)="openPage(home)" menuClose>
+      <button ion-item menuClose (click)="sair()">
         <button item-left>
           <ion-icon name="md-exit"></ion-icon>
         </button>
@@ -25,4 +26,4 @@
     </ion-list>
   </ion-content>
 </ion-menu>
-<ion-nav [root]="rootPage" #conteudo></ion-nav>
+<ion-nav id="nav" #rootNavController [root]="rootPage" #conteudo></ion-nav>

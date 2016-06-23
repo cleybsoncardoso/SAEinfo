@@ -12,6 +12,101 @@ export class AddPacientePage {
   constructor(view) {
     this.view = view;
     this.paciente = new Paciente();
+    this.qtdeOutros = 0;
+    this.qtdeAlergias = 0;
+    this.qtdeVacinas = 0;
+  }
+
+  /**Função que adiciona um campo na relação de antecedentes*/
+  addAntecedente() {
+    //guardando o div pai
+    let divPai = document.getElementById("outrosAntecetendes");
+    //Criando o elemento DIV filho;
+    let divFilho = document.createElement("div");
+    //Definindo atributos ao campoFilho:
+    divFilho.setAttribute("id","antecedente"+this.qtdeOutros);
+    //Inserindo o elemento filho no pai:
+    divPai.appendChild(divFilho);
+    //Escrevendo algo no filho recém-criado:
+    document.getElementById("antecedente"+this.qtdeOutros).innerHTML = "<input class='divitem' type='text' id='campoAntecedente"+this.qtdeOutros+"'></input>";
+    this.qtdeOutros++;
+  }
+
+  /**Função que Remove um campo na relação de antecedentes*/
+  removerAntecedente() {
+      //só remove se já ouver um campo adicionado
+      if(this.qtdeOutros > 0){
+        this.qtdeOutros--;
+        //Guardando o div pai
+        let divPai = document.getElementById("outrosAntecetendes");
+        let text = "antecedente"+this.qtdeOutros;
+        //Guardando o ultimo div filho criado
+        let divFilho = document.getElementById(text);
+        //Removendo o ultimo DIV do nó-pai:
+        divPai.removeChild(divFilho);
+      }
+  }
+
+  /**Função que adiciona um campo na relação de Alergia*/
+  addAlergia() {
+    //guardando o div pai
+    let divPai = document.getElementById("alergias");
+    //Criando o elemento DIV filho;
+    let divFilho = document.createElement("div");
+    //Definindo atributos ao campoFilho:
+    divFilho.setAttribute("id","alergia"+this.qtdeAlergias);
+    divFilho.setAttribute("class", "divitem4");
+    //Inserindo o elemento filho no pai:
+    divPai.appendChild(divFilho);
+    //Escrevendo algo no filho recém-criado:
+    document.getElementById("alergia"+this.qtdeAlergias).innerHTML = "<label class='divitem3'>"+ (this.qtdeAlergias+1) +".</label><input class='divitem2' type='text' id='campoAlergia"+this.qtdeAlergias+"'></input>";
+    this.qtdeAlergias++;
+  }
+
+  /**Função que Remove um campo na relação de Alergia*/
+  removerAlergia() {
+      //só remove se já ouver um campo adicionado
+      if(this.qtdeAlergias > 0){
+        this.qtdeAlergias--;
+        //Guardando o div pai
+        let divPai = document.getElementById("alergias");
+        let text = "alergia"+this.qtdeAlergias;
+        //Guardando o ultimo div filho criado
+        let divFilho = document.getElementById(text);
+        //Removendo o ultimo DIV do nó-pai:
+        divPai.removeChild(divFilho);
+      }
+  }
+
+  /**Função que adiciona um campo na relação de Alergia*/
+  addVacina() {
+    //guardando o div pai
+    let divPai = document.getElementById("vacinas");
+    //Criando o elemento DIV filho;
+    let divFilho = document.createElement("div");
+    //Definindo atributos ao campoFilho:
+    divFilho.setAttribute("id","vacina"+this.qtdeVacinas);
+    divFilho.setAttribute("class", "divitem4");
+    //Inserindo o elemento filho no pai:
+    divPai.appendChild(divFilho);
+    //Escrevendo algo no filho recém-criado:
+    document.getElementById("vacina"+this.qtdeVacinas).innerHTML = "<label class='divitem3'>"+ (this.qtdeVacinas+1) +".</label><input class='divitem2' type='text' id='campoVacina"+this.qtdeVacinas+"'></input>";
+    this.qtdeVacinas++;
+  }
+
+  /**Função que Remove um campo na relação de Alergia*/
+  removerVacina() {
+      //só remove se já ouver um campo adicionado
+      if(this.qtdeVacinas > 0){
+        this.qtdeVacinas--;
+        //Guardando o div pai
+        let divPai = document.getElementById("vacinas");
+        let text = "vacina"+this.qtdeVacinas;
+        //Guardando o ultimo div filho criado
+        let divFilho = document.getElementById(text);
+        //Removendo o ultimo DIV do nó-pai:
+        divPai.removeChild(divFilho);
+      }
   }
 
   salvar(){
@@ -21,6 +116,5 @@ export class AddPacientePage {
   cancel(){
     this.view.dismiss();
   }
-
 
 }
