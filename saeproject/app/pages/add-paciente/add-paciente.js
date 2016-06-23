@@ -59,7 +59,7 @@ export class AddPacientePage {
     //Inserindo o elemento filho no pai:
     divPai.appendChild(divFilho);
     //Escrevendo algo no filho recém-criado:
-    document.getElementById("alergia"+this.qtdeAlergias).innerHTML = "<label class='divitem3'>"+ (this.qtdeAlergias+1) +".</label><input class='divitem2' type='text' id='campoAlergia"+this.qtdeAlergias+"'></input>";
+    document.getElementById("alergia"+this.qtdeAlergias).innerHTML = "<label class='divitem3'></label><input class='divitem2' type='text' id='campoAlergia"+this.qtdeAlergias+"'></input>";
     this.qtdeAlergias++;
   }
 
@@ -78,7 +78,7 @@ export class AddPacientePage {
       }
   }
 
-  /**Função que adiciona um campo na relação de Alergia*/
+  /**Função que adiciona um campo na relação de Vacinas*/
   addVacina() {
     //guardando o div pai
     let divPai = document.getElementById("vacinas");
@@ -94,7 +94,7 @@ export class AddPacientePage {
     this.qtdeVacinas++;
   }
 
-  /**Função que Remove um campo na relação de Alergia*/
+  /**Função que Remove um campo na relação de Vacinas*/
   removerVacina() {
       //só remove se já ouver um campo adicionado
       if(this.qtdeVacinas > 0){
