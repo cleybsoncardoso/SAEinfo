@@ -4,11 +4,8 @@ import {StatusBar} from 'ionic-native';
 import {HomePage} from './pages/home/home';
 import {PacientesPage} from './pages/pacientes/pacientes';
 import {AlterarSenhaPage} from './pages/alterar-senha/alterar-senha';
-<<<<<<< HEAD
-import {TabsPage} from './pages/tabs/tabs';
-=======
 import {AddPacientePage} from './pages/add-paciente/add-paciente';
->>>>>>> 903ba4b6bcf52369a59bdc61468bef88c22943d5
+
 
 @Component({
   templateUrl: 'build/app.html',
