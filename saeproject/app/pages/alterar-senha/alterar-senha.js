@@ -1,4 +1,4 @@
-import {Page, NavController} from 'ionic-angular';
+import {Page, NavController,Alert} from 'ionic-angular';
 import {PacientesPage} from '../../pages/pacientes/pacientes';
 
 /*
@@ -20,8 +20,24 @@ export class AlterarSenhaPage {
     this.senha1 = "";
     this.senha2 = "";
   }
+
   conferir(){
-    if(this.senha1==this.senha2){
+
+    if(this.senha1!=this.senha2){
+      let alert = Alert.create({
+        title: 'Não foi possivel alterar senha',
+        subTitle: 'Senhas não correspondem',
+        buttons: ['OK']
+      });
+      this.nav.present(alert);
+    }else if(this.senha1==""||this.senha2==""){
+      let alert = Alert.create({
+        title: 'Não foi possivel alterar senha',
+        subTitle: 'Coloque algum caracter no campo de nova senha',
+        buttons: ['OK']
+      });
+      this.nav.present(alert);
+    }else if(this.senha1==this.senha2){
       this.redirecionar();
     }
 
