@@ -90,7 +90,7 @@ export class AddPacientePage {
     //Inserindo o elemento filho no pai:
     divPai.appendChild(divFilho);
     //Escrevendo algo no filho recém-criado:
-    document.getElementById("vacina"+this.qtdeVacinas).innerHTML = "<label class='divitem3'>"+ (this.qtdeVacinas+1) +".</label><input class='divitem2' type='text' id='campoVacina"+this.qtdeVacinas+"'></input>";
+    document.getElementById("vacina"+this.qtdeVacinas).innerHTML = "<label class='divitem3'>"+ "</label><input class='divitem2' type='text' id='campoVacina"+this.qtdeVacinas+"'></input>";
     this.qtdeVacinas++;
   }
 
