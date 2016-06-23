@@ -6,6 +6,7 @@ import {PacientesPage} from './pages/pacientes/pacientes';
 import {AlterarSenhaPage} from './pages/alterar-senha/alterar-senha';
 import {AddPacientePage} from './pages/add-paciente/add-paciente';
 
+
 @Component({
   templateUrl: 'build/app.html',
   config: {},
@@ -18,6 +19,7 @@ export class MyApp {
   }
 
   constructor(platform) {
+
     this.rootPage = HomePage;
     this.pacientes = PacientesPage;
     this.alterarsenha = AlterarSenhaPage;
