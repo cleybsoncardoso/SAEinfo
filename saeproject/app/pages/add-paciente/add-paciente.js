@@ -2,7 +2,7 @@ import {Page, ViewController} from 'ionic-angular';
 import {Paciente} from '../../model/paciente';
 
 @Page({
-  templateUrl: 'build/pages/add-paciente/teste.html',
+  templateUrl: 'build/pages/add-paciente/add-paciente.html',
 })
 export class AddPacientePage {
   static get parameters() {
@@ -143,16 +143,7 @@ export class AddPacientePage {
   }
 
   toggleGroup(id){
-    /**
-    let grupo = document.getElementById("teste"+id);
-    if(grupo.style.display == "none"){
-      grupo.style.display = "block";
-    }
-    else{
-      grupo.style.display = "none";
-    }
-    */
-    let grupo = document.getElementById("teste"+id);
+    let grupo = document.getElementById("dados"+id);
 
     if(grupo.style.visibility == "visible"){
       this.myIcons[id] = "md-add";
@@ -162,12 +153,12 @@ export class AddPacientePage {
       this.myIcons[id] = "md-remove";
       grupo.style.visibility = "visible";
       if(id == 0){
-        grupo.style.height = "200px";
+        grupo.style.height = "auto";
       }else if(id == 1){
-        grupo.style.height = "40px";
+        grupo.style.height = "auto";
       }
       else{
-        grupo.style.height = "60px";
+        grupo.style.height = "auto";
       }
     }
   }

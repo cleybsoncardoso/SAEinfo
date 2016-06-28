@@ -80,7 +80,7 @@
 
     <!--Slide Referente aos dados da entrevista -->
     <ion-slide class="slide">
-      <ion-card class="card">
+      <ion-card class="cartao">
         <ion-card-header class="cardheader"> Entrevista </ion-card-header>
           <ion-list>
             <ion-item style="border-bottom-style: none; border-color: #D3D3D3;">
@@ -88,10 +88,8 @@
               <ion-input type="number"></ion-input>
             </ion-item>
           </ion-list>
-          <ion-list-header class="listtitle">
-            Antecedentes
-          </ion-list-header>
-          <ion-list no-lines>
+          <ion-list-header class="titulolista" (click)="toggleGroup(0)">Antecedentes <ion-icon style="float: right" id="icon" [name]="myIcons[0]"></ion-icon></ion-list-header>
+          <ion-list no-lines class="lista" id="dados0" class="subgrupo">
                 <ion-item>
                   <ion-label class="label">Cardiopatia</ion-label>
                   <ion-checkbox></ion-checkbox>
@@ -136,27 +134,27 @@
               </ion-item>
             </ion-list>
         </ion-list>
-        <ion-list-header class="listtitle">
-          Alergias
-        </ion-list-header>
-        <ion-list no-lines id="alergias" >
+        <ion-list-header class="titulolista" (click)="toggleGroup(1)">Alergia <ion-icon style="float: right" id="icon" [name]="myIcons[1]"></ion-icon></ion-list-header>
+        <ion-list no-lines class="lista" id="dados1" class="subgrupo">
+          <ion-list no-lines id="alergias" >
+          </ion-list>
+          <ion-list no-lines class="listitem">
+            <ion-item>
+              <button (click)="addAlergia()">Adicionar Alergia</button>
+              <button (click)="removerAlergia()">Remover</button>
+            </ion-item>
+          </ion-list>
         </ion-list>
-        <ion-list no-lines class="listitem">
-          <ion-item>
-            <button (click)="addAlergia()">Adicionar Alergia</button>
-            <button (click)="removerAlergia()">Remover</button>
-          </ion-item>
-        </ion-list>
-        <ion-list-header class="listtitle">
-          Vacinas
-        </ion-list-header>
-        <ion-list no-lines id="vacinas" >
-        </ion-list>
-        <ion-list no-lines class="listitem">
-          <ion-item>
-            <button (click)="addVacina()">Adicionar Vacina</button>
-            <button (click)="removerVacina()">Remover</button>
-          </ion-item>
+        <ion-list-header class="titulolista" (click)="toggleGroup(2)">Vacinas <ion-icon style="float: right" id="icon" [name]="myIcons[2]"></ion-icon></ion-list-header>
+          <ion-list no-lines class="lista" id="dados2" class="subgrupo">
+          <ion-list no-lines id="vacinas" >
+          </ion-list>
+          <ion-list no-lines class="listitem">
+            <ion-item>
+              <button (click)="addVacina()">Adicionar Vacina</button>
+              <button (click)="removerVacina()">Remover</button>
+            </ion-item>
+          </ion-list>
         </ion-list>
       </ion-card>
     </ion-slide>
