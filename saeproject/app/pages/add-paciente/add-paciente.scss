@@ -1,8 +1,8 @@
-.add-paciente {
+.ionitem{
+  background-color: #F0FFFF;
 }
-
 .slide{
-  background-color: white;
+  background-color: #F5F5F5;
   overflow-y: scroll;
   display: block;
   margin-bottom: 32px;
@@ -14,12 +14,15 @@
 }
 
 .card{
+  border-color: white;
   position: absolute;
   top: 0px;
   padding-bottom: 35px;
 }
 
 .cardheader{
+    color: white;
+    background-color: #548B54;
     font-weight: bold;
     font-size: 20px;
 }
@@ -31,32 +34,28 @@
 }
 
 .listtitle{
-  background-color: white;
+  background-color: #7CCD7C;
   font-size: 16px;
-  color: #363636;
+  color: white;
   text-align: left;
   text-transform: none;
   border-style: solid;
   border-width: thin;
-  border-color: gray;
+  border-color: #D3D3D3;
   border-left-style: none;
   border-right-style: none;
   border-bottom-style: none;
 }
 
+.inputitem{
+  border-bottom-style: solid;
+  border-color: #D3D3D3;
+  border-width: thin;
+}
+
 .outros{
   margin: 0px;
   padding: 0px;
-}
-
-.divitem{
-  padding: 3px;
-  margin: 1px;
-  margin-bottom: 1px;
-  font-size: 14px;
-  border-style: inset;
-  border-width: thin;
-  border-radius: 5px;
 }
 
 .divitem2{
@@ -71,11 +70,6 @@
   border-radius: 5px;
 }
 
-.divitem3{
-  color: gray;
-  font-size: 14px;
-}
-
 .divitem4{
   text-align: left;
   padding: 3px;
@@ -86,6 +80,53 @@
 }
 
 .listitem{
+    border-color: #D3D3D3;
     margin: 0px;
     padding: 0px;
+}
+
+.subgrupo{
+  height: 0px;
+  color: gray;
+  position: relative;
+    height: 0;
+    overflow: hidden;
+    -webkit-transition-timing-function: ease;
+    -o-transition-timing-function: ease;
+    transition-timing-function: ease;
+    -webkit-transition-duration: .35s;
+    -o-transition-duration: .35s;
+    transition-duration: .35s;
+    -webkit-transition-property: height, visibility;
+    -o-transition-property: height, visibility;
+    transition-property: height, visibility;
+}
+
+//novas classes a serem seguidas
+
+.cartao{
+  border-radius: 5px;
+  position: absolute;
+  top: 0px;
+  padding-bottom: 35px;
+}
+
+.titulolista{
+  text-align: left;
+  border-style: none;
+  background-color: #D3D3D3;
+  border-radius: 5px;
+}
+
+.lista{
+  border-style: none;
+  border-right-style: solid;
+  border-left-style: solid;
+}
+
+.inputgrupo{
+  border-style: none;
+  border-bottom-style: solid;
+  border-width: thin;
+  border-color: #D3D3D3;
 }

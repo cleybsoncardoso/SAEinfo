@@ -2,7 +2,7 @@ import {Page, ViewController} from 'ionic-angular';
 import {Paciente} from '../../model/paciente';
 
 @Page({
-  templateUrl: 'build/pages/add-paciente/add-paciente.html',
+  templateUrl: 'build/pages/add-paciente/teste.html',
 })
 export class AddPacientePage {
   static get parameters() {
@@ -15,6 +15,7 @@ export class AddPacientePage {
     this.qtdeOutros = 0;
     this.qtdeAlergias = 0;
     this.qtdeVacinas = 0;
+    this.myIcons = ["md-add", "md-add", "md-add"];
   }
 
   /**Função que adiciona um campo na relação de antecedentes*/
@@ -25,10 +26,11 @@ export class AddPacientePage {
     let divFilho = document.createElement("div");
     //Definindo atributos ao campoFilho:
     divFilho.setAttribute("id","antecedente"+this.qtdeOutros);
+    divFilho.setAttribute("class", "divitem4");
     //Inserindo o elemento filho no pai:
     divPai.appendChild(divFilho);
     //Escrevendo algo no filho recém-criado:
-    document.getElementById("antecedente"+this.qtdeOutros).innerHTML = "<input class='divitem' type='text' id='campoAntecedente"+this.qtdeOutros+"'></input>";
+    document.getElementById("antecedente"+this.qtdeOutros).innerHTML = "<input class='divitem2' type='text' id='campoAntecedente"+this.qtdeOutros+"'></input>";
     this.qtdeOutros++;
   }
 
@@ -59,7 +61,7 @@ export class AddPacientePage {
     //Inserindo o elemento filho no pai:
     divPai.appendChild(divFilho);
     //Escrevendo algo no filho recém-criado:
-    document.getElementById("alergia"+this.qtdeAlergias).innerHTML = "<label class='divitem3'></label><input class='divitem2' type='text' id='campoAlergia"+this.qtdeAlergias+"'></input>";
+    document.getElementById("alergia"+this.qtdeAlergias).innerHTML = "<input class='divitem2' type='text' id='campoAlergia"+this.qtdeAlergias+"'></input>";
     this.qtdeAlergias++;
   }
 
@@ -78,7 +80,7 @@ export class AddPacientePage {
       }
   }
 
-  /**Função que adiciona um campo na relação de Alergia*/
+  /**Função que adiciona um campo na relação de vacina*/
   addVacina() {
     //guardando o div pai
     let divPai = document.getElementById("vacinas");
@@ -90,11 +92,11 @@ export class AddPacientePage {
     //Inserindo o elemento filho no pai:
     divPai.appendChild(divFilho);
     //Escrevendo algo no filho recém-criado:
-    document.getElementById("vacina"+this.qtdeVacinas).innerHTML = "<label class='divitem3'></label><input class='divitem2' type='text' id='campoVacina"+this.qtdeVacinas+"'></input>";
+    document.getElementById("vacina"+this.qtdeVacinas).innerHTML = "<input class='divitem2' type='text' id='campoVacina"+this.qtdeVacinas+"'></input>";
     this.qtdeVacinas++;
   }
 
-  /**Função que Remove um campo na relação de Alergia*/
+  /**Função que Remove um campo na relação de vacina*/
   removerVacina() {
       //só remove se já ouver um campo adicionado
       if(this.qtdeVacinas > 0){
@@ -107,6 +109,67 @@ export class AddPacientePage {
         //Removendo o ultimo DIV do nó-pai:
         divPai.removeChild(divFilho);
       }
+  }
+
+  /**Função que adiciona um campo na relação de Respiracao*/
+  addRespiracao() {
+    //guardando o div pai
+    let divPai = document.getElementById("respiracao");
+    //Criando o elemento DIV filho;
+    let divFilho = document.createElement("div");
+    //Definindo atributos ao campoFilho:
+    divFilho.setAttribute("id","resp"+this.qtdeVacinas);
+    divFilho.setAttribute("class", "divitem4");
+    //Inserindo o elemento filho no pai:
+    divPai.appendChild(divFilho);
+    //Escrevendo algo no filho recém-criado:
+    document.getElementById("resp"+this.qtdeVacinas).innerHTML = "<input class='divitem2' type='text' id='campoResp"+this.qtdeVacinas+"'></input>";
+    this.qtdeVacinas++;
+  }
+
+  /**Função que Remove um campo na relação de Respiracao*/
+  removerRespiracao() {
+      //só remove se já ouver um campo adicionado
+      if(this.qtdeVacinas > 0){
+        this.qtdeVacinas--;
+        //Guardando o div pai
+        let divPai = document.getElementById("respiracao");
+        let text = "resp"+this.qtdeVacinas;
+        //Guardando o ultimo div filho criado
+        let divFilho = document.getElementById(text);
+        //Removendo o ultimo DIV do nó-pai:
+        divPai.removeChild(divFilho);
+      }
+  }
+
+  toggleGroup(id){
+    /**
+    let grupo = document.getElementById("teste"+id);
+    if(grupo.style.display == "none"){
+      grupo.style.display = "block";
+    }
+    else{
+      grupo.style.display = "none";
+    }
+    */
+    let grupo = document.getElementById("teste"+id);
+
+    if(grupo.style.visibility == "visible"){
+      this.myIcons[id] = "md-add";
+      grupo.style.height = "0px";
+      grupo.style.visibility = "hidden";
+    }else{
+      this.myIcons[id] = "md-remove";
+      grupo.style.visibility = "visible";
+      if(id == 0){
+        grupo.style.height = "200px";
+      }else if(id == 1){
+        grupo.style.height = "40px";
+      }
+      else{
+        grupo.style.height = "60px";
+      }
+    }
   }
 
   salvar(){

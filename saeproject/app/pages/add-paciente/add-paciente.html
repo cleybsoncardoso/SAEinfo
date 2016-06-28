@@ -13,7 +13,7 @@
     <ion-slide class="slide">
       <ion-card class="card">
           <ion-card-header class="cardheader"> Identificação </ion-card-header>
-            <ion-list class="list">
+            <ion-list>
               <ion-item>
                 <ion-label floating>Nome</ion-label>
                 <ion-input type="text" [(ngModel)]="paciente.nome"></ion-input>
@@ -83,7 +83,7 @@
       <ion-card class="card">
         <ion-card-header class="cardheader"> Entrevista </ion-card-header>
           <ion-list>
-            <ion-item style="border-bottom-style: none;">
+            <ion-item style="border-bottom-style: none; border-color: #D3D3D3;">
               <ion-label floating>Internação Anterior (nº de vezes)</ion-label>
               <ion-input type="number"></ion-input>
             </ion-item>
@@ -92,48 +92,30 @@
             Antecedentes
           </ion-list-header>
           <ion-list no-lines>
-            <ion-row>
-              <ion-col width-50 class="col">
                 <ion-item>
                   <ion-label class="label">Cardiopatia</ion-label>
                   <ion-checkbox></ion-checkbox>
                 </ion-item>
-              </ion-col>
-              <ion-col width-50 class="col">
                 <ion-item>
                   <ion-label>Convulsão</ion-label>
                   <ion-checkbox></ion-checkbox>
                 </ion-item>
-              </ion-col>
-            </ion-row>
-            <ion-row>
-              <ion-col width-50 class="col">
                 <ion-item>
                   <ion-label>Asma</ion-label>
                   <ion-checkbox></ion-checkbox>
                 </ion-item>
-              </ion-col>
-              <ion-col width-50 class="col">
                 <ion-item>
                   <ion-label>Drogas</ion-label>
                   <ion-checkbox></ion-checkbox>
                 </ion-item>
-              </ion-col>
-            </ion-row>
-            <ion-row>
-              <ion-col width-50 class="col">
                 <ion-item>
                   <ion-label>HAS</ion-label>
                   <ion-checkbox></ion-checkbox>
                 </ion-item>
-              </ion-col>
-              <ion-col width-50 class="col">
                 <ion-item>
                   <ion-label class="label">Tabagismo</ion-label>
                   <ion-checkbox></ion-checkbox>
                 </ion-item>
-              </ion-col>
-            </ion-row>
             <ion-item>
               <ion-label>Diabetes Mellitus</ion-label>
               <ion-checkbox></ion-checkbox>
@@ -142,27 +124,22 @@
               <ion-label>Alcoolismo</ion-label>
               <ion-checkbox></ion-checkbox>
             </ion-item>
-            <ion-row>
-              <ion-col>
-                <ion-item>
-                  <ion-label class="outros">Outros:</ion-label>
-                </ion-item>
-              </ion-col>
-              <ion-col>
-                <ion-item>
-                  <div id="outrosAntecetendes"></div>
-                </ion-item>
-              </ion-col>
-          </ion-row>
-          <ion-item>
-            <button (click)="addAntecedente()">adicionar item</button>
-            <button (click)="removerAntecedente()">remover</button>
-          </ion-item>
+            <ion-item>
+              <ion-label>Outros</ion-label>
+            </ion-item>
+            <ion-list no-lines id="outrosAntecetendes">
+            </ion-list>
+            <ion-list no-lines class="listitem">
+              <ion-item>
+                <button (click)="addAntecedente()">Adicionar</button>
+                <button (click)="removerAntecedente()">Remover</button>
+              </ion-item>
+            </ion-list>
         </ion-list>
         <ion-list-header class="listtitle">
           Alergias
         </ion-list-header>
-        <ion-list no-lines id="alergias">
+        <ion-list no-lines id="alergias" >
         </ion-list>
         <ion-list no-lines class="listitem">
           <ion-item>
@@ -170,11 +147,10 @@
             <button (click)="removerAlergia()">Remover</button>
           </ion-item>
         </ion-list>
-
         <ion-list-header class="listtitle">
           Vacinas
         </ion-list-header>
-        <ion-list no-lines id="vacinas">
+        <ion-list no-lines id="vacinas" >
         </ion-list>
         <ion-list no-lines class="listitem">
           <ion-item>
@@ -182,7 +158,6 @@
             <button (click)="removerVacina()">Remover</button>
           </ion-item>
         </ion-list>
-
       </ion-card>
     </ion-slide>
 
@@ -290,6 +265,80 @@
             <ion-checkbox></ion-checkbox>
           </ion-item>
         </ion-list>
+      </ion-card>
+    </ion-slide>
+
+    <ion-slide class="slide">
+      <ion-card class="card">
+        <ion-card-header class="cardheader"> Oxigenação </ion-card-header>
+        <ion-list-header class="listtitle">
+          Respiração
+        </ion-list-header>
+        <ion-list no-lines>
+          <ion-item>
+            <ion-label>Espontânea</ion-label>
+            <ion-checkbox></ion-checkbox>
+          </ion-item>
+          <ion-item>
+            <ion-label>Catéter</ion-label>
+            <ion-checkbox></ion-checkbox>
+          </ion-item>
+          <ion-item>
+            <ion-label>Máscara</ion-label>
+            <ion-checkbox></ion-checkbox>
+          </ion-item>
+          <ion-item>
+            <ion-label>Traqueostomia</ion-label>
+            <ion-checkbox></ion-checkbox>
+          </ion-item>
+          <ion-item>
+            <ion-label>Outros</ion-label>
+          </ion-item>
+          </ion-list>
+          <ion-list no-lines id="respiracao" class="listitem">
+          </ion-list>
+          <ion-list no-lines class="listitem">
+            <ion-item style="margin: 0px;">
+              <button (click)="addRespiracao()">Adicionar</button>
+              <button (click)="removerRespiracao()">Remover</button>
+            </ion-item>
+            <ion-item style="margin-top: 0px;">
+              <ion-label floating>O² (Litros/Min)</ion-label>
+              <ion-input type="number" class="inputitem"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label floating>SpO²</ion-label>
+              <ion-input type="number" class="inputitem"></ion-input>
+            </ion-item>
+            <ion-item  style="margin-bottom:15px;">
+              <ion-label floating>FR (mrpm)</ion-label>
+              <ion-input type="number" class="inputitem"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label>Dispnéia</ion-label>
+              <ion-checkbox></ion-checkbox>
+            </ion-item>
+            <ion-item>
+              <ion-label>Taquipnéia</ion-label>
+              <ion-checkbox></ion-checkbox>
+            </ion-item>
+            <ion-item>
+              <ion-label>Bradipnéia</ion-label>
+              <ion-checkbox></ion-checkbox>
+            </ion-item>
+            <ion-item>
+              <ion-label>Hiperventilação neurogênica central</ion-label>
+              <ion-checkbox></ion-checkbox>
+            </ion-item>
+            <ion-item>
+              <ion-label>Apnêustica</ion-label>
+              <ion-checkbox></ion-checkbox>
+            </ion-item>
+            <ion-item>
+              <ion-label>Biot</ion-label>
+              <ion-checkbox></ion-checkbox>
+            </ion-item>
+          </ion-list>
       </ion-card>
     </ion-slide>
   </ion-slides>
