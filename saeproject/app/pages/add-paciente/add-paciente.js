@@ -16,8 +16,15 @@ export class AddPacientePage {
     this.qtdeAlergias = 0;
     this.qtdeVacinas = 0;
     this.myIcons = ["md-add", "md-add", "md-add"];
+    this.glasgow= 0;
+    this.glasgowOcular=0;
+    this.glasgowVerbal=0;
+    this.glasgowMotor=0;
   }
 
+  somarGlasgow(){
+    this.glasgow = parseInt(this.glasgowOcular) + parseInt(this.glasgowVerbal) + parseInt(this.glasgowMotor);
+  }
   /**Função que adiciona um campo na relação de antecedentes*/
   addAntecedente() {
     //guardando o div pai
@@ -162,7 +169,10 @@ export class AddPacientePage {
       }
     }
   }
-
+  checar(){
+    this.teste=document.getElementsByName("aspiracao")[0].checked;
+    console.log(this.teste);
+  }
   salvar(){
     this.view.dismiss(this.paciente);
   }
