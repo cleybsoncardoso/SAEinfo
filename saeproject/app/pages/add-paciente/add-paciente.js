@@ -151,7 +151,7 @@ export class AddPacientePage {
 
   toggleGroup(id){
     let grupo = document.getElementById("dados"+id);
-    if(id!=4){
+    if(id!=4 && id!=10 ){
       this.toggleClose(id);
     }
     if(grupo.style.visibility == "visible"){
@@ -159,7 +159,6 @@ export class AddPacientePage {
       grupo.style.height = "0px";
       grupo.style.visibility = "hidden";
     }else{
-      this.myIcons[id] = "md-remove";
       grupo.style.visibility = "visible";
       grupo.style.height = "auto";
     }
@@ -168,10 +167,13 @@ export class AddPacientePage {
   toggleClose(id){
     var i=0;
     for(i=0;document.getElementById("dados"+i)!=null;i++){
-      if(i!=id){
+      if(i!=id && i!=4 && i!=10){
         let grupo = document.getElementById("dados"+i);
         grupo.style.height = "0px";
         grupo.style.visibility = "hidden";
+        this.myIcons[i] = "md-add";
+      }else{
+        this.myIcons[i] = "md-remove";
       }
     }
   }

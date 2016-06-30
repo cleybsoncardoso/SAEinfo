@@ -163,7 +163,7 @@
     <ion-slide class="slide">
       <ion-card class="card">
         <ion-card-header class="cardheader"> Avaliação Neurológica </ion-card-header>
-        <ion-list-header class="titulolista" (click)="toggleGroup(3)">Consciência <ion-icon style="float: right" id="icon" [name]="myIcons[0]"></ion-icon></ion-list-header>
+        <ion-list-header class="titulolista" (click)="toggleGroup(3)">Consciência <ion-icon style="float: right" id="icon" [name]="myIcons[3]"></ion-icon></ion-list-header>
           <ion-list no-lines class="lista" id="dados3" class="subgrupo">
             <ion-item>
               <ion-label>Alerta</ion-label>
@@ -218,7 +218,7 @@
             </ion-grid>
           </ion-list>
           </ion-list>
-          <ion-list-header class="titulolista" (click)="toggleGroup(5)">Pupilas <ion-icon style="float: right" id="icon" [name]="myIcons[0]"></ion-icon></ion-list-header>
+          <ion-list-header class="titulolista" (click)="toggleGroup(5)">Pupilas <ion-icon style="float: right" id="icon" [name]="myIcons[5]"></ion-icon></ion-list-header>
             <ion-list no-lines class="lista" id="dados5" class="subgrupo">
           <ion-item>
             <ion-label>Isocórica</ion-label>
@@ -242,7 +242,7 @@
           </ion-item>
         </ion-list>
 
-        <ion-list-header class="titulolista" (click)="toggleGroup(6)">Mobilidade Física <ion-icon style="float: right" id="icon" [name]="myIcons[0]"></ion-icon></ion-list-header>
+        <ion-list-header class="titulolista" (click)="toggleGroup(6)">Mobilidade Física <ion-icon style="float: right" id="icon" [name]="myIcons[6]"></ion-icon></ion-list-header>
           <ion-list no-lines class="lista" id="dados6" class="subgrupo">
           <ion-item-divider light style="text-align: left; border-radius: 5px;">MMSS</ion-item-divider>
           <ion-item>
@@ -293,7 +293,7 @@
     <ion-slide class="slide">
       <ion-card class="card">
         <ion-card-header class="cardheader"> Oxigenação </ion-card-header>
-        <ion-list-header class="titulolista" (click)="toggleGroup(7)">Respiração <ion-icon style="float: right" id="icon" [name]="myIcons[0]"></ion-icon></ion-list-header>
+        <ion-list-header class="titulolista" (click)="toggleGroup(7)">Respiração <ion-icon style="float: right" id="icon" [name]="myIcons[7]"></ion-icon></ion-list-header>
           <ion-list no-lines class="lista" id="dados7" class="subgrupo">
           <ion-item>
             <ion-label>Espontânea</ion-label>
@@ -391,7 +391,7 @@
             </ion-item>
           </ion-list>
           </ion-list>
-          <ion-list-header class="titulolista" (click)="toggleGroup(8)">Ausculta pulmonar <ion-icon style="float: right" id="icon" [name]="myIcons[0]"></ion-icon></ion-list-header>
+          <ion-list-header class="titulolista" (click)="toggleGroup(8)">Ausculta pulmonar <ion-icon style="float: right" id="icon" [name]="myIcons[8]"></ion-icon></ion-list-header>
             <ion-list no-lines class="lista" id="dados8" class="subgrupo">
               <ion-item-divider light style="text-align: left; border-radius: 5px;">MV presentes</ion-item-divider>
               <ion-item>
@@ -416,7 +416,7 @@
                 <ion-checkbox></ion-checkbox>
               </ion-item>
             </ion-list>
-            <ion-list-header class="titulolista" (click)="toggleGroup(9)">Presenção de tosse: <ion-icon style="float: right" id="icon" [name]="myIcons[0]"></ion-icon></ion-list-header>
+            <ion-list-header class="titulolista" (click)="toggleGroup(9)">Presenção de tosse <ion-icon style="float: right" id="icon" [name]="myIcons[9]"></ion-icon></ion-list-header>
               <ion-list no-lines class="lista" id="dados9" class="subgrupo">
                 <ion-item>
                   <ion-label>Não</ion-label>
@@ -458,7 +458,7 @@
                 </ion-list>
               </ion-list>
 
-                <ion-list-header class="titulolista" (click)="toggleGroup(11)">Aspiração <ion-icon style="float: right" id="icon" [name]="myIcons[1]"></ion-icon></ion-list-header>
+                <ion-list-header class="titulolista" (click)="toggleGroup(11)">Aspiração <ion-icon style="float: right" id="icon" [name]="myIcons[11]"></ion-icon></ion-list-header>
                 <ion-list radio-group class="lista" id="dados11" class="subgrupo">
                 <ion-grid >
                   <ion-row>
@@ -492,7 +492,7 @@
               </ion-row>
             </ion-grid>
             </ion-list>
-            <ion-list-header class="titulolista" (click)="toggleGroup(12)">Drenagem torácica <ion-icon style="float: right" id="icon" [name]="myIcons[1]"></ion-icon></ion-list-header>
+            <ion-list-header class="titulolista" (click)="toggleGroup(12)">Drenagem torácica <ion-icon style="float: right" id="icon" [name]="myIcons[12]"></ion-icon></ion-list-header>
             <ion-list radio-group class="lista" id="dados12" class="subgrupo">
               <ion-grid>
                 <ion-row>
@@ -534,7 +534,7 @@
           </ion-item>
           </ion-list>
 
-          <ion-list-header class="titulolista" (click)="toggleGroup(13)">Mamas <ion-icon style="float: right" id="icon" [name]="myIcons[0]"></ion-icon></ion-list-header>
+          <ion-list-header class="titulolista" (click)="toggleGroup(13)">Mamas <ion-icon style="float: right" id="icon" [name]="myIcons[13]"></ion-icon></ion-list-header>
           <ion-list no-lines class="lista" id="dados13" class="subgrupo">
             <ion-item>
               <ion-label>Sem alterações</ion-label>
@@ -700,6 +700,98 @@
             <ion-label>Olha que négocio de fuder lucas. A gente podia colocar isso nos que estão saindo cortado</ion-label>
           </div>
         </div>
+      </ion-card>
+    </ion-slide>
+
+
+    <ion-slide class="slide">
+      <ion-card class="card">
+        <ion-card-header class="cardheader"> Hidratação e Eliminação Vesical </ion-card-header>
+        <ion-list-header class="titulolista" (click)="toggleGroup(14)">Turgidez da pele <ion-icon style="float: right" id="icon" [name]="myIcons[14]"></ion-icon></ion-list-header>
+        <ion-list no-lines class="lista" id="dados14" class="subgrupo">
+          <ion-item>
+            <ion-label>Preservada </ion-label>
+            <ion-checkbox></ion-checkbox>
+          </ion-item>
+          <ion-item>
+            <ion-label>Diminuída </ion-label>
+            <ion-checkbox></ion-checkbox>
+          </ion-item>
+        </ion-list>
+        <ion-list-header class="titulolista" (click)="toggleGroup(15)">Eliminação urinária <ion-icon style="float: right" id="icon" [name]="myIcons[15]"></ion-icon></ion-list-header>
+        <ion-list no-lines class="lista" id="dados15" class="subgrupo">
+          <ion-item>
+            <ion-label floating>Volume (ml:h)</ion-label>
+            <ion-input class="inputgrupo" type="number"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label>Espontânea </ion-label>
+            <ion-checkbox></ion-checkbox>
+          </ion-item>
+          <ion-item>
+            <ion-label>Retenção </ion-label>
+            <ion-checkbox></ion-checkbox>
+          </ion-item>
+          <ion-item>
+            <ion-label>Incontinência </ion-label>
+            <ion-checkbox></ion-checkbox>
+          </ion-item>
+          <ion-item>
+            <ion-label>SVD </ion-label>
+            <ion-checkbox></ion-checkbox>
+          </ion-item>
+          <ion-item>
+            <ion-label>Dispositivo urinário </ion-label>
+            <ion-checkbox></ion-checkbox>
+          </ion-item>
+        </ion-list>
+        <ion-list-header class="titulolista" (click)="toggleGroup(16)">Características <ion-icon style="float: right" id="icon" [name]="myIcons[16]"></ion-icon></ion-list-header>
+        <ion-list no-lines class="lista" id="dados16" class="subgrupo">
+          <ion-item>
+            <ion-label>Disúria </ion-label>
+            <ion-checkbox></ion-checkbox>
+          </ion-item>
+          <ion-item>
+            <ion-label>Oligúria </ion-label>
+            <ion-checkbox></ion-checkbox>
+          </ion-item>
+          <ion-item>
+            <ion-label>Anúria </ion-label>
+            <ion-checkbox></ion-checkbox>
+          </ion-item>
+          <ion-item>
+            <ion-label>Poliúria </ion-label>
+            <ion-checkbox></ion-checkbox>
+          </ion-item>
+          <ion-item>
+            <ion-label>Hematúria </ion-label>
+            <ion-checkbox></ion-checkbox>
+          </ion-item>
+          <ion-item>
+            <ion-label floating>Outros</ion-label>
+            <ion-input class="inputgrupo" type="text"></ion-input>
+          </ion-item>
+        </ion-list>
+      </ion-card>
+    </ion-slide>
+
+
+
+    <ion-slide class="slide">
+      <ion-card class="card">
+        <div class="marquee">
+          <div>
+            <ion-card-header class="cardheader"> Alimentação e Eliminação Intestinal </ion-card-header>
+          </div>
+        </div>
+        <ion-item>
+          <ion-label floating>Tipo de dieta</ion-label>
+          <ion-input class="inputgrupo" type="text"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label floating>Glicemia</ion-label>
+          <ion-input class="inputgrupo" type="text"></ion-input>
+        </ion-item>
       </ion-card>
     </ion-slide>
   </ion-slides>

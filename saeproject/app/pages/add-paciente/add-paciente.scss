@@ -135,8 +135,8 @@
   overflow-x: -webkit-marquee;
 }
 .marquee {
-  height: 30px;
-  width: 1000px;
+  height: 50px;
+  width: 360px;
 
   overflow: hidden;
   position: relative;
@@ -145,7 +145,7 @@
 .marquee div {
   display: block;
   width: 200%;
-  height: 30px;
+  height: 50px;
 
   position: absolute;
   overflow: hidden;
