@@ -9,13 +9,14 @@
 
 <ion-content>
   <ion-slides pager>
+
     <!--Slide Referente aos dados da Identificação -->
     <ion-slide class="slide">
       <ion-card class="card">
-          <ion-card-header class="cardheader"> Identificação </ion-card-header>
-            <ion-list>
-              <ion-item>
-                <ion-label floating>Nome</ion-label>
+        <ion-card-header class="cardheader"> Identificação </ion-card-header>
+          <ion-list>
+            <ion-item>
+              <ion-label floating>Nome</ion-label>
                 <ion-input type="text" [(ngModel)]="paciente.nome"></ion-input>
               </ion-item>
               <ion-row>
@@ -31,7 +32,7 @@
                     <ion-input type="text"></ion-input>
                   </ion-item>
                 </ion-col>
-            </ion-row>
+              </ion-row>
               <ion-item>
                 <ion-label floating>Estado Civil</ion-label>
                 <ion-input type="text"></ion-input>
@@ -456,49 +457,26 @@
                 </ion-grid>
                 </ion-list>
               </ion-list>
-              <ion-list-header class="titulolista" (click)="toggleGroup(11)">Mamas <ion-icon style="float: right" id="icon" [name]="myIcons[0]"></ion-icon></ion-list-header>
-              <ion-list no-lines class="lista" id="dados11" class="subgrupo">
-                <ion-item>
-                  <ion-label>Sem alterações</ion-label>
-                  <ion-checkbox></ion-checkbox>
-                </ion-item>
-                <ion-item>
-                  <ion-label>Nódulos</ion-label>
-                  <ion-checkbox></ion-checkbox>
-                </ion-item>
-                <ion-item>
-                  <ion-label>Dor</ion-label>
-                  <ion-checkbox></ion-checkbox>
-                </ion-item>
-                <ion-item>
-                  <ion-label>Assimétrica</ion-label>
-                  <ion-checkbox></ion-checkbox>
-                </ion-item>
-                <ion-item>
-                  <ion-label floating>Outros</ion-label>
-                  <ion-input class="inputgrupo" type="text"></ion-input>
-                </ion-item>
-              </ion-list>
-              <ion-list radio-group>
-                <ion-list-header>Aspiração </ion-list-header>
-                <ion-grid>
+
+                <ion-list-header class="titulolista" (click)="toggleGroup(11)">Aspiração <ion-icon style="float: right" id="icon" [name]="myIcons[1]"></ion-icon></ion-list-header>
+                <ion-list radio-group class="lista" id="dados11" class="subgrupo">
+                <ion-grid >
                   <ion-row>
                     <ion-col width-50>
                       <ion-item>
                         <ion-label>Sim</ion-label>
-                        <ion-radio name="aspiracao" value="sim" (click)="checar()"></ion-radio>
+                        <ion-radio name="aspiracao" value="sim" (click)="toggleGroup2(0,'block')"></ion-radio>
                       </ion-item>
                     </ion-col>
                     <ion-col width-50><ion-item>
                       <ion-label>Não</ion-label>
-                      <ion-radio name="aspiracao" value="nao" (click)="checar()"></ion-radio>
+                      <ion-radio name="aspiracao" value="nao" (click)="toggleGroup2(0,'none')"></ion-radio>
                     </ion-item>
                   </ion-col>
                 </ion-row>
               </ion-grid>
-            </ion-list>
-            <ion-list no-lines class="lista" id="dados12" class="subgrupo">
-              <ion-grid>
+
+              <ion-grid id="listRadio0" style="display: none" >
                 <ion-row>
                   <ion-col width-30>
                     <ion-item>
@@ -514,6 +492,214 @@
               </ion-row>
             </ion-grid>
             </ion-list>
+            <ion-list-header class="titulolista" (click)="toggleGroup(12)">Drenagem torácica <ion-icon style="float: right" id="icon" [name]="myIcons[1]"></ion-icon></ion-list-header>
+            <ion-list radio-group class="lista" id="dados12" class="subgrupo">
+              <ion-grid>
+                <ion-row>
+                  <ion-col width-50>
+                    <ion-item>
+                      <ion-label>Sim</ion-label>
+                      <ion-radio name="aspiracao" value="sim" (click)="toggleGroup2(1,'block')"></ion-radio>
+                    </ion-item>
+                  </ion-col>
+                  <ion-col width-50><ion-item>
+                    <ion-label>Não</ion-label>
+                    <ion-radio name="aspiracao" value="nao" (click)="toggleGroup2(1,'none')"></ion-radio>
+                  </ion-item>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+            <ion-grid id="listRadio1" style="display: none" >
+              <ion-row>
+                <ion-col width-30>
+                  <ion-item>
+                    <ion-label floating>quantidade</ion-label>
+                    <ion-input class="inputgrupo" type="number"></ion-input>
+                  </ion-item>
+                </ion-col>
+                <ion-col width-80><ion-item>
+                  <ion-label floating>característica</ion-label>
+                  <ion-input class="inputgrupo" type="text"></ion-input>
+                </ion-item>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+          <ion-item>
+            <ion-label>DTE</ion-label>
+            <ion-checkbox></ion-checkbox>
+          </ion-item>
+          <ion-item>
+            <ion-label>DTD</ion-label>
+            <ion-checkbox></ion-checkbox>
+          </ion-item>
+          </ion-list>
+
+          <ion-list-header class="titulolista" (click)="toggleGroup(13)">Mamas <ion-icon style="float: right" id="icon" [name]="myIcons[0]"></ion-icon></ion-list-header>
+          <ion-list no-lines class="lista" id="dados13" class="subgrupo">
+            <ion-item>
+              <ion-label>Sem alterações</ion-label>
+              <ion-checkbox></ion-checkbox>
+            </ion-item>
+            <ion-item>
+              <ion-label>Nódulos</ion-label>
+              <ion-checkbox></ion-checkbox>
+            </ion-item>
+            <ion-item>
+              <ion-label>Dor</ion-label>
+              <ion-checkbox></ion-checkbox>
+            </ion-item>
+            <ion-item>
+              <ion-label>Assimétrica</ion-label>
+              <ion-checkbox></ion-checkbox>
+            </ion-item>
+            <ion-item>
+              <ion-label floating>Outros</ion-label>
+              <ion-input class="inputgrupo" type="text"></ion-input>
+            </ion-item>
+          </ion-list>
+      </ion-card>
+    </ion-slide>
+
+
+
+    <ion-slide class="slide">
+      <ion-card class="card">
+      <ion-card-header class="cardheader"> Avaliação Cardiovascular </ion-card-header>
+      <ion-grid>
+        <ion-row>
+          <ion-col width-50>
+            <ion-item>
+              <ion-label floating>FC (bpm)</ion-label>
+              <ion-input class="inputgrupo" type="number"></ion-input>
+            </ion-item>
+          </ion-col>
+          <ion-col width-50>
+            <ion-item>
+              <ion-label floating>PA (mmHg)</ion-label>
+              <ion-input class="inputgrupo" type="number"></ion-input>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      <ion-grid>
+        <ion-row>
+          <ion-col width-50>
+            <ion-item>
+              <ion-label floating>PVC (cmH2O)</ion-label>
+              <ion-input class="inputgrupo" type="number"></ion-input>
+            </ion-item>
+          </ion-col>
+          <ion-col width-50>
+            <ion-item>
+              <ion-label floating>PAM (mmHg)</ion-label>
+              <ion-input class="inputgrupo" type="number"></ion-input>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      <ion-list-header class="titulolista">Pulso </ion-list-header>
+        <ion-grid>
+          <ion-row>
+            <ion-col width-50>
+              <ion-item>
+                <ion-label>Regular</ion-label>
+                <ion-checkbox></ion-checkbox>
+              </ion-item>
+            </ion-col>
+            <ion-col width-50>
+              <ion-item>
+                <ion-label>Irregular </ion-label>
+                <ion-checkbox></ion-checkbox>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+        <ion-grid>
+          <ion-row>
+            <ion-col width-50>
+              <ion-item>
+                <ion-label>Palpável</ion-label>
+                <ion-checkbox></ion-checkbox>
+              </ion-item>
+            </ion-col>
+            <ion-col width-50>
+              <ion-item>
+                <ion-label class="testes">Impalpável</ion-label>
+                <ion-checkbox></ion-checkbox>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+        <ion-grid>
+          <ion-row>
+            <ion-col width-50>
+              <ion-item>
+                <ion-label>Cheio</ion-label>
+                <ion-checkbox></ion-checkbox>
+              </ion-item>
+            </ion-col>
+            <ion-col width-50>
+              <ion-item>
+                <ion-label>Filiforme</ion-label>
+                <ion-checkbox></ion-checkbox>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+        <ion-list-header class="titulolista">Presença de edema </ion-list-header>
+          <ion-grid>
+            <ion-row>
+              <ion-col width-50>
+                <ion-item>
+                  <ion-label>Não</ion-label>
+                  <ion-checkbox></ion-checkbox>
+                </ion-item>
+              </ion-col>
+              <ion-col width-50>
+                <ion-item>
+                  <ion-label>Sim</ion-label>
+                  <ion-checkbox></ion-checkbox>
+                </ion-item>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+          <ion-grid>
+            <ion-row>
+              <ion-col width-50>
+                <ion-item>
+                  <ion-label>Pés</ion-label>
+                  <ion-checkbox></ion-checkbox>
+                </ion-item>
+              </ion-col>
+              <ion-col width-50>
+                <ion-item>
+                  <ion-label class="testes">MMII</ion-label>
+                  <ion-checkbox></ion-checkbox>
+                </ion-item>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+          <ion-grid>
+            <ion-row>
+              <ion-col width-50>
+                <ion-item>
+                  <ion-label>MMSS</ion-label>
+                  <ion-checkbox></ion-checkbox>
+                </ion-item>
+              </ion-col>
+              <ion-col width-50>
+                <ion-item>
+                  <ion-label>Anasarca</ion-label>
+                  <ion-checkbox></ion-checkbox>
+                </ion-item>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        <div class="marquee">
+          <div>
+            <ion-label>Olha que négocio de fuder lucas. A gente podia colocar isso nos que estão saindo cortado</ion-label>
+          </div>
+        </div>
       </ion-card>
     </ion-slide>
   </ion-slides>

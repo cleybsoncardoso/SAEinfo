@@ -130,3 +130,35 @@
   border-width: thin;
   border-color: #D3D3D3;
 }
+.testes{
+  -webkit-marquee: auto medium infinite scroll normal;
+  overflow-x: -webkit-marquee;
+}
+.marquee {
+  height: 30px;
+  width: 1000px;
+
+  overflow: hidden;
+  position: relative;
+}
+
+.marquee div {
+  display: block;
+  width: 200%;
+  height: 30px;
+
+  position: absolute;
+  overflow: hidden;
+
+  animation: marquee 10s linear infinite;
+}
+
+.marquee ion-label {
+  float: left;
+  width: 100%;
+}
+
+@keyframes marquee {
+  0% { left: 0; }
+  100% { left: -100%; }
+}

@@ -151,7 +151,7 @@ export class AddPacientePage {
 
   toggleGroup(id){
     let grupo = document.getElementById("dados"+id);
-
+    this.toggleClose(id);
     if(grupo.style.visibility == "visible"){
       this.myIcons[id] = "md-add";
       grupo.style.height = "0px";
@@ -159,19 +159,26 @@ export class AddPacientePage {
     }else{
       this.myIcons[id] = "md-remove";
       grupo.style.visibility = "visible";
-      if(id == 0){
-        grupo.style.height = "auto";
-      }else if(id == 1){
-        grupo.style.height = "auto";
-      }
-      else{
-        grupo.style.height = "auto";
+      grupo.style.height = "auto";
+    }
+  }
+
+  toggleClose(id){
+    var i=0;
+    for(i=0;document.getElementById("dados"+i)!=null;i++){
+      if(i!=id){
+        let grupo = document.getElementById("dados"+i);
+        grupo.style.height = "0px";
+        grupo.style.visibility = "hidden";
       }
     }
   }
-  checar(){
-    this.teste=document.getElementsByName("aspiracao")[0].checked;
-    console.log(this.teste);
+
+  toggleGroup2(id,status){
+
+    let grupo = document.getElementById("listRadio"+id);
+    grupo.style.display = status;
+
   }
   salvar(){
     this.view.dismiss(this.paciente);
