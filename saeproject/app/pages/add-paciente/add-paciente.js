@@ -151,7 +151,9 @@ export class AddPacientePage {
 
   toggleGroup(id){
     let grupo = document.getElementById("dados"+id);
-    this.toggleClose(id);
+    if(id!=4){
+      this.toggleClose(id);
+    }
     if(grupo.style.visibility == "visible"){
       this.myIcons[id] = "md-add";
       grupo.style.height = "0px";
