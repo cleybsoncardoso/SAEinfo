@@ -1,0 +1,88 @@
+<ion-toolbar>
+ <ion-title>
+   Novo Paciente
+ </ion-title>
+ <ion-buttons start>
+   <button round (click)="cancel()">Cancelar</button>
+ </ion-buttons>
+</ion-toolbar>
+
+<ion-content padding class="entrevista" (swipe)="slide($event)">
+  <ion-card class="card">
+    <ion-card-header class="cardheader"> Entrevista </ion-card-header>
+    <ion-list>
+      <ion-item style="border-bottom-style: none; border-color: #D3D3D3;">
+        <ion-label floating>Internação Anterior (nº de vezes)</ion-label>
+        <ion-input type="number"></ion-input>
+      </ion-item>
+    </ion-list>
+    <ion-list-header class="titulolista" (click)="toggleGroup(0)">Antecedentes <ion-icon style="float: right"  ></ion-icon></ion-list-header>
+    <ion-list no-lines class="lista" id="dados0" class="subgrupo">
+          <ion-item>
+            <ion-label style="color: gray">Cardiopatia</ion-label>
+            <ion-checkbox></ion-checkbox>
+          </ion-item>
+          <ion-item>
+            <ion-label style="color: gray">Convulsão</ion-label>
+            <ion-checkbox></ion-checkbox>
+          </ion-item>
+          <ion-item>
+            <ion-label style="color: gray">Asma</ion-label>
+            <ion-checkbox></ion-checkbox>
+          </ion-item>
+          <ion-item>
+            <ion-label style="color: gray">Drogas</ion-label>
+            <ion-checkbox></ion-checkbox>
+          </ion-item>
+          <ion-item>
+            <ion-label style="color: gray">HAS</ion-label>
+            <ion-checkbox></ion-checkbox>
+          </ion-item>
+          <ion-item>
+            <ion-label style="color: gray">Tabagismo</ion-label>
+            <ion-checkbox></ion-checkbox>
+          </ion-item>
+      <ion-item>
+        <ion-label style="color: gray">Diabetes Mellitus</ion-label>
+        <ion-checkbox></ion-checkbox>
+      </ion-item>
+      <ion-item>
+        <ion-label style="color: gray">Alcoolismo</ion-label>
+        <ion-checkbox></ion-checkbox>
+      </ion-item>
+      <ion-item>
+        <ion-label style="color: gray">Outros</ion-label>
+      </ion-item>
+      <ion-list no-lines id="outrosAntecetendes">
+      </ion-list>
+      <ion-list no-lines class="listitem">
+        <ion-item>
+          <button (click)="addAntecedente()">Adicionar</button>
+          <button (click)="removerAntecedente()">Remover</button>
+        </ion-item>
+      </ion-list>
+  </ion-list>
+  <ion-list-header class="titulolista" (click)="toggleGroup(1)">Alergia <ion-icon style="float: right" ></ion-icon></ion-list-header>
+  <ion-list no-lines class="lista" id="dados1" class="subgrupo">
+    <ion-list no-lines id="alergias" >
+    </ion-list>
+    <ion-list no-lines class="listitem">
+      <ion-item>
+        <button (click)="addAlergia()">Adicionar Alergia</button>
+        <button (click)="removerAlergia()">Remover</button>
+      </ion-item>
+    </ion-list>
+  </ion-list>
+  <ion-list-header class="titulolista" (click)="toggleGroup(2)">Vacinas <ion-icon style="float: right"  ></ion-icon></ion-list-header>
+    <ion-list no-lines class="lista" id="dados2" class="subgrupo">
+    <ion-list no-lines id="vacinas" >
+    </ion-list>
+    <ion-list no-lines class="listitem">
+      <ion-item>
+        <button (click)="addVacina()">Adicionar Vacina</button>
+        <button (click)="removerVacina()">Remover</button>
+      </ion-item>
+    </ion-list>
+  </ion-list>
+  </ion-card>
+</ion-content>
