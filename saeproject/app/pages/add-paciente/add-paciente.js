@@ -14,6 +14,7 @@ export class AddPacientePage {
     this.paciente = new Paciente();
     this.qtdeOutros = 0;
     this.qtdeAlergias = 0;
+    this.qtdeObs = 0;
     this.qtdeVacinas = 0;
     this.myIcons = ["md-add"];
     this.initiateIcons();
@@ -96,6 +97,38 @@ export class AddPacientePage {
       }
   }
 
+  addObservacoes() {
+    //guardando o div pai
+    let divPai = document.getElementById("observacoes");
+    //Criando o elemento DIV filho;
+    let divFilho = document.createElement("div");
+    //Definindo atributos ao campoFilho:
+    divFilho.setAttribute("id","observacoes"+this.qtdeObs);
+    divFilho.setAttribute("class", "divitem4");
+    //Inserindo o elemento filho no pai:
+    divPai.appendChild(divFilho);
+    //Escrevendo algo no filho recém-criado:
+    document.getElementById("observacoes"+this.qtdeObs).innerHTML = "<input class='divitem2' type='text' id='campoObservacoes"+this.qtdeObs+"'></input>";
+    this.qtdeObs++;
+  }
+
+  /**Função que Remove um campo na relação de observacoes*/
+  removerObservacoes() {
+      //só remove se já ouver um campo adicionado
+      if(this.qtdeObs > 0){
+        this.qtdeObs--;
+        //Guardando o div pai
+        let divPai = document.getElementById("observacoes");
+        let text = "observacoes"+this.qtdeObs;
+        //Guardando o ultimo div filho criado
+        let divFilho = document.getElementById(text);
+        //Removendo o ultimo DIV do nó-pai:
+        divPai.removeChild(divFilho);
+      }
+  }
+
+
+
   /**Função que adiciona um campo na relação de vacina*/
   addVacina() {
     //guardando o div pai
@@ -160,7 +193,7 @@ export class AddPacientePage {
 
   toggleGroup(id){
     let grupo = document.getElementById("dados"+id);
-    if(id!=4 && id!=10 && id!=20 ){
+    if(id!=4 && id!=10 && id!=20 && id!=31){
       this.toggleClose(id);
     }
     if(grupo.style.visibility == "visible"){
@@ -176,7 +209,7 @@ export class AddPacientePage {
   toggleClose(id){
     var i=0;
     for(i=0;document.getElementById("dados"+i)!=null;i++){
-      if(i!=id && i!=4 && i!=10 && i!=20){
+      if(i!=id && i!=4 && i!=10 && i!=20 && i!=31){
         let grupo = document.getElementById("dados"+i);
         grupo.style.height = "0px";
         grupo.style.visibility = "hidden";
