@@ -17,10 +17,10 @@ export class AddPacientePage {
     this.qtdeVacinas = 0;
     this.myIcons = ["md-add"];
     this.initiateIcons();
-    this.glasgow= 0;
-    this.glasgowOcular=0;
-    this.glasgowVerbal=0;
-    this.glasgowMotor=0;
+    this.glasgow = 0;
+    this.glasgowOcular;
+    this.glasgowVerbal;
+    this.glasgowMotor;
   }
 
   initiateIcons(){
@@ -33,7 +33,7 @@ export class AddPacientePage {
   somarGlasgow(){
     this.glasgow = parseInt(this.glasgowOcular) + parseInt(this.glasgowVerbal) + parseInt(this.glasgowMotor);
   }
-  
+
   /**Função que adiciona um campo na relação de antecedentes*/
   addAntecedente() {
     //guardando o div pai

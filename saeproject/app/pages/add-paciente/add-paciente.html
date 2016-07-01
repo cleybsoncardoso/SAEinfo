@@ -185,33 +185,32 @@
               <ion-label style="color: gray">Comatoso</ion-label>
               <ion-checkbox></ion-checkbox>
             </ion-item>
-              <ion-grid>
                 <ion-row>
-                  <ion-col width-70>
+                  <ion-col style="margin: 0px; padding: 0px">
                     <ion-item>
                       <ion-label style="color: gray">Glasgow</ion-label>
                       <ion-checkbox (click)="toggleGroup(4)"></ion-checkbox>
                     </ion-item>
                   </ion-col>
-                  <ion-col width-30><ion-item>
+                  <ion-col style="margin: 0px; padding: 0px">
+                  <ion-item>
                     <ion-input class="inputgrupo" disabled [(ngModel)]="glasgow" type="number"></ion-input>
                   </ion-item>
                   </ion-col>
                 </ion-row>
-              </ion-grid>
               <ion-list no-lines class="lista" id="dados4" class="subgrupo">
               <ion-grid>
                 <ion-row>
                   <ion-col width-30><ion-item>
-                    <ion-input class="inputgrupo" [(ngModel)]="glasgowOcular" placeholder="Ocular" (keydown)="somarGlasgow()" type="number"></ion-input>
+                    <ion-input class="inputgrupo" [(ngModel)]="glasgowOcular" placeholder="Ocular" (keyup)="somarGlasgow()" type="number"></ion-input>
                   </ion-item>
                   </ion-col>
                   <ion-col width-30><ion-item>
-                    <ion-input class="inputgrupo" [(ngModel)]="glasgowVerbal" placeholder="Verbal" (keydown)="somarGlasgow()" type="number"></ion-input>
+                    <ion-input class="inputgrupo" [(ngModel)]="glasgowVerbal" placeholder="Verbal" (keyup)="somarGlasgow()" type="number"></ion-input>
                   </ion-item>
                   </ion-col>
                   <ion-col width-30><ion-item>
-                    <ion-input class="inputgrupo" [(ngModel)]="glasgowMotor" placeholder="Motor" (keydown)="somarGlasgow()" type="number"></ion-input>
+                    <ion-input class="inputgrupo" [(ngModel)]="glasgowMotor" placeholder="Motor" (keyup)="somarGlasgow()" type="number"></ion-input>
                   </ion-item>
                   </ion-col>
               </ion-row>
@@ -494,33 +493,32 @@
             </ion-list>
             <ion-list-header class="titulolista" (click)="toggleGroup(12)">Drenagem torácica <ion-icon style="float: right"  [name]="myIcons[12]"></ion-icon></ion-list-header>
             <ion-list radio-group class="lista" id="dados12" class="subgrupo">
-              <ion-grid>
                 <ion-row>
-                  <ion-col width-50>
+                  <ion-col>
                     <ion-item>
                       <ion-label style="color: gray">Sim</ion-label>
                       <ion-radio name="aspiracao" value="sim" (click)="toggleGroup2(1,'block')"></ion-radio>
                     </ion-item>
                   </ion-col>
-                  <ion-col width-50><ion-item>
+                  <ion-col><ion-item>
                     <ion-label style="color: gray">Não</ion-label>
                     <ion-radio name="aspiracao" value="nao" (click)="toggleGroup2(1,'none')"></ion-radio>
                   </ion-item>
                 </ion-col>
               </ion-row>
-            </ion-grid>
-            <ion-grid id="listRadio1" style="display: none" >
-              <ion-row>
-                <ion-col width-30>
-                  <ion-item>
+            <ion-grid id="listRadio1" style="display: none; padding: 0px; margin: 0px;">
+              <ion-row style="padding: 0px; margin: 0px;">
+                <ion-col style="padding: 0px; margin: 0px;">
+                  <ion-item style="padding: 0px; margin: 0px;">
                     <ion-label floating>quantidade</ion-label>
                     <ion-input class="inputgrupo" type="number"></ion-input>
                   </ion-item>
                 </ion-col>
-                <ion-col width-80><ion-item>
-                  <ion-label floating>característica</ion-label>
-                  <ion-input class="inputgrupo" type="text"></ion-input>
-                </ion-item>
+                <ion-col style="padding: 0px; margin: 0px;">
+                  <ion-item style="padding: 0px; margin: 0px;">
+                    <ion-label floating>característica</ion-label>
+                    <ion-input class="inputgrupo" type="text"></ion-input>
+                  </ion-item>
               </ion-col>
             </ion-row>
           </ion-grid>
