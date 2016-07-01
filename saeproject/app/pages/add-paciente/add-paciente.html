@@ -598,103 +598,56 @@
         </ion-row>
       </ion-grid>
       <ion-list-header class="titulolista">Pulso </ion-list-header>
-        <ion-grid>
-          <ion-row>
-            <ion-col width-50>
               <ion-item>
                 <ion-label>Regular</ion-label>
                 <ion-checkbox></ion-checkbox>
               </ion-item>
-            </ion-col>
-            <ion-col width-50>
               <ion-item>
                 <ion-label>Irregular </ion-label>
                 <ion-checkbox></ion-checkbox>
               </ion-item>
-            </ion-col>
-          </ion-row>
-        </ion-grid>
-        <ion-grid>
-          <ion-row>
-            <ion-col width-50>
               <ion-item>
                 <ion-label>Palpável</ion-label>
                 <ion-checkbox></ion-checkbox>
               </ion-item>
-            </ion-col>
-            <ion-col width-50>
               <ion-item>
                 <ion-label class="testes">Impalpável</ion-label>
                 <ion-checkbox></ion-checkbox>
               </ion-item>
-            </ion-col>
-          </ion-row>
-        </ion-grid>
-        <ion-grid>
-          <ion-row>
-            <ion-col width-50>
               <ion-item>
                 <ion-label>Cheio</ion-label>
                 <ion-checkbox></ion-checkbox>
               </ion-item>
-            </ion-col>
-            <ion-col width-50>
               <ion-item>
                 <ion-label>Filiforme</ion-label>
                 <ion-checkbox></ion-checkbox>
               </ion-item>
-            </ion-col>
-          </ion-row>
-        </ion-grid>
+
         <ion-list-header class="titulolista">Presença de edema </ion-list-header>
-          <ion-grid>
-            <ion-row>
-              <ion-col width-50>
                 <ion-item>
                   <ion-label>Não</ion-label>
                   <ion-checkbox></ion-checkbox>
                 </ion-item>
-              </ion-col>
-              <ion-col width-50>
                 <ion-item>
                   <ion-label>Sim</ion-label>
                   <ion-checkbox></ion-checkbox>
                 </ion-item>
-              </ion-col>
-            </ion-row>
-          </ion-grid>
-          <ion-grid>
-            <ion-row>
-              <ion-col width-50>
                 <ion-item>
                   <ion-label>Pés</ion-label>
                   <ion-checkbox></ion-checkbox>
                 </ion-item>
-              </ion-col>
-              <ion-col width-50>
                 <ion-item>
                   <ion-label class="testes">MMII</ion-label>
                   <ion-checkbox></ion-checkbox>
                 </ion-item>
-              </ion-col>
-            </ion-row>
-          </ion-grid>
-          <ion-grid>
-            <ion-row>
-              <ion-col width-50>
                 <ion-item>
                   <ion-label>MMSS</ion-label>
                   <ion-checkbox></ion-checkbox>
                 </ion-item>
-              </ion-col>
-              <ion-col width-50>
                 <ion-item>
                   <ion-label>Anasarca</ion-label>
                   <ion-checkbox></ion-checkbox>
                 </ion-item>
-              </ion-col>
-            </ion-row>
-          </ion-grid>
         <div class="marquee">
           <div>
             <ion-label>Olha que négocio de fuder lucas. A gente podia colocar isso nos que estão saindo cortado</ion-label>
@@ -790,7 +743,7 @@
           <ion-label floating>Glicemia</ion-label>
           <ion-input class="inputgrupo" type="text"></ion-input>
         </ion-item>
-        <ion-list-header class="titulolista" (click)="toggleGroup(17)">Apetite <ion-icon style="float: right" id="icon" [name]="myIcons[17]"></ion-icon></ion-list-header>
+        <ion-list-header class="titulolista" (click)="toggleGroup(17)">Apetite <ion-icon style="float: right"  [name]="myIcons[17]"></ion-icon></ion-list-header>
         <ion-list no-lines class="lista" id="dados17" class="subgrupo">
           <ion-item>
             <ion-label>Normal </ion-label>
@@ -810,7 +763,7 @@
           </ion-item>
         </ion-list>
 
-        <ion-list-header class="titulolista" (click)="toggleGroup(18)">Vias de administração <ion-icon style="float: right" id="icon" [name]="myIcons[18]"></ion-icon></ion-list-header>
+        <ion-list-header class="titulolista" (click)="toggleGroup(18)">Vias de administração <ion-icon style="float: right" [name]="myIcons[18]"></ion-icon></ion-list-header>
         <ion-list no-lines class="lista" id="dados18" class="subgrupo">
           <ion-item>
             <ion-label>Oral </ion-label>
@@ -834,7 +787,7 @@
           </ion-item>
         </ion-list>
 
-        <ion-list-header class="titulolista" (click)="toggleGroup(19)">Presenção de <ion-icon style="float: right" id="icon" [name]="myIcons[19]"></ion-icon></ion-list-header>
+        <ion-list-header class="titulolista" (click)="toggleGroup(19)">Presenção de <ion-icon style="float: right"  [name]="myIcons[19]"></ion-icon></ion-list-header>
         <ion-list no-lines class="lista" id="dados19" class="subgrupo">
           <ion-item>
             <ion-label>Náusea</ion-label>
@@ -864,7 +817,7 @@
           </ion-list>
         </ion-list>
 
-        <ion-list-header class="titulolista" (click)="toggleGroup(21)">Abdome <ion-icon style="float: right" id="icon" [name]="myIcons[21]"></ion-icon></ion-list-header>
+        <ion-list-header class="titulolista" (click)="toggleGroup(21)">Abdome <ion-icon style="float: right"  [name]="myIcons[21]"></ion-icon></ion-list-header>
         <ion-list no-lines class="lista" id="dados21" class="subgrupo">
           <ion-item>
             <ion-label>Plano </ion-label>
@@ -888,7 +841,7 @@
           </ion-item>
         </ion-list>
 
-        <ion-list-header class="titulolista" (click)="toggleGroup(22)">RHA <ion-icon style="float: right" id="icon" [name]="myIcons[22]"></ion-icon></ion-list-header>
+        <ion-list-header class="titulolista" (click)="toggleGroup(22)">RHA <ion-icon style="float: right"  [name]="myIcons[22]"></ion-icon></ion-list-header>
         <ion-list no-lines class="lista" id="dados22" class="subgrupo">
           <ion-item>
             <ion-label>Presentes </ion-label>
@@ -908,7 +861,7 @@
           </ion-item>
         </ion-list>
 
-        <ion-list-header class="titulolista" (click)="toggleGroup(23)">Ostomia <ion-icon style="float: right" id="icon" [name]="myIcons[23]"></ion-icon></ion-list-header>
+        <ion-list-header class="titulolista" (click)="toggleGroup(23)">Ostomia <ion-icon style="float: right"  [name]="myIcons[23]"></ion-icon></ion-list-header>
         <ion-list radio-group class="lista" id="dados23" class="subgrupo">
         <ion-grid >
           <ion-row>
@@ -943,7 +896,7 @@
     </ion-grid>
     </ion-list>
 
-    <ion-list-header class="titulolista" (click)="toggleGroup(24)">Eliminação intestinal <ion-icon style="float: right" id="icon" [name]="myIcons[24]"></ion-icon></ion-list-header>
+    <ion-list-header class="titulolista" (click)="toggleGroup(24)">Eliminação intestinal <ion-icon style="float: right"  [name]="myIcons[24]"></ion-icon></ion-list-header>
     <ion-list no-lines class="lista" id="dados24" class="subgrupo">
       <ion-item>
         <ion-label floating>Frequência (vezes;semana)</ion-label>
