@@ -19,6 +19,7 @@ export class OxigenacaoPage {
     this.nav = nav;
     this.myIcons = ["md-add"];
     this.initiateIcons();
+    this.obsRespiracao = 0;
   }
 
   cancel(){
@@ -26,9 +27,9 @@ export class OxigenacaoPage {
   }
   slide(passar){
     if(passar.deltaX>0){
-      this.nav.setRoot(EntrevistaPage);
+      this.nav.setRoot(AvaliacaoNeurologicaPage);
     }else if(passar.deltaX<0){
-      this.nav.setRoot(OxigenacaoPage);
+    //  this.nav.setRoot(OxigenacaoPage);
     }
 }
 initiateIcons(){
@@ -39,7 +40,7 @@ initiateIcons(){
 }
 toggleGroup(id){
   let grupo = document.getElementById("dados"+id);
-  if(id!=1){
+  if(id!=3){
     this.toggleClose(id);
   }
   if(grupo.style.visibility == "visible"){
@@ -56,7 +57,7 @@ toggleClose(id){
   var i=0;
   let grupo = document.getElementById("dados"+i);
   while(grupo!=null){
-    if(i!=id && i!=1){
+    if(i!=id && i!=3){
       grupo.style.height = "0px";
       grupo.style.visibility = "hidden";
       this.myIcons[i] = "md-add";
@@ -74,23 +75,23 @@ addRespiracao() {
   //Criando o elemento DIV filho;
   let divFilho = document.createElement("div");
   //Definindo atributos ao campoFilho:
-  divFilho.setAttribute("id","resp"+this.qtdeVacinas);
+  divFilho.setAttribute("id","resp"+this.obsRespiracao);
   divFilho.setAttribute("class", "divitem4");
   //Inserindo o elemento filho no pai:
   divPai.appendChild(divFilho);
   //Escrevendo algo no filho recém-criado:
-  document.getElementById("resp"+this.qtdeVacinas).innerHTML = "<input class='divitem2' type='text' id='campoResp"+this.qtdeVacinas+"'></input>";
-  this.qtdeVacinas++;
+  document.getElementById("resp"+this.obsRespiracao).innerHTML = "<input class='divitem2' type='text' id='campoResp"+this.obsRespiracao+"'></input>";
+  this.obsRespiracao++;
 }
 
 /**Função que Remove um campo na relação de Respiracao*/
 removerRespiracao() {
     //só remove se já ouver um campo adicionado
-    if(this.qtdeVacinas > 0){
-      this.qtdeVacinas--;
+    if(this.obsRespiracao > 0){
+      this.obsRespiracao--;
       //Guardando o div pai
       let divPai = document.getElementById("respiracao");
-      let text = "resp"+this.qtdeVacinas;
+      let text = "resp"+this.obsRespiracao;
       //Guardando o ultimo div filho criado
       let divFilho = document.getElementById(text);
       //Removendo o ultimo DIV do nó-pai:
