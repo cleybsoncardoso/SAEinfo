@@ -151,7 +151,7 @@ export class AddPacientePage {
 
   toggleGroup(id){
     let grupo = document.getElementById("dados"+id);
-    if(id!=4 && id!=10 ){
+    if(id!=4 && id!=10 && id!=20 ){
       this.toggleClose(id);
     }
     if(grupo.style.visibility == "visible"){
@@ -167,7 +167,7 @@ export class AddPacientePage {
   toggleClose(id){
     var i=0;
     for(i=0;document.getElementById("dados"+i)!=null;i++){
-      if(i!=id && i!=4 && i!=10){
+      if(i!=id && i!=4 && i!=10 && i!=20){
         let grupo = document.getElementById("dados"+i);
         grupo.style.height = "0px";
         grupo.style.visibility = "hidden";
