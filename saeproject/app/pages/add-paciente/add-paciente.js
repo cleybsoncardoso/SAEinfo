@@ -15,11 +15,20 @@ export class AddPacientePage {
     this.qtdeOutros = 0;
     this.qtdeAlergias = 0;
     this.qtdeVacinas = 0;
-    this.myIcons = ["md-add", "md-add", "md-add"];
+    this.myIcons = ["md-add"];
+    this.initiateIcons();
     this.glasgow= 0;
     this.glasgowOcular=0;
     this.glasgowVerbal=0;
     this.glasgowMotor=0;
+  }
+
+
+  initiateIcons(){
+    var i = 0;
+    for(i=0;i<17;i++){
+      this.myIcons[i] = "md-add";
+    }
   }
 
   somarGlasgow(){
