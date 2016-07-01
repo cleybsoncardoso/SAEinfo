@@ -1,0 +1,277 @@
+<ion-toolbar>
+ <ion-title>
+   Novo Paciente
+ </ion-title>
+ <ion-buttons start>
+   <button round (click)="cancel()">Cancelar</button>
+ </ion-buttons>
+</ion-toolbar>
+<ion-content padding class="oxigenacao" (swipe)="slide($event)">
+
+  <ion-card class="card">
+    <ion-card-header class="cardheader"> Oxigenação </ion-card-header>
+    <ion-list-header class="titulolista" (click)="toggleGroup(0)">Respiração <ion-icon style="float: right"  [name]="myIcons[0]"></ion-icon></ion-list-header>
+      <ion-list no-lines class="lista" id="dados0" class="subgrupo">
+      <ion-item>
+        <ion-label style="color: gray">Espontânea</ion-label>
+        <ion-checkbox></ion-checkbox>
+      </ion-item>
+      <ion-item>
+        <ion-label style="color: gray">Catéter</ion-label>
+        <ion-checkbox></ion-checkbox>
+      </ion-item>
+      <ion-item>
+        <ion-label style="color: gray">Máscara</ion-label>
+        <ion-checkbox></ion-checkbox>
+      </ion-item>
+      <ion-item>
+        <ion-label style="color: gray">Traqueostomia</ion-label>
+        <ion-checkbox></ion-checkbox>
+      </ion-item>
+      <ion-item>
+        <ion-label style="color: gray">Outros</ion-label>
+      </ion-item>
+      <ion-list no-lines id="respiracao" class="listitem">
+      </ion-list>
+      <ion-list no-lines class="listitem">
+        <ion-item style="margin: 0px;">
+          <button (click)="addRespiracao()">Adicionar</button>
+          <button (click)="removerRespiracao()">Remover</button>
+        </ion-item>
+        <ion-item style="margin-top: 0px;">
+          <ion-label floating>O² (Litros/Min)</ion-label>
+          <ion-input type="number" class="inputitem"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label floating>SpO²</ion-label>
+          <ion-input type="number" class="inputitem"></ion-input>
+        </ion-item>
+        <ion-item  style="margin-bottom:15px;">
+          <ion-label floating>FR (mrpm)</ion-label>
+          <ion-input type="number" class="inputitem"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label style="color: gray">Dispnéia</ion-label>
+          <ion-checkbox></ion-checkbox>
+        </ion-item>
+        <ion-item>
+          <ion-label style="color: gray">Taquipnéia</ion-label>
+          <ion-checkbox></ion-checkbox>
+        </ion-item>
+        <ion-item>
+          <ion-label style="color: gray">Bradipnéia</ion-label>
+          <ion-checkbox></ion-checkbox>
+        </ion-item>
+        <ion-item>
+          <ion-label style="color: gray">Hiperventilação neurogênica central</ion-label>
+          <ion-checkbox></ion-checkbox>
+        </ion-item>
+        <ion-item>
+          <ion-label style="color: gray">Apnêustica</ion-label>
+          <ion-checkbox></ion-checkbox>
+        </ion-item>
+        <ion-item>
+          <ion-label style="color: gray">Biot</ion-label>
+          <ion-checkbox></ion-checkbox>
+        </ion-item>
+        <ion-item>
+          <ion-label style="color: gray">Cheyne-Stokes</ion-label>
+          <ion-checkbox></ion-checkbox>
+        </ion-item>
+        <ion-item>
+          <ion-label style="color: gray">Kussmaul</ion-label>
+          <ion-checkbox></ion-checkbox>
+        </ion-item>
+        <ion-item>
+          <ion-label style="color: gray">em Salvas</ion-label>
+          <ion-checkbox></ion-checkbox>
+        </ion-item>
+        <ion-item>
+          <ion-label style="color: gray">Ventilação mecânica</ion-label>
+          <ion-checkbox></ion-checkbox>
+        </ion-item>
+        <ion-item  style="margin-bottom:15px;">
+          <ion-label floating>Modalidade</ion-label>
+          <ion-input type="text" class="inputitem"></ion-input>
+        </ion-item>
+        <ion-item  style="margin-bottom:15px;">
+          <ion-label floating>FiO2</ion-label>
+          <ion-input type="text" class="inputitem"></ion-input>
+        </ion-item>
+        <ion-item  style="margin-bottom:15px;">
+          <ion-label floating>PEEP</ion-label>
+          <ion-input type="text" class="inputitem"></ion-input>
+        </ion-item>
+        <ion-item  style="margin-bottom:15px;">
+          <ion-label floating>SpO2</ion-label>
+          <ion-input type="text" class="inputitem"></ion-input>
+        </ion-item>
+      </ion-list>
+      </ion-list>
+      <ion-list-header class="titulolista" (click)="toggleGroup(1)">Ausculta pulmonar <ion-icon style="float: right"  [name]="myIcons[1]"></ion-icon></ion-list-header>
+        <ion-list no-lines class="lista" id="dados1" class="subgrupo">
+          <ion-item-divider light style="text-align: left; border-radius: 5px;">MV presentes</ion-item-divider>
+          <ion-item>
+            <ion-label style="color: gray">Bilateralmente</ion-label>
+            <ion-checkbox></ion-checkbox>
+          </ion-item>
+          <ion-item>
+            <ion-label style="color: gray">Diminuídos</ion-label>
+            <ion-checkbox></ion-checkbox>
+          </ion-item>
+          <ion-item-divider light style="text-align: left; border-radius: 5px;">Ruídos adventícios</ion-item-divider>
+          <ion-item>
+            <ion-label style="color: gray">Roncos</ion-label>
+            <ion-checkbox></ion-checkbox>
+          </ion-item>
+          <ion-item>
+            <ion-label style="color: gray">Sibilos</ion-label>
+            <ion-checkbox></ion-checkbox>
+          </ion-item>
+          <ion-item>
+            <ion-label style="color: gray">Estertores</ion-label>
+            <ion-checkbox></ion-checkbox>
+          </ion-item>
+        </ion-list>
+        <ion-list-header class="titulolista" (click)="toggleGroup(2)">Presenção de tosse <ion-icon style="float: right"  [name]="myIcons[2]"></ion-icon></ion-list-header>
+          <ion-list no-lines class="lista" id="dados2" class="subgrupo">
+            <ion-item>
+              <ion-label style="color: gray">Não</ion-label>
+              <ion-checkbox></ion-checkbox>
+            </ion-item>
+            <ion-item>
+              <ion-label style="color: gray">Sim</ion-label>
+              <ion-checkbox></ion-checkbox>
+            </ion-item>
+            <ion-item-divider light style="text-align: left; border-radius: 5px;">Ruídos adventícios</ion-item-divider>
+            <ion-item>
+              <ion-label style="color: gray">Seca</ion-label>
+              <ion-checkbox></ion-checkbox>
+            </ion-item>
+            <ion-item>
+              <ion-label style="color: gray">Produtiva</ion-label>
+              <ion-checkbox></ion-checkbox>
+            </ion-item>
+            <ion-item>
+              <ion-label style="color: gray">Expectoração(Quantidade e Caracteristica)</ion-label>
+              <ion-checkbox (click)="toggleGroup(3)"></ion-checkbox>
+            </ion-item>
+            <ion-list no-lines class="lista" id="dados3" class="subgrupo">
+              <ion-grid>
+                <ion-row>
+                  <ion-col width-30>
+                    <ion-item>
+                      <ion-label floating>quantidade</ion-label>
+                      <ion-input class="inputgrupo" type="number"></ion-input>
+                    </ion-item>
+                  </ion-col>
+                  <ion-col width-80><ion-item>
+                    <ion-label floating>característica</ion-label>
+                    <ion-input class="inputgrupo" type="text"></ion-input>
+                  </ion-item>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+            </ion-list>
+          </ion-list>
+
+            <ion-list-header class="titulolista" (click)="toggleGroup(4)">Aspiração <ion-icon style="float: right"  [name]="myIcons[4]"></ion-icon></ion-list-header>
+            <ion-list radio-group class="lista" id="dados4" class="subgrupo">
+            <ion-grid >
+              <ion-row>
+                <ion-col width-50>
+                  <ion-item>
+                    <ion-label style="color: gray">Sim</ion-label>
+                    <ion-radio name="aspiracao" value="sim" (click)="toggleGroup2(0,'block')"></ion-radio>
+                  </ion-item>
+                </ion-col>
+                <ion-col width-50><ion-item>
+                  <ion-label style="color: gray">Não</ion-label>
+                  <ion-radio name="aspiracao" value="nao" (click)="toggleGroup2(0,'none')"></ion-radio>
+                </ion-item>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+
+          <ion-grid id="listRadio0" style="display: none" >
+            <ion-row>
+              <ion-col width-30>
+                <ion-item>
+                  <ion-label floating>quantidade</ion-label>
+                  <ion-input class="inputgrupo" type="number"></ion-input>
+                </ion-item>
+              </ion-col>
+              <ion-col width-80><ion-item>
+                <ion-label floating>característica</ion-label>
+                <ion-input class="inputgrupo" type="text"></ion-input>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+        </ion-list>
+        <ion-list-header class="titulolista" (click)="toggleGroup(5)">Drenagem torácica <ion-icon style="float: right"  [name]="myIcons[5]"></ion-icon></ion-list-header>
+        <ion-list radio-group class="lista" id="dados5" class="subgrupo">
+            <ion-row>
+              <ion-col>
+                <ion-item>
+                  <ion-label style="color: gray">Sim</ion-label>
+                  <ion-radio name="aspiracao" value="sim" (click)="toggleGroup2(1,'block')"></ion-radio>
+                </ion-item>
+              </ion-col>
+              <ion-col><ion-item>
+                <ion-label style="color: gray">Não</ion-label>
+                <ion-radio name="aspiracao" value="nao" (click)="toggleGroup2(1,'none')"></ion-radio>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+        <ion-grid id="listRadio1" style="display: none; padding: 0px; margin: 0px;">
+          <ion-row style="padding: 0px; margin: 0px;">
+            <ion-col style="padding: 0px; margin: 0px;">
+              <ion-item style="padding: 0px; margin: 0px;">
+                <ion-label floating>quantidade</ion-label>
+                <ion-input class="inputgrupo" type="number"></ion-input>
+              </ion-item>
+            </ion-col>
+            <ion-col style="padding: 0px; margin: 0px;">
+              <ion-item style="padding: 0px; margin: 0px;">
+                <ion-label floating>característica</ion-label>
+                <ion-input class="inputgrupo" type="text"></ion-input>
+              </ion-item>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      <ion-item>
+        <ion-label style="color: gray">DTE</ion-label>
+        <ion-checkbox></ion-checkbox>
+      </ion-item>
+      <ion-item>
+        <ion-label style="color: gray">DTD</ion-label>
+        <ion-checkbox></ion-checkbox>
+      </ion-item>
+      </ion-list>
+
+      <ion-list-header class="titulolista" (click)="toggleGroup(6)">Mamas <ion-icon style="float: right" [name]="myIcons[6]"></ion-icon></ion-list-header>
+      <ion-list no-lines class="lista" id="dados6" class="subgrupo">
+        <ion-item>
+          <ion-label style="color: gray">Sem alterações</ion-label>
+          <ion-checkbox></ion-checkbox>
+        </ion-item>
+        <ion-item>
+          <ion-label style="color: gray">Nódulos</ion-label>
+          <ion-checkbox></ion-checkbox>
+        </ion-item>
+        <ion-item>
+          <ion-label style="color: gray">Dor</ion-label>
+          <ion-checkbox></ion-checkbox>
+        </ion-item>
+        <ion-item>
+          <ion-label style="color: gray">Assimétrica</ion-label>
+          <ion-checkbox></ion-checkbox>
+        </ion-item>
+        <ion-item>
+          <ion-label floating>Outros</ion-label>
+          <ion-input class="inputgrupo" type="text"></ion-input>
+        </ion-item>
+      </ion-list>
+  </ion-card>
+</ion-content>

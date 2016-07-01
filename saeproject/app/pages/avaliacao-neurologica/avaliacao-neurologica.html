@@ -1,0 +1,159 @@
+<ion-toolbar>
+ <ion-title>
+   Novo Paciente
+ </ion-title>
+ <ion-buttons start>
+   <button round (click)="cancel()">Cancelar</button>
+ </ion-buttons>
+</ion-toolbar>
+<ion-content padding class="avaliacao-neurologica" (swipe)="slide($event)">
+  <ion-card class="card">
+    <ion-card-header class="cardheader"> Avaliação Neurológica </ion-card-header>
+    <ion-list-header class="titulolista" (click)="toggleGroup(0)">Consciência <ion-icon style="float: right"  [name]="myIcons[0]"></ion-icon></ion-list-header>
+      <ion-list no-lines class="lista" id="dados0" class="subgrupo">
+        <ion-item>
+          <ion-label style="color: gray">Alerta</ion-label>
+          <ion-checkbox></ion-checkbox>
+        </ion-item>
+        <ion-item>
+          <ion-label style="color: gray">Letárgico</ion-label>
+          <ion-checkbox></ion-checkbox>
+        </ion-item>
+        <ion-item>
+          <ion-label style="color: gray">Obnubilado</ion-label>
+          <ion-checkbox></ion-checkbox>
+        </ion-item>
+        <ion-item>
+          <ion-label style="color: gray">Torporoso</ion-label>
+          <ion-checkbox></ion-checkbox>
+        </ion-item>
+        <ion-item>
+          <ion-label style="color: gray">Comatoso</ion-label>
+          <ion-checkbox></ion-checkbox>
+        </ion-item>
+            <ion-row>
+              <ion-col style="margin: 0px; padding: 0px">
+                <ion-item>
+                  <ion-label style="color: gray">Glasgow</ion-label>
+                  <ion-checkbox (click)="toggleGroup(1)"></ion-checkbox>
+                </ion-item>
+              </ion-col>
+              <ion-col style="margin: 0px; padding: 0px">
+              <ion-item>
+                <ion-input class="inputgrupo" disabled [(ngModel)]="glasgow" type="number"></ion-input>
+              </ion-item>
+              </ion-col>
+            </ion-row>
+          <ion-list no-lines class="lista" id="dados1" class="subgrupo">
+          <ion-grid>
+            <ion-row>
+              <ion-col width-30><ion-item>
+                <ion-input class="inputgrupo" [(ngModel)]="glasgowOcular" placeholder="Ocular" (keydown)="somarGlasgow()" type="number"></ion-input>
+              </ion-item>
+              </ion-col>
+              <ion-col width-30><ion-item>
+                <ion-input class="inputgrupo" [(ngModel)]="glasgowVerbal" placeholder="Verbal" (keyup)="somarGlasgow()" type="number"></ion-input>
+              </ion-item>
+              </ion-col>
+              <ion-col width-30><ion-item>
+                <ion-input class="inputgrupo" [(ngModel)]="glasgowMotor" placeholder="Motor" (keyup)="somarGlasgow()" type="number"></ion-input>
+              </ion-item>
+              </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-list>
+      </ion-list>
+      <ion-list-header class="titulolista" (click)="toggleGroup(2)">Pupilas <ion-icon style="float: right"  [name]="myIcons[2]"></ion-icon></ion-list-header>
+        <ion-list no-lines class="lista" id="dados2" class="subgrupo">
+      <ion-item>
+        <ion-label style="color: gray">Isocórica</ion-label>
+        <ion-checkbox></ion-checkbox>
+      </ion-item>
+      <ion-item>
+        <ion-label style="color: gray">Anisocórica</ion-label>
+        <ion-checkbox></ion-checkbox>
+      </ion-item>
+      <ion-item>
+        <ion-label style="color: gray">Miose</ion-label>
+        <ion-checkbox></ion-checkbox>
+      </ion-item>
+      <ion-item>
+        <ion-label style="color: gray">Midríase</ion-label>
+        <ion-checkbox></ion-checkbox>
+      </ion-item>
+      <ion-item>
+        <ion-label style="color: gray">RFM</ion-label>
+        <ion-checkbox></ion-checkbox>
+      </ion-item>
+    </ion-list>
+
+    <ion-list-header class="titulolista" (click)="toggleGroup(3)">Mobilidade Física <ion-icon style="float: right" [name]="myIcons[3]"></ion-icon></ion-list-header>
+      <ion-list no-lines class="lista" id="dados3" class="subgrupo">
+      <ion-item-divider light style="text-align: left; border-radius: 5px;">MMSS</ion-item-divider>
+      <ion-item>
+        <ion-label style="color: gray">Preservada</ion-label>
+        <ion-checkbox></ion-checkbox>
+      </ion-item>
+      <ion-item>
+        <ion-label style="color: gray">Paresia</ion-label>
+        <ion-checkbox></ion-checkbox>
+      </ion-item>
+      <ion-item>
+        <ion-label style="color: gray">Plegia</ion-label>
+        <ion-checkbox></ion-checkbox>
+      </ion-item>
+      <ion-item>
+        <ion-label style="color: gray">Parestesia</ion-label>
+        <ion-checkbox></ion-checkbox>
+      </ion-item>
+      <ion-item-divider light style="text-align: left; border-radius: 5px;">MMII</ion-item-divider>
+      <ion-item>
+        <ion-label style="color: gray">Preservada</ion-label>
+        <ion-checkbox></ion-checkbox>
+      </ion-item>
+      <ion-item>
+        <ion-label style="color: gray">Paresia</ion-label>
+        <ion-checkbox></ion-checkbox>
+      </ion-item>
+      <ion-item>
+        <ion-label style="color: gray">Plegia</ion-label>
+        <ion-checkbox></ion-checkbox>
+      </ion-item>
+      <ion-item>
+        <ion-label style="color: gray">Parestesia</ion-label>
+        <ion-checkbox></ion-checkbox>
+      </ion-item>
+      <ion-item>
+        <ion-label style="color: gray">Movimentos Lentos</ion-label>
+        <ion-checkbox></ion-checkbox>
+      </ion-item>
+      <ion-item>
+        <ion-label style="color: gray">Movimentos Involuntários</ion-label>
+        <ion-checkbox></ion-checkbox>
+      </ion-item>
+    </ion-list>
+    <ion-list-header class="titulolista" (click)="toggleGroup(4)">Fala e linguagem <ion-icon style="float: right"  [name]="myIcons[4]"></ion-icon></ion-list-header>
+      <ion-list no-lines class="lista" id="dados4" class="subgrupo">
+    <ion-item>
+      <ion-label style="color: gray">Afonia     </ion-label>
+      <ion-checkbox></ion-checkbox>
+    </ion-item>
+    <ion-item>
+      <ion-label style="color: gray">Dislalia</ion-label>
+      <ion-checkbox></ion-checkbox>
+    </ion-item>
+    <ion-item>
+      <ion-label style="color: gray">Disartria</ion-label>
+      <ion-checkbox></ion-checkbox>
+    </ion-item>
+    <ion-item>
+      <ion-label style="color: gray">Disfasia</ion-label>
+      <ion-checkbox></ion-checkbox>
+    </ion-item>
+    <ion-item>
+      <ion-label style="color: gray">Afasia</ion-label>
+      <ion-checkbox></ion-checkbox>
+    </ion-item>
+  </ion-list>
+  </ion-card>
+</ion-content>
