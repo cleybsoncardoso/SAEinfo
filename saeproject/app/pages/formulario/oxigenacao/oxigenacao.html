@@ -8,9 +8,9 @@
 </ion-toolbar>
 <ion-content padding class="oxigenacao" (swipe)="slide($event)">
 
-  <ion-card class="card">
-    <ion-card-header class="cardheader"> Oxigenação </ion-card-header>
-    <ion-list-header class="titulolista" (click)="toggleGroup(0)">Respiração <ion-icon style="float: right"  [name]="myIcons[0]"></ion-icon></ion-list-header>
+  <ion-card class="mycard">
+    <ion-card-header class="cardtitulo"> Oxigenação </ion-card-header>
+    <ion-list-header class="titulolista" (click)="toggleGroup(0)">Respiração <p class="icone" id="icone0" style="float: right">+</p></ion-list-header>
       <ion-list no-lines class="lista" id="dados0" class="subgrupo">
       <ion-item>
         <ion-label style="color: gray">Espontânea</ion-label>
@@ -108,7 +108,7 @@
         </ion-item>
       </ion-list>
       </ion-list>
-      <ion-list-header class="titulolista" (click)="toggleGroup(1)">Ausculta pulmonar <ion-icon style="float: right"  [name]="myIcons[1]"></ion-icon></ion-list-header>
+      <ion-list-header class="titulolista" (click)="toggleGroup(1)">Ausculta pulmonar <p class="icone" id="icone1" style="float: right">+</p></ion-list-header>
         <ion-list no-lines class="lista" id="dados1" class="subgrupo">
           <ion-item-divider light style="text-align: left; border-radius: 5px;">MV presentes</ion-item-divider>
           <ion-item>
@@ -133,7 +133,7 @@
             <ion-checkbox></ion-checkbox>
           </ion-item>
         </ion-list>
-        <ion-list-header class="titulolista" (click)="toggleGroup(2)">Presenção de tosse <ion-icon style="float: right"  [name]="myIcons[2]"></ion-icon></ion-list-header>
+        <ion-list-header class="titulolista" (click)="toggleGroup(2)">Presenção de tosse <p class="icone" id="icone2" style="float: right">+</p></ion-list-header>
           <ion-list no-lines class="lista" id="dados2" class="subgrupo">
             <ion-item>
               <ion-label style="color: gray">Não</ion-label>
@@ -153,7 +153,7 @@
               <ion-checkbox></ion-checkbox>
             </ion-item>
             <ion-item>
-              <ion-label style="color: gray">Expectoração </ion-label>
+              <ion-label style="color: gray">Expectoração(Quantidade e Caracteristica)</ion-label>
               <ion-checkbox (click)="toggleGroup(3)"></ion-checkbox>
             </ion-item>
             <ion-list no-lines class="lista" id="dados3" class="subgrupo">
@@ -165,7 +165,7 @@
                       <ion-input class="inputgrupo" type="number"></ion-input>
                     </ion-item>
                   </ion-col>
-                  <ion-col width-80><ion-item>
+                  <ion-col width-30><ion-item>
                     <ion-label floating>característica</ion-label>
                     <ion-input class="inputgrupo" type="text"></ion-input>
                   </ion-item>
@@ -175,7 +175,7 @@
             </ion-list>
           </ion-list>
 
-            <ion-list-header class="titulolista" (click)="toggleGroup(4)">Aspiração <ion-icon style="float: right"  [name]="myIcons[4]"></ion-icon></ion-list-header>
+            <ion-list-header class="titulolista" (click)="toggleGroup(4)">Aspiração <p class="icone" id="icone4" style="float: right">+</p></ion-list-header>
             <ion-list radio-group class="lista" id="dados4" class="subgrupo">
             <ion-grid >
               <ion-row>
@@ -201,7 +201,7 @@
                   <ion-input class="inputgrupo" type="number"></ion-input>
                 </ion-item>
               </ion-col>
-              <ion-col width-80><ion-item>
+              <ion-col width-10><ion-item>
                 <ion-label floating>característica</ion-label>
                 <ion-input class="inputgrupo" type="text"></ion-input>
               </ion-item>
@@ -209,7 +209,7 @@
           </ion-row>
         </ion-grid>
         </ion-list>
-        <ion-list-header class="titulolista" (click)="toggleGroup(5)">Drenagem torácica <ion-icon style="float: right"  [name]="myIcons[5]"></ion-icon></ion-list-header>
+        <ion-list-header class="titulolista" (click)="toggleGroup(5)">Drenagem torácica <p class="icone" id="icone5" style="float: right">+</p></ion-list-header>
         <ion-list radio-group class="lista" id="dados5" class="subgrupo">
             <ion-row>
               <ion-col>
@@ -250,7 +250,7 @@
       </ion-item>
       </ion-list>
 
-      <ion-list-header class="titulolista" (click)="toggleGroup(6)">Mamas <ion-icon style="float: right" [name]="myIcons[6]"></ion-icon></ion-list-header>
+      <ion-list-header class="titulolista" (click)="toggleGroup(6)">Mamas <p class="icone" id="icone6" style="float: right">+</p></ion-list-header>
       <ion-list no-lines class="lista" id="dados6" class="subgrupo">
         <ion-item>
           <ion-label style="color: gray">Sem alterações</ion-label>

@@ -46,32 +46,40 @@ export class AvaliacaoNeurologicaPage {
   }
   toggleGroup(id){
     let grupo = document.getElementById("dados"+id);
-    if(id!=1){
-      this.toggleClose(id);
-    }
-    if(grupo.style.visibility == "visible"){
-      this.myIcons[id] = "md-add";
-      grupo.style.height = "0px";
-      grupo.style.visibility = "hidden";
+    let icone = document.getElementById("icone"+id);
+    this.toggleClose(id);
+    if(grupo.style.display == "block"){
+      grupo.style.display = "none";
+      icone.innerHTML = '+';
     }else{
-      grupo.style.visibility = "visible";
-      grupo.style.height = "auto";
+      grupo.style.display = "block";
+      icone.innerHTML = '-';
     }
   }
 
   toggleClose(id){
     var i=0;
     let grupo = document.getElementById("dados"+i);
+    let icone = document.getElementById("icone"+i);
     while(grupo!=null){
-      if(i!=id && i!=1){
-        grupo.style.height = "0px";
-        grupo.style.visibility = "hidden";
-        this.myIcons[i] = "md-add";
-      }else{
-        this.myIcons[i] = "md-remove";
+      console.log(i);
+      if(i!=id){
+        grupo.style.display = "none";
+        icone.innerHTML = '+';
       }
       i++;
+      icone = document.getElementById("icone"+i);
       grupo = document.getElementById("dados"+i);
     }
   }
+
+  toggleGlasgow(){
+    let grupo = document.getElementById("glasgow");
+    if(grupo.style.display == "block"){
+      grupo.style.display = "none";
+    }else{
+      grupo.style.display = "block";
+    }
+  }
+
 }

@@ -124,39 +124,39 @@ export class EntrevistaPage {
     }else if(passar.deltaX<0){
       this.nav.setRoot(AvaliacaoNeurologicaPage);
     }
-}
-initiateIcons(){
-  var i = 0;
-  for(i=0;i<17;i++){
-    this.myIcons[i] = "md-add";
   }
-}
-toggleGroup(id){
-  let grupo = document.getElementById("dados"+id);
-  this.toggleClose(id);
-  if(grupo.style.visibility == "visible"){
-    this.myIcons[id] = "md-add";
-    grupo.style.height = "0px";
-    grupo.style.visibility = "hidden";
-  }else{
-    grupo.style.visibility = "visible";
-    grupo.style.height = "auto";
-  }
-}
-
-toggleClose(id){
-  var i=0;
-  let grupo = document.getElementById("dados"+i);
-  while(grupo!=null){
-    if(i!=id){
-      grupo.style.height = "0px";
-      grupo.style.visibility = "hidden";
+  initiateIcons(){
+    var i = 0;
+    for(i=0;i<17;i++){
       this.myIcons[i] = "md-add";
-    }else{
-      this.myIcons[i] = "md-remove";
     }
-    i++;
-    grupo = document.getElementById("dados"+i);
   }
-}
+  toggleGroup(id){
+    let grupo = document.getElementById("dados"+id);
+    let icone = document.getElementById("icone"+id);
+    this.toggleClose(id);
+    if(grupo.style.display == "block"){
+      grupo.style.display = "none";
+      icone.innerHTML = '+';
+    }else{
+      grupo.style.display = "block";
+      icone.innerHTML = '-';
+    }
+  }
+
+  toggleClose(id){
+    var i=0;
+    let grupo = document.getElementById("dados"+i);
+    let icone = document.getElementById("icone"+i);
+    while(grupo!=null){
+      console.log(i);
+      if(i!=id){
+        grupo.style.display = "none";
+        icone.innerHTML = '+';
+      }
+      i++;
+      icone = document.getElementById("icone"+i);
+      grupo = document.getElementById("dados"+i);
+    }
+  }
 }

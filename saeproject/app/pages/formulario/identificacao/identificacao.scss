@@ -1,3 +1,21 @@
-.identificacao {
+.mycard{
+  width: 100%;
+  margin: 0px;
+  text-align: center;
+}
 
+.cardtitulo{
+  color: white;
+  background-color: #548B54;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 5px;
+}
+
+.lista{
+  border-style: none;
+  border-right-style: solid;
+  border-left-style: solid;
+  visibility: visible;
+  display: none;
 }
