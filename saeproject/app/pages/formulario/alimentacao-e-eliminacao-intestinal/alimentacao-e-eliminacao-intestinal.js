@@ -8,7 +8,7 @@ import {NavController} from 'ionic-angular';
   Ionic pages and navigation.
 */
 @Component({
-  templateUrl: 'build/pages/alimentacao-e-eliminacao-intestinal/alimentacao-e-eliminacao-intestinal.html',
+  templateUrl: 'build/pages/formulario/alimentacao-e-eliminacao-intestinal/alimentacao-e-eliminacao-intestinal.html',
 })
 export class AlimentacaoEEliminacaoIntestinalPage {
   static get parameters() {

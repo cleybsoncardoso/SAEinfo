@@ -8,7 +8,7 @@ import {NavController} from 'ionic-angular';
   Ionic pages and navigation.
 */
 @Component({
-  templateUrl: 'build/pages/seguranca-fisica/seguranca-fisica.html',
+  templateUrl: 'build/pages/formulario/seguranca-fisica/seguranca-fisica.html',
 })
 export class SegurancaFisicaPage {
   static get parameters() {
