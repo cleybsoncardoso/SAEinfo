@@ -1,5 +1,8 @@
-import {Component} from '@angular/core';
-import {NavController} from 'ionic-angular';
+
+import {Page, NavController} from 'ionic-angular';
+import {HidratacaoEEliminacaoVesicalPage} from '../hidratacao-e-eliminacao-vesical/hidratacao-e-eliminacao-vesical';
+import {AspectosCutaneoMucosaPage} from '../aspectos-cutaneo-mucosa/aspectos-cutaneo-mucosa.html';
+import {PacientesPage} from '../../pacientes/pacientes';
 
 /*
   Generated class for the AlimentacaoEEliminacaoIntestinalPage page.
@@ -7,7 +10,7 @@ import {NavController} from 'ionic-angular';
   See http://ionicframework.com/docs/v2/components/#navigation for more info on
   Ionic pages and navigation.
 */
-@Component({
+@Page({
   templateUrl: 'build/pages/formulario/alimentacao-e-eliminacao-intestinal/alimentacao-e-eliminacao-intestinal.html',
 })
 export class AlimentacaoEEliminacaoIntestinalPage {
@@ -24,9 +27,9 @@ export class AlimentacaoEEliminacaoIntestinalPage {
   }
   slide(passar){
     if(passar.deltaX>0){
-      this.nav.setRoot(IdentificacaoPage);
+      this.nav.setRoot(AspectosCutaneoMucosaPage);
     }else if(passar.deltaX<0){
-      this.nav.setRoot(AvaliacaoNeurologicaPage);
+      this.nav.setRoot(HidratacaoEEliminacaoVesicalPage);
     }
   }
 
@@ -57,12 +60,21 @@ export class AlimentacaoEEliminacaoIntestinalPage {
       grupo = document.getElementById("dados"+i);
     }
   }
+
   toggleVomito(){
     let grupo = document.getElementById("vomito");
     if(grupo.style.display == "block"){
       grupo.style.display = "none";
     }else{
       grupo.style.display = "block";
+    }
+  }
+
+  Slide(passar){
+    if(passar.deltaX>0){
+      this.nav.setRoot(IdentificacaoPage);
+    }else if(passar.deltaX<0){
+      this.nav.setRoot(AvaliacaoNeurologicaPage);
     }
   }
 

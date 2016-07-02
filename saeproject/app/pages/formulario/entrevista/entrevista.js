@@ -19,7 +19,6 @@ export class EntrevistaPage {
   constructor(nav) {
     this.nav = nav;
     this.myIcons = ["md-add"];
-    this.initiateIcons();
     this.qtdeOutros = 0;
     this.qtdeAlergias = 0;
     this.qtdeVacinas = 0;
@@ -125,12 +124,7 @@ export class EntrevistaPage {
       this.nav.setRoot(AvaliacaoNeurologicaPage);
     }
   }
-  initiateIcons(){
-    var i = 0;
-    for(i=0;i<17;i++){
-      this.myIcons[i] = "md-add";
-    }
-  }
+
   toggleGroup(id){
     let grupo = document.getElementById("dados"+id);
     let icone = document.getElementById("icone"+id);
