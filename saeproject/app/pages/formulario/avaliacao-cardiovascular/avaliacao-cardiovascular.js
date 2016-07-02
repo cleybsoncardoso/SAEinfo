@@ -1,6 +1,7 @@
 import {NavController, Page} from 'ionic-angular';
 import {OxigenacaoPage} from '../oxigenacao/oxigenacao';
 import {PacientesPage} from '../../pacientes/pacientes';
+import {HidratacaoEEliminacaoVesicalPage} from '../hidratacao-e-eliminacao-vesical/hidratacao-e-eliminacao-vesical';
 
 @Page({
   templateUrl: 'build/pages/formulario/avaliacao-cardiovascular/avaliacao-cardiovascular.html',
@@ -20,7 +21,7 @@ export class AvaliacaoCardiovascularPage {
     if(passar.deltaX>0){
       this.nav.setRoot(OxigenacaoPage);
     }else if(passar.deltaX<0){
-      //this.nav.setRoot(AvaliacaoCardiovascularPage);
+      this.nav.setRoot(HidratacaoEEliminacaoVesicalPage);
     }
 }
 }
