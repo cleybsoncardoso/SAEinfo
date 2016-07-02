@@ -27,6 +27,12 @@ export class AlimentacaoEEliminacaoIntestinalPage {
       icone.innerHTML = '-';
     }
   }
+  toggleGroup2(id,status){
+
+    let grupo = document.getElementById("listRadio"+id);
+    grupo.style.display = status;
+
+  }
   toggleClose(id){
     var i=0;
     let grupo = document.getElementById("dados"+i);
