@@ -1,13 +1,207 @@
-<!--
-  Generated template for the AlimentacaoEEliminacaoIntestinalPage page.
+<ion-toolbar>
+ <ion-title>
+   Novo Paciente
+ </ion-title>
+ <ion-buttons start>
+   <button round (click)="cancel()">Cancelar</button>
+ </ion-buttons>
+</ion-toolbar>
 
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
--->
-<ion-navbar *navbar>
-  <ion-title>alimentacaoEEliminacaoIntestinal</ion-title>
-</ion-navbar>
+<ion-content padding>
+  <ion-card class="mycard">
+    <div class="marquee">
+      <div>
+        <ion-card-header class="cardtitulo"> Alimentação e Eliminação Intestinal </ion-card-header>
+      </div>
+    </div>
+    <ion-item>
+      <ion-label floating>Tipo de dieta</ion-label>
+      <ion-input class="inputgrupo" type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Glicemia</ion-label>
+      <ion-input class="inputgrupo" type="text"></ion-input>
+    </ion-item>
+    <ion-list-header class="titulolista" (click)="toggleGroup(0)">Apetite <p class="icone" id="icone0" style="float: right">+</p></ion-list-header>
+    <ion-list no-lines class="lista" id="dados0" class="subgrupo">
+      <ion-item>
+        <ion-label style="color: gray">Normal </ion-label>
+        <ion-checkbox></ion-checkbox>
+      </ion-item>
+      <ion-item>
+        <ion-label style="color: gray">Aumentado </ion-label>
+        <ion-checkbox></ion-checkbox>
+      </ion-item>
+      <ion-item>
+        <ion-label style="color: gray">Diminuído </ion-label>
+        <ion-checkbox></ion-checkbox>
+      </ion-item>
+      <ion-item>
+        <ion-label style="color: gray">Não se aplica  </ion-label>
+        <ion-checkbox></ion-checkbox>
+      </ion-item>
+    </ion-list>
 
-<ion-content padding class="alimentacao-e-eliminacao-intestinal">
-  
+    <ion-list-header class="titulolista" (click)="toggleGroup(1)">Vias de administração <p class="icone" id="icone1" style="float: right">+</p></ion-list-header>
+    <ion-list no-lines class="lista" id="dados1" class="subgrupo">
+      <ion-item>
+        <ion-label style="color: gray">Oral </ion-label>
+        <ion-checkbox></ion-checkbox>
+      </ion-item>
+      <ion-item>
+        <ion-label style="color: gray">SNG </ion-label>
+        <ion-checkbox></ion-checkbox>
+      </ion-item>
+      <ion-item>
+        <ion-label style="color: gray">SNE </ion-label>
+        <ion-checkbox></ion-checkbox>
+      </ion-item>
+      <ion-item>
+        <ion-label style="color: gray">Parenteral  </ion-label>
+        <ion-checkbox></ion-checkbox>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Outros</ion-label>
+        <ion-input class="inputgrupo" type="text"></ion-input>
+      </ion-item>
+    </ion-list>
+
+    <ion-list-header class="titulolista" (click)="toggleGroup(2)">Presenção de <p class="icone" id="icone2" style="float: right">+</p></ion-list-header>
+    <ion-list no-lines class="lista" id="dados2" class="subgrupo">
+      <ion-item>
+        <ion-label style="color: gray">Náusea</ion-label>
+        <ion-checkbox></ion-checkbox>
+      </ion-item>
+      <ion-item>
+        <ion-label style="color: gray">Vômito</ion-label>
+        <ion-checkbox (click)="toggleVomito()"></ion-checkbox>
+      </ion-item>
+      <ion-list no-lines class="lista" id="vomito" class="subgrupo">
+        <ion-grid>
+          <ion-row>
+            <ion-col width-30>
+              <ion-item>
+                <ion-label floating>quantidade</ion-label>
+                <ion-input class="inputgrupo" type="number"></ion-input>
+              </ion-item>
+            </ion-col>
+            <ion-col width-80>
+              <ion-item>
+                <ion-label floating>característica</ion-label>
+                <ion-input class="inputgrupo" type="text"></ion-input>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-list>
+    </ion-list>
+
+    <ion-list-header class="titulolista" (click)="toggleGroup(3)">Abdome <p class="icone" id="icone3" style="float: right">+</p></ion-list-header>
+    <ion-list no-lines class="lista" id="dados3" class="subgrupo">
+      <ion-item>
+        <ion-label style="color: gray">Plano </ion-label>
+        <ion-checkbox></ion-checkbox>
+      </ion-item>
+      <ion-item>
+        <ion-label style="color: gray">Globoso </ion-label>
+        <ion-checkbox></ion-checkbox>
+      </ion-item>
+      <ion-item>
+        <ion-label style="color: gray">Distendido  </ion-label>
+        <ion-checkbox></ion-checkbox>
+      </ion-item>
+      <ion-item>
+        <ion-label style="color: gray">Doloroso à palpação  </ion-label>
+        <ion-checkbox></ion-checkbox>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Outros</ion-label>
+        <ion-input class="inputgrupo" type="text"></ion-input>
+      </ion-item>
+    </ion-list>
+
+    <ion-list-header class="titulolista" (click)="toggleGroup(4)">RHA <p class="icone" id="icone4" style="float: right">+</p></ion-list-header>
+    <ion-list no-lines class="lista" id="dados4" class="subgrupo">
+      <ion-item>
+        <ion-label style="color: gray">Presentes </ion-label>
+        <ion-checkbox></ion-checkbox>
+      </ion-item>
+      <ion-item>
+        <ion-label style="color: gray">Ausentes </ion-label>
+        <ion-checkbox></ion-checkbox>
+      </ion-item>
+      <ion-item>
+        <ion-label style="color: gray">Diminuído </ion-label>
+        <ion-checkbox></ion-checkbox>
+      </ion-item>
+      <ion-item>
+        <ion-label style="color: gray">Aumentado </ion-label>
+        <ion-checkbox></ion-checkbox>
+      </ion-item>
+    </ion-list>
+
+    <ion-list-header class="titulolista" (click)="toggleGroup(5)">Ostomia <p class="icone" id="icone5" style="float: right">+</p></ion-list-header>
+    <ion-list radio-group class="lista" id="dados5" class="subgrupo">
+    <ion-grid >
+      <ion-row>
+        <ion-col width-50>
+          <ion-item>
+            <ion-label style="color: gray">Sim</ion-label>
+            <ion-radio name="aspiracao" value="sim" (click)="toggleGroup2(2,'block')"></ion-radio>
+          </ion-item>
+        </ion-col>
+        <ion-col width-50><ion-item>
+          <ion-label style="color: gray">Não</ion-label>
+          <ion-radio name="aspiracao" value="nao" (click)="toggleGroup2(2,'none')"></ion-radio>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-grid id="listRadio2" style="display: none" >
+    <ion-row>
+      <ion-col width-50>
+        <ion-item>
+          <ion-label floating>Local</ion-label>
+          <ion-input class="inputgrupo" type="text"></ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col width-50><ion-item>
+        <ion-label floating>Característica</ion-label>
+        <ion-input class="inputgrupo" type="text"></ion-input>
+      </ion-item>
+    </ion-col>
+  </ion-row>
+</ion-grid>
+</ion-list>
+
+<ion-list-header class="titulolista" (click)="toggleGroup(6)">Alimentação e Eliminação intestinal <p class="icone" id="icone6" style="float: right">+</p></ion-list-header>
+<ion-list no-lines class="lista" id="dados6" class="subgrupo">
+  <ion-item>
+    <ion-label floating>Frequência (vezes;semana)</ion-label>
+    <ion-input class="inputgrupo" type="number"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label style="color: gray">Normal </ion-label>
+    <ion-checkbox></ion-checkbox>
+  </ion-item>
+  <ion-item>
+    <ion-label style="color: gray">Constipação </ion-label>
+    <ion-checkbox></ion-checkbox>
+  </ion-item>
+  <ion-item>
+    <ion-label style="color: gray">Diarréia </ion-label>
+    <ion-checkbox></ion-checkbox>
+  </ion-item>
+  <ion-item>
+    <ion-label style="color: gray">Incontinência </ion-label>
+    <ion-checkbox></ion-checkbox>
+  </ion-item>
+  <ion-item>
+    <ion-label floating>Outros</ion-label>
+    <ion-input class="inputgrupo" type="text"></ion-input>
+  </ion-item>
+</ion-list>
+</ion-card>
+
 </ion-content>
