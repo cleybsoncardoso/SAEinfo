@@ -8,7 +8,7 @@ import {EntrevistaPage} from '../entrevista/entrevista';
   Ionic pages and navigation.
 */
 @Page({
-  templateUrl: 'build/pages/identificacao/identificacao.html',
+  templateUrl: 'build/pages/formulario/identificacao/identificacao.html',
 })
 export class IdentificacaoPage {
   static get parameters() {

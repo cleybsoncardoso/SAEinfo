@@ -8,7 +8,7 @@ import {OxigenacaoPage} from '../oxigenacao/oxigenacao';
   Ionic pages and navigation.
 */
 @Page({
-  templateUrl: 'build/pages/avaliacao-neurologica/avaliacao-neurologica.html',
+  templateUrl: 'build/pages/formulario/avaliacao-neurologica/avaliacao-neurologica.html',
 })
 export class AvaliacaoNeurologicaPage {
   static get parameters() {

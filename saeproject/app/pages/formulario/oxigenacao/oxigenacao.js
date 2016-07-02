@@ -1,5 +1,6 @@
 import {NavController, Page} from 'ionic-angular';
 import {AvaliacaoNeurologicaPage} from '../avaliacao-neurologica/avaliacao-neurologica';
+import {PacientesPage} from '../../pacientes/pacientes';
 
 /*
   Generated class for the OxigenacaoPage page.
@@ -8,7 +9,7 @@ import {AvaliacaoNeurologicaPage} from '../avaliacao-neurologica/avaliacao-neuro
   Ionic pages and navigation.
 */
 @Page({
-  templateUrl: 'build/pages/oxigenacao/oxigenacao.html',
+  templateUrl: 'build/pages/formulario/oxigenacao/oxigenacao.html',
 })
 export class OxigenacaoPage {
   static get parameters() {

@@ -1,5 +1,6 @@
 import {NavController, Page} from 'ionic-angular';
 import {IdentificacaoPage} from '../identificacao/identificacao';
+import {PacientesPage} from '../../../pages/pacientes/pacientes';
 import {AvaliacaoNeurologicaPage} from '../avaliacao-neurologica/avaliacao-neurologica';
 /*
   Generated class for the EntrevistaPage page.
@@ -8,7 +9,7 @@ import {AvaliacaoNeurologicaPage} from '../avaliacao-neurologica/avaliacao-neuro
   Ionic pages and navigation.
 */
 @Page({
-  templateUrl: 'build/pages/entrevista/entrevista.html',
+  templateUrl: 'build/pages/formulario/entrevista/entrevista.html',
 })
 export class EntrevistaPage {
   static get parameters() {
