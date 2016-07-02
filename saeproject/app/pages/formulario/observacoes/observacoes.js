@@ -7,7 +7,7 @@ import {SegurancaFisicaPage} from '../seguranca-fisica/seguranca-fisica';
   See http://ionicframework.com/docs/v2/components/#navigation for more info on
   Ionic pages and navigation.
 */
-@Component({
+@Page({
   templateUrl: 'build/pages/formulario/observacoes/observacoes.html',
 })
 export class ObservacoesPage {
