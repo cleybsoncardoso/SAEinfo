@@ -1,15 +1,8 @@
-
 import {Page, NavController} from 'ionic-angular';
 import {HidratacaoEEliminacaoVesicalPage} from '../hidratacao-e-eliminacao-vesical/hidratacao-e-eliminacao-vesical';
-import {AspectosCutaneoMucosaPage} from '../aspectos-cutaneo-mucosa/aspectos-cutaneo-mucosa.html';
+import {AspectosCutaneoMucosaPage} from '../aspectos-cutaneo-mucosa/aspectos-cutaneo-mucosa';
 import {PacientesPage} from '../../pacientes/pacientes';
 
-/*
-  Generated class for the AlimentacaoEEliminacaoIntestinalPage page.
-
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
-*/
 @Page({
   templateUrl: 'build/pages/formulario/alimentacao-e-eliminacao-intestinal/alimentacao-e-eliminacao-intestinal.html',
 })
@@ -20,17 +13,6 @@ export class AlimentacaoEEliminacaoIntestinalPage {
 
   constructor(nav) {
     this.nav = nav;
-  }
-
-  cancel(){
-    this.nav.setRoot(PacientesPage);
-  }
-  slide(passar){
-    if(passar.deltaX>0){
-      this.nav.setRoot(AspectosCutaneoMucosaPage);
-    }else if(passar.deltaX<0){
-      this.nav.setRoot(HidratacaoEEliminacaoVesicalPage);
-    }
   }
 
   toggleGroup(id){
@@ -70,12 +52,16 @@ export class AlimentacaoEEliminacaoIntestinalPage {
     }
   }
 
-  Slide(passar){
+  slide(passar){
     if(passar.deltaX>0){
-      this.nav.setRoot(IdentificacaoPage);
+      this.nav.setRoot(HidratacaoEEliminacaoVesicalPage);
     }else if(passar.deltaX<0){
-      this.nav.setRoot(AvaliacaoNeurologicaPage);
+      this.nav.setRoot(AspectosCutaneoMucosaPage);
     }
+  }
+
+  cancel(){
+    this.nav.setRoot(PacientesPage);
   }
 
 }
