@@ -1,5 +1,5 @@
 import {NavController, Page} from 'ionic-angular';
-import {AvaliacaoNeurologicaPage} from '../../pages/avaliacao-neurologica/avaliacao-neurologica';
+import {AvaliacaoNeurologicaPage} from '../avaliacao-neurologica/avaliacao-neurologica';
 
 /*
   Generated class for the OxigenacaoPage page.

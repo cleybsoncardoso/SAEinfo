@@ -1,6 +1,6 @@
 import {NavController, Page} from 'ionic-angular';
-import {PacientesPage} from '../../pages/pacientes/pacientes';
-import {EntrevistaPage} from '../../pages/entrevista/entrevista';
+import {PacientesPage} from '../../../pages/pacientes/pacientes';
+import {EntrevistaPage} from '../entrevista/entrevista';
 /*
   Generated class for the IdentificacaoPage page.
 

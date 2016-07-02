@@ -2,7 +2,7 @@ import {Page, NavController, Modal, MenuController} from 'ionic-angular';
 import {DAOPacientes} from '../../dao/dao-paciente';
 import {HomePage} from '../../pages/home/home';
 //import {AddPacientePage} from '../../pages/add-paciente/add-paciente';
-import {IdentificacaoPage} from '../../pages/identificacao/identificacao';
+import {IdentificacaoPage} from '../formulario/identificacao/identificacao';
 
 @Page({
   templateUrl: 'build/pages/pacientes/pacientes.html',
