@@ -8,6 +8,16 @@
   <ion-title>observacoes</ion-title>
 </ion-navbar>
 
-<ion-content padding class="observacoes">
-  
+<ion-content padding class="observacoes" (swipe)="slide($event)">
+  <ion-card class="card">
+    <ion-card-header class="cardheader">Observações </ion-card-header>
+    <ion-list no-lines id="observacoes" >
+    </ion-list>
+    <ion-list no-lines class="listitem">
+      <ion-item>
+        <button (click)="addObservacoes()">Adicionar Observações</button>
+        <button (click)="removerObservacoes()">Remover</button>
+      </ion-item>
+    </ion-list>
+    </ion-card>
 </ion-content>

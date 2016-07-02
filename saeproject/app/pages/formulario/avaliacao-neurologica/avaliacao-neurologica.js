@@ -18,8 +18,6 @@ export class AvaliacaoNeurologicaPage {
 
   constructor(nav) {
     this.nav = nav;
-    this.myIcons = ["md-add"];
-    this.initiateIcons();
     this.glasgow = 0;
     this.glasgowOcular;
     this.glasgowVerbal;
@@ -38,12 +36,6 @@ export class AvaliacaoNeurologicaPage {
       }else if(passar.deltaX<0){
         this.nav.setRoot(OxigenacaoPage);
       }
-  }
-  initiateIcons(){
-    var i = 0;
-    for(i=0;i<17;i++){
-      this.myIcons[i] = "md-add";
-    }
   }
   toggleGroup(id){
     let grupo = document.getElementById("dados"+id);
