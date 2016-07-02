@@ -1,5 +1,7 @@
 import {NavController, Page} from 'ionic-angular';
-
+import {PacientesPage} from '../../pacientes/pacientes';
+import {AvaliacaoCardiovascularPage} from '../avaliacao-cardiovascular/avaliacao-cardiovascular';
+import {AlimentacaoEEliminacaoIntestinalPage} from '../alimentacao-e-eliminacao-intestinal/alimentacao-e-eliminacao-intestinal';
 /*
   Generated class for the HidratacaoEEliminacaoVesicalPage page.
 
@@ -23,9 +25,9 @@ export class HidratacaoEEliminacaoVesicalPage {
   }
   slide(passar){
     if(passar.deltaX>0){
-      this.nav.setRoot(OxigenacaoPage);
+      this.nav.setRoot(AvaliacaoCardiovascularPage);
     }else if(passar.deltaX<0){
-      this.nav.setRoot(HidratacaoEEliminacaoVesicalPage);
+      this.nav.setRoot(AlimentacaoEEliminacaoIntestinalPage);
     }
 }
   toggleGroup(id){
