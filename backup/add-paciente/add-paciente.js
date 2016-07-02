@@ -16,10 +16,19 @@ export class AddPacientePage {
     this.qtdeAlergias = 0;
     this.qtdeObs = 0;
     this.qtdeVacinas = 0;
+    this.myIcons = ["md-add"];
+    this.initiateIcons();
     this.glasgow = 0;
     this.glasgowOcular;
     this.glasgowVerbal;
     this.glasgowMotor;
+  }
+
+  initiateIcons(){
+    var i = 0;
+    for(i=0;i<17;i++){
+      this.myIcons[i] = "md-add";
+    }
   }
 
   somarGlasgow(){
@@ -184,35 +193,30 @@ export class AddPacientePage {
 
   toggleGroup(id){
     let grupo = document.getElementById("dados"+id);
-    let icone = document.getElementById("icone"+id);
-    console.log(grupo.style.display);
     if(id!=4 && id!=10 && id!=20 && id!=31){
       this.toggleClose(id);
     }
-    if(grupo.style.display == "block"){
-      grupo.style.display = "none";
-      icone.innerHTML = '►';
+    if(grupo.style.visibility == "visible"){
+      this.myIcons[id] = "md-add";
+      grupo.style.height = "0px";
+      grupo.style.visibility = "hidden";
     }else{
-      grupo.style.display = "block";
-      icone.innerHTML = '▼';
+      grupo.style.visibility = "visible";
+      grupo.style.height = "auto";
     }
   }
 
   toggleClose(id){
     var i=0;
-    let grupo = document.getElementById("dados"+i);
-    let icone = document.getElementById("icone"+i);
-    while(grupo!=null){
+    for(i=0;document.getElementById("dados"+i)!=null;i++){
       if(i!=id && i!=4 && i!=10 && i!=20 && i!=31){
-        console.log(i);
-        grupo.style.display = "none";
-        icone.innerHTML = '►';
+        let grupo = document.getElementById("dados"+i);
+        grupo.style.height = "0px";
+        grupo.style.visibility = "hidden";
+        this.myIcons[i] = "md-add";
       }else{
-
+        this.myIcons[i] = "md-remove";
       }
-      i++;
-      icone = document.getElementById("icone"+i);
-      grupo = document.getElementById("dados"+i);
     }
   }
 

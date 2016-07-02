@@ -84,11 +84,10 @@
 }
 
 .subgrupo{
+  height: 0px;
   color: gray;
   position: relative;
   overflow: hidden;
-  visibility: visible;
-  display: none;
 }
 
 //novas classes a serem seguidas
@@ -112,12 +111,6 @@
   border-style: none;
   border-right-style: solid;
   border-left-style: solid;
-  visibility: visible;
-  display: none;
-}
-
-.icone{
-  color: white;
 }
 
 .inputgrupo{
