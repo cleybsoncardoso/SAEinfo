@@ -18,9 +18,6 @@ export class HidratacaoEEliminacaoVesicalPage {
     this.nav = nav;
   }
 
-  constructor(nav) {
-    this.nav = nav;
-  }
   cancel(){
     this.nav.setRoot(PacientesPage);
   }
