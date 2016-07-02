@@ -1,7 +1,7 @@
 import {NavController, Page} from 'ionic-angular';
 import {AvaliacaoNeurologicaPage} from '../avaliacao-neurologica/avaliacao-neurologica';
 import {PacientesPage} from '../../pacientes/pacientes';
-
+import {AvaliacaoCardiovascularPage} from '../avaliacao-cardiovascular/avaliacao-cardiovascular';
 /*
   Generated class for the OxigenacaoPage page.
 
@@ -30,7 +30,7 @@ export class OxigenacaoPage {
     if(passar.deltaX>0){
       this.nav.setRoot(AvaliacaoNeurologicaPage);
     }else if(passar.deltaX<0){
-    //  this.nav.setRoot(OxigenacaoPage);
+      this.nav.setRoot(AvaliacaoCardiovascularPage);
     }
   }
   initiateIcons(){

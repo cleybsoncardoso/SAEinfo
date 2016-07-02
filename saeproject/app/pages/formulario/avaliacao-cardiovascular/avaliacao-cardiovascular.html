@@ -1,0 +1,94 @@
+<ion-toolbar>
+ <ion-title>
+   Novo Paciente
+ </ion-title>
+ <ion-buttons start>
+   <button round (click)="cancel()">Cancelar</button>
+ </ion-buttons>
+</ion-toolbar>
+<ion-content padding class="avaliacao-cardiovascular" (swipe)="slide($event)">
+  <ion-card-header class="cardheader"> Avaliação Cardiovascular </ion-card-header>
+  <ion-grid>
+    <ion-row>
+      <ion-col width-50>
+        <ion-item>
+          <ion-label floating>FC (bpm)</ion-label>
+          <ion-input class="inputgrupo" type="number"></ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col width-50>
+        <ion-item>
+          <ion-label floating>PA (mmHg)</ion-label>
+          <ion-input class="inputgrupo" type="number"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-grid>
+    <ion-row>
+      <ion-col width-50>
+        <ion-item>
+          <ion-label floating style="overflow: visible">PVC (cmH2O)</ion-label>
+          <ion-input class="inputgrupo" type="number"></ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col width-50>
+        <ion-item>
+          <ion-label floating>PAM (mmHg)</ion-label>
+          <ion-input class="inputgrupo" type="number"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-list-header class="titulolista">Pulso </ion-list-header>
+          <ion-item>
+            <ion-label style="color: gray">Regular</ion-label>
+            <ion-checkbox></ion-checkbox>
+          </ion-item>
+          <ion-item>
+            <ion-label style="color: gray">Irregular </ion-label>
+            <ion-checkbox></ion-checkbox>
+          </ion-item>
+          <ion-item>
+            <ion-label style="color: gray">Palpável</ion-label>
+            <ion-checkbox></ion-checkbox>
+          </ion-item>
+          <ion-item>
+            <ion-label style="color: gray">Impalpável</ion-label>
+            <ion-checkbox></ion-checkbox>
+          </ion-item>
+          <ion-item>
+            <ion-label style="color: gray">Cheio</ion-label>
+            <ion-checkbox></ion-checkbox>
+          </ion-item>
+          <ion-item>
+            <ion-label style="color: gray">Filiforme</ion-label>
+            <ion-checkbox></ion-checkbox>
+          </ion-item>
+    <ion-list-header class="titulolista">Presença de edema </ion-list-header>
+            <ion-item>
+              <ion-label style="color: gray">Não</ion-label>
+              <ion-checkbox></ion-checkbox>
+            </ion-item>
+            <ion-item>
+              <ion-label style="color: gray">Sim</ion-label>
+              <ion-checkbox></ion-checkbox>
+            </ion-item>
+            <ion-item>
+              <ion-label style="color: gray">Pés</ion-label>
+              <ion-checkbox></ion-checkbox>
+            </ion-item>
+            <ion-item>
+              <ion-label style="color: gray">MMII</ion-label>
+              <ion-checkbox></ion-checkbox>
+            </ion-item>
+            <ion-item>
+              <ion-label style="color: gray">MMSS</ion-label>
+              <ion-checkbox></ion-checkbox>
+            </ion-item>
+            <ion-item>
+              <ion-label style="color: gray">Anasarca</ion-label>
+              <ion-checkbox></ion-checkbox>
+            </ion-item>
+
+</ion-content>

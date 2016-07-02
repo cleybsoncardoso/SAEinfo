@@ -1,0 +1,77 @@
+<ion-toolbar>
+ <ion-title>
+   Novo Paciente
+ </ion-title>
+ <ion-buttons start>
+   <button round (click)="cancel()">Cancelar</button>
+ </ion-buttons>
+</ion-toolbar>
+
+<ion-content padding class="hidratacao-e-eliminacao-vesical" (swipe)="slide($event)">
+  <ion-card-header class="cardheader"> Hidratação e Eliminação Vesical </ion-card-header>
+  <ion-list-header class="titulolista" (click)="toggleGroup(0)">Turgidez da pele <p class="icone" id="icone0" style="float: right">+</p></ion-list-header>
+  <ion-list no-lines class="lista" id="dados0" class="subgrupo">
+    <ion-item>
+      <ion-label style="color: gray">Preservada </ion-label>
+      <ion-checkbox></ion-checkbox>
+    </ion-item>
+    <ion-item>
+      <ion-label style="color: gray">Diminuída </ion-label>
+      <ion-checkbox></ion-checkbox>
+    </ion-item>
+  </ion-list>
+  <ion-list-header class="titulolista" (click)="toggleGroup(1)">Eliminação urinária <p class="icone" id="icone1" style="float: right">+</p></ion-list-header>
+  <ion-list no-lines class="lista" id="dados1" class="subgrupo">
+    <ion-item>
+      <ion-label floating>Volume (ml:h)</ion-label>
+      <ion-input class="inputgrupo" type="number"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label style="color: gray">Espontânea </ion-label>
+      <ion-checkbox></ion-checkbox>
+    </ion-item>
+    <ion-item>
+      <ion-label style="color: gray">Retenção </ion-label>
+      <ion-checkbox></ion-checkbox>
+    </ion-item>
+    <ion-item>
+      <ion-label style="color: gray">Incontinência </ion-label>
+      <ion-checkbox></ion-checkbox>
+    </ion-item>
+    <ion-item>
+      <ion-label style="color: gray">SVD </ion-label>
+      <ion-checkbox></ion-checkbox>
+    </ion-item>
+    <ion-item>
+      <ion-label style="color: gray">Dispositivo urinário </ion-label>
+      <ion-checkbox></ion-checkbox>
+    </ion-item>
+  </ion-list>
+  <ion-list-header class="titulolista" (click)="toggleGroup(2)">Características <p class="icone" id="icone2" style="float: right">+</p></ion-list-header>
+  <ion-list no-lines class="lista" id="dados2" class="subgrupo">
+    <ion-item>
+      <ion-label style="color: gray">Disúria </ion-label>
+      <ion-checkbox></ion-checkbox>
+    </ion-item>
+    <ion-item>
+      <ion-label style="color: gray">Oligúria </ion-label>
+      <ion-checkbox></ion-checkbox>
+    </ion-item>
+    <ion-item>
+      <ion-label style="color: gray">Anúria </ion-label>
+      <ion-checkbox></ion-checkbox>
+    </ion-item>
+    <ion-item>
+      <ion-label style="color: gray">Poliúria </ion-label>
+      <ion-checkbox></ion-checkbox>
+    </ion-item>
+    <ion-item>
+      <ion-label style="color: gray">Hematúria </ion-label>
+      <ion-checkbox></ion-checkbox>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Outros</ion-label>
+      <ion-input class="inputgrupo" type="text"></ion-input>
+    </ion-item>
+  </ion-list>
+</ion-content>
