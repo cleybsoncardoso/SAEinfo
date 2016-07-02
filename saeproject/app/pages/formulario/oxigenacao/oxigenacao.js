@@ -68,8 +68,8 @@ export class OxigenacaoPage {
     }
   }
 
-  toggleGlasgow(){
-    let grupo = document.getElementById("glasgow");
+  toggleExpetoracao(){
+    let grupo = document.getElementById("expetoracao");
     if(grupo.style.display == "block"){
       grupo.style.display = "none";
     }else{
