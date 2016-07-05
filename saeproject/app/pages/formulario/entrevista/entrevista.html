@@ -17,7 +17,7 @@
       </ion-item>
     </ion-list>
     <ion-list-header class="titulolista" (click)="toggleGroup(0)">Antecedentes <p class="icone" id="icone0" style="float: right">+</p></ion-list-header>
-    <ion-list no-lines class="lista" id="dados0" class="subgrupo">
+    <ion-list no-lines class="lista" id="dados0">
           <ion-item>
             <ion-label class="label">Cardiopatia</ion-label>
             <ion-checkbox></ion-checkbox>
@@ -57,30 +57,30 @@
       </ion-list>
       <ion-list no-lines class="listitem">
         <ion-item>
-          <button (click)="addAntecedente()">Adicionar</button>
-          <button (click)="removerAntecedente()">Remover</button>
+          <button class="buttons" (click)="addAntecedente()">Adicionar</button>
+          <button class="buttons" (click)="removerAntecedente()">Remover</button>
         </ion-item>
       </ion-list>
   </ion-list>
   <ion-list-header class="titulolista" (click)="toggleGroup(1)">Alergia <p class="icone" id="icone1" style="float: right">+</p></ion-list-header>
-  <ion-list no-lines class="lista" id="dados1" class="subgrupo">
+  <ion-list no-lines class="lista" id="dados1">
     <ion-list no-lines id="alergias" >
     </ion-list>
     <ion-list no-lines class="listitem">
       <ion-item>
-        <button (click)="addAlergia()">Adicionar Alergia</button>
-        <button (click)="removerAlergia()">Remover</button>
+        <button class="buttons" (click)="addAlergia()">Adicionar Alergia</button>
+        <button class="buttons" (click)="removerAlergia()">Remover</button>
       </ion-item>
     </ion-list>
   </ion-list>
   <ion-list-header class="titulolista" (click)="toggleGroup(2)">Vacinas <p class="icone" id="icone2" style="float: right">+</p></ion-list-header>
-    <ion-list no-lines class="lista" id="dados2" class="subgrupo">
+    <ion-list no-lines class="lista" id="dados2">
     <ion-list no-lines id="vacinas" >
     </ion-list>
     <ion-list no-lines class="listitem">
       <ion-item>
-        <button (click)="addVacina()">Adicionar Vacina</button>
-        <button (click)="removerVacina()">Remover</button>
+        <button class="buttons" (click)="addVacina()">Adicionar Vacina</button>
+        <button class="buttons" (click)="removerVacina()">Remover</button>
       </ion-item>
     </ion-list>
   </ion-list>

@@ -7,15 +7,15 @@
  </ion-buttons>
 </ion-toolbar>
 
-<ion-content padding class="observacoes" (swipe)="slide($event)">
+<ion-content padding (swipe)="slide($event)">
   <ion-card class="mycard">
     <ion-card-header class="cardtitulo">Observações </ion-card-header>
     <ion-list no-lines id="observacoes" >
     </ion-list>
     <ion-list no-lines class="listitem">
-      <ion-item>
-        <button (click)="addObservacoes()">Adicionar Observações</button>
-        <button (click)="removerObservacoes()">Remover</button>
+      <ion-item style="margin: 0px;">
+        <button class="buttons" (click)="addObservacoes()">Adicionar Observações</button>
+        <button class="buttons" (click)="removerObservacoes()">Remover</button>
       </ion-item>
     </ion-list>
     </ion-card>

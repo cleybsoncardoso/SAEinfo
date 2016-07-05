@@ -11,7 +11,7 @@
   <ion-card class="mycard">
     <ion-card-header class="cardtitulo"> Oxigenação </ion-card-header>
     <ion-list-header class="titulolista" (click)="toggleGroup(0)">Respiração <p class="icone" id="icone0" style="float: right">+</p></ion-list-header>
-      <ion-list no-lines class="lista" id="dados0" class="subgrupo">
+    <ion-list no-lines id="dados0" class="lista">
       <ion-item>
         <ion-label class="label">Espontânea</ion-label>
         <ion-checkbox></ion-checkbox>
@@ -29,15 +29,17 @@
         <ion-checkbox></ion-checkbox>
       </ion-item>
       <ion-item>
-        <ion-label class="label">Outros</ion-label>
+        <ion-label class="label" style="margin: 0px">Outros</ion-label>
       </ion-item>
       <ion-list no-lines id="respiracao" class="listitem">
       </ion-list>
       <ion-list no-lines class="listitem">
         <ion-item style="margin: 0px;">
-          <button (click)="addRespiracao()">Adicionar</button>
-          <button (click)="removerRespiracao()">Remover</button>
+          <button class="buttons" (click)="addRespiracao()">Adicionar</button>
+          <button class="buttons" (click)="removerRespiracao()">Remover</button>
         </ion-item>
+      </ion-list>
+      <ion-list no-lines style="margin: 0px; padding: 0px;">
         <ion-item style="margin-top: 0px;">
           <ion-label floating>O² (Litros/Min)</ion-label>
           <ion-input type="number" class="inputitem"></ion-input>
@@ -107,9 +109,9 @@
           <ion-input type="text" class="inputitem"></ion-input>
         </ion-item>
       </ion-list>
-      </ion-list>
+    </ion-list>
       <ion-list-header class="titulolista" (click)="toggleGroup(1)">Ausculta pulmonar <p class="icone" id="icone1" style="float: right">+</p></ion-list-header>
-        <ion-list no-lines class="lista" id="dados1" class="subgrupo">
+        <ion-list no-lines class="lista" id="dados1">
           <ion-item-divider light style="text-align: left; border-radius: 5px;">MV presentes</ion-item-divider>
           <ion-item>
             <ion-label class="label">Bilateralmente</ion-label>
@@ -134,7 +136,7 @@
           </ion-item>
         </ion-list>
         <ion-list-header class="titulolista" (click)="toggleGroup(2)">Presenção de tosse <p class="icone" id="icone2" style="float: right">+</p></ion-list-header>
-          <ion-list no-lines class="lista" id="dados2" class="subgrupo">
+          <ion-list no-lines class="lista" id="dados2" style="margin: 0px">
             <ion-item>
               <ion-label class="label">Não</ion-label>
               <ion-checkbox></ion-checkbox>
@@ -152,40 +154,39 @@
               <ion-label class="label">Produtiva</ion-label>
               <ion-checkbox></ion-checkbox>
             </ion-item>
-            <ion-item>
-              <ion-label class="label">Expectoração(Quantidade e Caracteristica)</ion-label>
+            <ion-item style="margin-bottom: 0px">
+              <ion-label style="margin-bottom: 0px" class="label">Expectoração</ion-label>
               <ion-checkbox (click)="toggleExpetoracao()"></ion-checkbox>
             </ion-item>
-            <ion-list no-lines class="lista" id="expetoracao" class="subgrupo">
-              <ion-grid>
-                <ion-row>
-                  <ion-col width-30>
+            <ion-list no-lines class="lista" id="expetoracao" style="margin: 0px">
+                <ion-row style="margin: 0px">
+                  <ion-col>
                     <ion-item>
-                      <ion-label floating>quantidade</ion-label>
+                      <ion-label style="margin: 0px" floating>quantidade</ion-label>
                       <ion-input class="inputgrupo" type="number"></ion-input>
                     </ion-item>
                   </ion-col>
-                  <ion-col width-30><ion-item>
-                    <ion-label floating>característica</ion-label>
-                    <ion-input class="inputgrupo" type="text"></ion-input>
-                  </ion-item>
-                </ion-col>
-              </ion-row>
-            </ion-grid>
+                  <ion-col>
+                    <ion-item>
+                      <ion-label style="margin: 0px" floating>característica</ion-label>
+                      <ion-input class="inputgrupo" type="text"></ion-input>
+                    </ion-item>
+                  </ion-col>
+                </ion-row>
             </ion-list>
           </ion-list>
 
             <ion-list-header class="titulolista" (click)="toggleGroup(3)">Aspiração <p class="icone" id="icone3" style="float: right">+</p></ion-list-header>
-            <ion-list radio-group class="lista" id="dados3" class="subgrupo">
-            <ion-grid >
+            <ion-list radio-group class="lista" id="dados3">
+            <ion-grid>
               <ion-row>
-                <ion-col width-50>
+                <ion-col>
                   <ion-item>
                     <ion-label class="label">Sim</ion-label>
                     <ion-radio name="aspiracao" value="sim" (click)="toggleGroup2(0,'block')"></ion-radio>
                   </ion-item>
                 </ion-col>
-                <ion-col width-50><ion-item>
+                <ion-col><ion-item>
                   <ion-label class="label">Não</ion-label>
                   <ion-radio name="aspiracao" value="nao" (click)="toggleGroup2(0,'none')"></ion-radio>
                 </ion-item>
@@ -193,24 +194,25 @@
             </ion-row>
           </ion-grid>
 
-          <ion-grid id="listRadio0" style="display: none" >
-            <ion-row>
-              <ion-col width-30>
+          <ion-list no-lines id="listRadio0" style="display: none" >
+            <ion-row style="margin: 0px">
+              <ion-col>
                 <ion-item>
-                  <ion-label floating>quantidade</ion-label>
+                  <ion-label style="margin: 0px" floating>quantidade</ion-label>
                   <ion-input class="inputgrupo" type="number"></ion-input>
                 </ion-item>
               </ion-col>
-              <ion-col width-10><ion-item>
-                <ion-label floating>característica</ion-label>
-                <ion-input class="inputgrupo" type="text"></ion-input>
-              </ion-item>
-            </ion-col>
-          </ion-row>
-        </ion-grid>
+              <ion-col>
+                <ion-item>
+                  <ion-label style="margin: 0px" floating>característica</ion-label>
+                  <ion-input class="inputgrupo" type="text"></ion-input>
+                </ion-item>
+              </ion-col>
+            </ion-row>
+          </ion-list>
         </ion-list>
         <ion-list-header class="titulolista" (click)="toggleGroup(4)">Drenagem torácica <p class="icone" id="icone4" style="float: right">+</p></ion-list-header>
-        <ion-list radio-group class="lista" id="dados4" class="subgrupo">
+        <ion-list radio-group class="lista" id="dados4">
             <ion-row>
               <ion-col>
                 <ion-item>
@@ -218,40 +220,43 @@
                   <ion-radio name="aspiracao" value="sim" (click)="toggleGroup2(1,'block')"></ion-radio>
                 </ion-item>
               </ion-col>
-              <ion-col><ion-item>
-                <ion-label class="label">Não</ion-label>
-                <ion-radio name="aspiracao" value="nao" (click)="toggleGroup2(1,'none')"></ion-radio>
+              <ion-col>
+                <ion-item>
+                  <ion-label class="label">Não</ion-label>
+                  <ion-radio name="aspiracao" value="nao" (click)="toggleGroup2(1,'none')"></ion-radio>
               </ion-item>
             </ion-col>
           </ion-row>
-        <ion-grid id="listRadio1" style="display: none; padding: 0px; margin: 0px;">
-          <ion-row style="padding: 0px; margin: 0px;">
-            <ion-col style="padding: 0px; margin: 0px;">
-              <ion-item style="padding: 0px; margin: 0px;">
-                <ion-label floating>quantidade</ion-label>
+        <ion-list no-lines id="listRadio1" style="display: none">
+          <ion-row style="margin: 0px">
+            <ion-col>
+              <ion-item style="margin: 0px">
+                <ion-label style="margin: 0px" floating>quantidade</ion-label>
                 <ion-input class="inputgrupo" type="number"></ion-input>
               </ion-item>
             </ion-col>
-            <ion-col style="padding: 0px; margin: 0px;">
-              <ion-item style="padding: 0px; margin: 0px;">
-                <ion-label floating>característica</ion-label>
+            <ion-col>
+              <ion-item>
+                <ion-label  style="margin: 0px" floating>característica</ion-label>
                 <ion-input class="inputgrupo" type="text"></ion-input>
               </ion-item>
-          </ion-col>
-        </ion-row>
-      </ion-grid>
-      <ion-item>
-        <ion-label class="label">DTE</ion-label>
-        <ion-checkbox></ion-checkbox>
-      </ion-item>
-      <ion-item>
-        <ion-label class="label">DTD</ion-label>
-        <ion-checkbox></ion-checkbox>
-      </ion-item>
-      </ion-list>
+            </ion-col>
+          </ion-row>
+        </ion-list>
+          <ion-list no-lines  style="margin: 0px; padding: 0px;">
+            <ion-item>
+              <ion-label class="label">DTE</ion-label>
+              <ion-checkbox></ion-checkbox>
+            </ion-item>
+            <ion-item>
+              <ion-label class="label">DTD</ion-label>
+              <ion-checkbox></ion-checkbox>
+            </ion-item>
+          </ion-list>
+        </ion-list>
 
       <ion-list-header class="titulolista" (click)="toggleGroup(5)">Mamas <p class="icone" id="icone5" style="float: right">+</p></ion-list-header>
-      <ion-list no-lines class="lista" id="dados5" class="subgrupo">
+      <ion-list no-lines class="lista" id="dados5">
         <ion-item>
           <ion-label class="label">Sem alterações</ion-label>
           <ion-checkbox></ion-checkbox>
