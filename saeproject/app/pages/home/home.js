@@ -1,6 +1,8 @@
 import {Page, NavController} from 'ionic-angular';
 import {PacientesPage} from '../../pages/pacientes/pacientes';
 import {EsqueciSenhaPage} from '../../pages/esqueci-senha/esqueci-senha';
+import {CadastroPaciente} from '../../model/paciente';
+
 
 
 
@@ -14,6 +16,7 @@ export class HomePage {
 
   constructor(nav) {
     this.nav = nav;
+    this.paciente = new CadastroPaciente();
   }
 
   entrar(){

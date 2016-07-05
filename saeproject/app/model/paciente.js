@@ -1,4 +1,5 @@
-export class Paciente{
+export class CadastroPaciente{
   constructor(){
+    this.nome = "a";
   }
 }

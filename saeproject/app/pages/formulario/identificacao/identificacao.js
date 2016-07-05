@@ -15,8 +15,10 @@ export class IdentificacaoPage {
     return [[NavController]];
   }
 
-  constructor(nav) {
+  constructor(nav, paciente) {
+
     this.nav = nav;
+
   }
   cancel(){
     this.nav.setRoot(PacientesPage);
