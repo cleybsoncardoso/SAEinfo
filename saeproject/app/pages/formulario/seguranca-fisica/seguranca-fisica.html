@@ -8,20 +8,21 @@
 </ion-toolbar>
 
 <ion-content padding class="seguranca-fisica" (swipe)="slide($event)">
-  <ion-card class="card">
-    <ion-card-header class="cardheader">Segurança Física </ion-card-header>
-    <ion-list-header class="titulolista">Necessidade de contenção no leito </ion-list-header>
+  <ion-card class="mycard">
+    <ion-card-header class="cardtitulo">Segurança Física </ion-card-header>
+    <ion-list-header class="titulolista" style="overflow: visible; font-size: 11px;">Necessidade de contenção no leito </ion-list-header>
     <ion-list radio-group>
     <ion-grid >
       <ion-row>
-        <ion-col width-50>
+        <ion-col>
           <ion-item>
-            <ion-label>Sim</ion-label>
+            <ion-label class="label">Sim</ion-label>
             <ion-radio name="contenção" value="sim" ></ion-radio>
           </ion-item>
         </ion-col>
-        <ion-col width-50><ion-item>
-          <ion-label>Não</ion-label>
+        <ion-col>
+        <ion-item>
+          <ion-label class="label">Não</ion-label>
           <ion-radio name="contenção" value="nao" ></ion-radio>
         </ion-item>
       </ion-col>
@@ -30,26 +31,26 @@
   </ion-list>
     <ion-list-header class="titulolista">Risco para queda </ion-list-header>
     <ion-list radio-group>
-    <ion-grid >
       <ion-row>
-        <ion-col width-50>
+        <ion-col>
           <ion-item>
-            <ion-label>Sim</ion-label>
-            <ion-radio name="riscoDeQueda" value="sim" ></ion-radio>
+            <ion-label class="label">Sim</ion-label>
+            <ion-radio name="riscoDeQueda" value="sim"></ion-radio>
           </ion-item>
         </ion-col>
-        <ion-col width-50><ion-item>
-          <ion-label>Não</ion-label>
+        <ion-col><ion-item>
+          <ion-label class="label">Não</ion-label>
           <ion-radio name="riscoDeQueda" value="nao" ></ion-radio>
         </ion-item>
       </ion-col>
     </ion-row>
-    </ion-grid>
     </ion-list>
     <ion-list-header class="titulolista">Escala de Braden </ion-list-header>
-    <ion-item class="itemgrupo">
-      <ion-label floating>Score</ion-label>
-      <ion-input class="inputgrupo" type="number"></ion-input>
-    </ion-item>
+    <ion-list no-lines>
+      <ion-item class="itemgrupo">
+        <ion-label floating>Score</ion-label>
+        <ion-input class="inputgrupo" type="number"></ion-input>
+      </ion-item>
+    </ion-list>
   </ion-card>
 </ion-content>

@@ -144,38 +144,40 @@
     <ion-list radio-group class="lista" id="dados5" class="subgrupo">
     <ion-grid >
       <ion-row>
-        <ion-col width-50>
+        <ion-col>
           <ion-item>
             <ion-label style="color: gray">Sim</ion-label>
             <ion-radio name="aspiracao" value="sim" (click)="toggleGroup2(2,'block')"></ion-radio>
           </ion-item>
         </ion-col>
-        <ion-col width-50><ion-item>
-          <ion-label style="color: gray">Não</ion-label>
-          <ion-radio name="aspiracao" value="nao" (click)="toggleGroup2(2,'none')"></ion-radio>
-        </ion-item>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
+        <ion-col>
+          <ion-item>
+            <ion-label style="color: gray">Não</ion-label>
+            <ion-radio name="aspiracao" value="nao" (click)="toggleGroup2(2,'none')"></ion-radio>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
 
-  <ion-grid id="listRadio2" style="display: none" >
-    <ion-row>
-      <ion-col width-50>
-        <ion-item>
-          <ion-label floating>Local</ion-label>
-          <ion-input class="inputgrupo" type="text"></ion-input>
-        </ion-item>
-      </ion-col>
-      <ion-col width-50><ion-item>
-        <ion-label floating>Característica</ion-label>
-        <ion-input class="inputgrupo" type="text"></ion-input>
-      </ion-item>
-    </ion-col>
-  </ion-row>
-</ion-grid>
-</ion-list>
+    <ion-grid id="listRadio2" style="display: none">
+      <ion-row>
+        <ion-col>
+          <ion-item>
+            <ion-label floating>Local</ion-label>
+            <ion-input class="inputgrupo" type="text"></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col>
+          <ion-item>
+            <ion-label floating style="overflow: visible">Característica</ion-label>
+            <ion-input class="inputgrupo" type="text"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-list>
 
-<ion-list-header class="titulolista" (click)="toggleGroup(6)">Alimentação e Eliminação intestinal <p class="icone" id="icone6" style="float: right">+</p></ion-list-header>
+<ion-list-header class="titulolista" (click)="toggleGroup(6)">Eliminação intestinal <p class="icone" id="icone6" style="float: right">+</p></ion-list-header>
 <ion-list no-lines class="lista" id="dados6" class="subgrupo">
   <ion-item>
     <ion-label floating>Frequência (vezes;semana)</ion-label>

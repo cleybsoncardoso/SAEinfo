@@ -15,7 +15,7 @@ export class AspectosCutaneoMucosaPage {
   constructor(nav) {
     this.nav = nav;
   }
-  
+
   cancel(){
     this.nav.setRoot(PacientesPage);
   }
@@ -66,7 +66,6 @@ export class AspectosCutaneoMucosaPage {
 }
 
   toggleGroup2(id,status){
-
     let grupo = document.getElementById("listRadio"+id);
     grupo.style.display = status;
 

@@ -57,6 +57,7 @@
 }
 
 .divitem2{
+  color: black;
   text-align: left;
   padding: 3px;
   margin-left: 6px;
@@ -66,6 +67,7 @@
   border-style: inset;
   border-width: thin;
   border-radius: 5px;
+  width: 95%;
 }
 
 .divitem4{
@@ -120,12 +122,7 @@
   color: white;
 }
 
-.inputgrupo{
-  border-style: none;
-  border-bottom-style: solid;
-  border-width: thin;
-  border-color: #D3D3D3;
-}
+
 .testes{
   -webkit-marquee: auto medium infinite scroll normal;
   overflow-x: -webkit-marquee;

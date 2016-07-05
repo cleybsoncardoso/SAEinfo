@@ -23,7 +23,6 @@ export class MyApp {
     this.rootPage = HomePage;
     this.pacientes = PacientesPage;
     this.alterarsenha = AlterarSenhaPage;
-    this.addPaciente = AddPacientePage;
     this.homePage = HomePage;
     platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.

@@ -18,10 +18,12 @@ export class PacientesPage {
     this.searchQuery = '';
     this.dao = new DAOPacientes();
     this.listaPacientes = this.dao.getList();
+    this.menu.enable(true);
   }
 
   novoPaciente(){
   //  let modal = Modal.create(TestePage);
+    this.menu.enable(false);
     this.nav.setRoot(IdentificacaoPage);
 /*
     modal.onDismiss((paciente) => {
