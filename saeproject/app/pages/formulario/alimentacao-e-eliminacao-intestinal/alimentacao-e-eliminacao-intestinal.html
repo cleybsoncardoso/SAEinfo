@@ -25,19 +25,19 @@
     <ion-list-header class="titulolista" (click)="toggleGroup(0)">Apetite <p class="icone" id="icone0" style="float: right">+</p></ion-list-header>
     <ion-list no-lines class="lista" id="dados0" class="subgrupo">
       <ion-item>
-        <ion-label style="color: gray">Normal </ion-label>
+        <ion-label class="label">Normal </ion-label>
         <ion-checkbox></ion-checkbox>
       </ion-item>
       <ion-item>
-        <ion-label style="color: gray">Aumentado </ion-label>
+        <ion-label class="label">Aumentado </ion-label>
         <ion-checkbox></ion-checkbox>
       </ion-item>
       <ion-item>
-        <ion-label style="color: gray">Diminuído </ion-label>
+        <ion-label class="label">Diminuído </ion-label>
         <ion-checkbox></ion-checkbox>
       </ion-item>
       <ion-item>
-        <ion-label style="color: gray">Não se aplica  </ion-label>
+        <ion-label class="label">Não se aplica  </ion-label>
         <ion-checkbox></ion-checkbox>
       </ion-item>
     </ion-list>
@@ -45,19 +45,19 @@
     <ion-list-header class="titulolista" (click)="toggleGroup(1)">Vias de administração <p class="icone" id="icone1" style="float: right">+</p></ion-list-header>
     <ion-list no-lines class="lista" id="dados1" class="subgrupo">
       <ion-item>
-        <ion-label style="color: gray">Oral </ion-label>
+        <ion-label class="label">Oral </ion-label>
         <ion-checkbox></ion-checkbox>
       </ion-item>
       <ion-item>
-        <ion-label style="color: gray">SNG </ion-label>
+        <ion-label class="label">SNG </ion-label>
         <ion-checkbox></ion-checkbox>
       </ion-item>
       <ion-item>
-        <ion-label style="color: gray">SNE </ion-label>
+        <ion-label class="label">SNE </ion-label>
         <ion-checkbox></ion-checkbox>
       </ion-item>
       <ion-item>
-        <ion-label style="color: gray">Parenteral  </ion-label>
+        <ion-label class="label">Parenteral  </ion-label>
         <ion-checkbox></ion-checkbox>
       </ion-item>
       <ion-item>
@@ -69,11 +69,11 @@
     <ion-list-header class="titulolista" (click)="toggleGroup(2)">Presenção de <p class="icone" id="icone2" style="float: right">+</p></ion-list-header>
     <ion-list no-lines class="lista" id="dados2" class="subgrupo">
       <ion-item>
-        <ion-label style="color: gray">Náusea</ion-label>
+        <ion-label class="label">Náusea</ion-label>
         <ion-checkbox></ion-checkbox>
       </ion-item>
       <ion-item>
-        <ion-label style="color: gray">Vômito</ion-label>
+        <ion-label class="label">Vômito</ion-label>
         <ion-checkbox (click)="toggleVomito()"></ion-checkbox>
       </ion-item>
       <ion-list no-lines class="lista" id="vomito" class="subgrupo">
@@ -99,19 +99,19 @@
     <ion-list-header class="titulolista" (click)="toggleGroup(3)">Abdome <p class="icone" id="icone3" style="float: right">+</p></ion-list-header>
     <ion-list no-lines class="lista" id="dados3" class="subgrupo">
       <ion-item>
-        <ion-label style="color: gray">Plano </ion-label>
+        <ion-label class="label">Plano </ion-label>
         <ion-checkbox></ion-checkbox>
       </ion-item>
       <ion-item>
-        <ion-label style="color: gray">Globoso </ion-label>
+        <ion-label class="label">Globoso </ion-label>
         <ion-checkbox></ion-checkbox>
       </ion-item>
       <ion-item>
-        <ion-label style="color: gray">Distendido  </ion-label>
+        <ion-label class="label">Distendido  </ion-label>
         <ion-checkbox></ion-checkbox>
       </ion-item>
       <ion-item>
-        <ion-label style="color: gray">Doloroso à palpação  </ion-label>
+        <ion-label class="label">Doloroso à palpação  </ion-label>
         <ion-checkbox></ion-checkbox>
       </ion-item>
       <ion-item>
@@ -123,19 +123,19 @@
     <ion-list-header class="titulolista" (click)="toggleGroup(4)">RHA <p class="icone" id="icone4" style="float: right">+</p></ion-list-header>
     <ion-list no-lines class="lista" id="dados4" class="subgrupo">
       <ion-item>
-        <ion-label style="color: gray">Presentes </ion-label>
+        <ion-label class="label">Presentes </ion-label>
         <ion-checkbox></ion-checkbox>
       </ion-item>
       <ion-item>
-        <ion-label style="color: gray">Ausentes </ion-label>
+        <ion-label class="label">Ausentes </ion-label>
         <ion-checkbox></ion-checkbox>
       </ion-item>
       <ion-item>
-        <ion-label style="color: gray">Diminuído </ion-label>
+        <ion-label class="label">Diminuído </ion-label>
         <ion-checkbox></ion-checkbox>
       </ion-item>
       <ion-item>
-        <ion-label style="color: gray">Aumentado </ion-label>
+        <ion-label class="label">Aumentado </ion-label>
         <ion-checkbox></ion-checkbox>
       </ion-item>
     </ion-list>
@@ -146,13 +146,13 @@
       <ion-row>
         <ion-col>
           <ion-item>
-            <ion-label style="color: gray">Sim</ion-label>
+            <ion-label class="label">Sim</ion-label>
             <ion-radio name="aspiracao" value="sim" (click)="toggleGroup2(2,'block')"></ion-radio>
           </ion-item>
         </ion-col>
         <ion-col>
           <ion-item>
-            <ion-label style="color: gray">Não</ion-label>
+            <ion-label class="label">Não</ion-label>
             <ion-radio name="aspiracao" value="nao" (click)="toggleGroup2(2,'none')"></ion-radio>
           </ion-item>
         </ion-col>
@@ -184,19 +184,19 @@
     <ion-input class="inputgrupo" type="number"></ion-input>
   </ion-item>
   <ion-item>
-    <ion-label style="color: gray">Normal </ion-label>
+    <ion-label class="label">Normal </ion-label>
     <ion-checkbox></ion-checkbox>
   </ion-item>
   <ion-item>
-    <ion-label style="color: gray">Constipação </ion-label>
+    <ion-label class="label">Constipação </ion-label>
     <ion-checkbox></ion-checkbox>
   </ion-item>
   <ion-item>
-    <ion-label style="color: gray">Diarréia </ion-label>
+    <ion-label class="label">Diarréia </ion-label>
     <ion-checkbox></ion-checkbox>
   </ion-item>
   <ion-item>
-    <ion-label style="color: gray">Incontinência </ion-label>
+    <ion-label class="label">Incontinência </ion-label>
     <ion-checkbox></ion-checkbox>
   </ion-item>
   <ion-item>
