@@ -3,6 +3,7 @@ import {DAOPacientes} from '../../dao/dao-paciente';
 import {HomePage} from '../../pages/home/home';
 //import {AddPacientePage} from '../../pages/add-paciente/add-paciente';
 import {IdentificacaoPage} from '../formulario/identificacao/identificacao';
+import {CadastroPaciente} from '../../model/cadastroPaciente'
 
 @Page({
   templateUrl: 'build/pages/pacientes/pacientes.html',
@@ -19,12 +20,13 @@ export class PacientesPage {
     this.dao = new DAOPacientes();
     this.listaPacientes = this.dao.getList();
     this.menu.enable(true);
+    this.pacienteCadastrado=new CadastroPaciente();
   }
 
   novoPaciente(){
   //  let modal = Modal.create(TestePage);
     this.menu.enable(false);
-    this.nav.setRoot(IdentificacaoPage);
+    this.nav.setRoot(IdentificacaoPage,{parametro: this.pacienteCadastrado});
 /*
     modal.onDismiss((paciente) => {
       if(paciente){

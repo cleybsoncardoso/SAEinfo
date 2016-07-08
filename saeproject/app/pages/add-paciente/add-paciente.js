@@ -1,5 +1,5 @@
 import {Page, ViewController} from 'ionic-angular';
-import {Paciente} from '../../model/paciente';
+//import {Paciente} from '../../model/paciente';
 
 @Page({
   templateUrl: 'build/pages/add-paciente/add-paciente.html',

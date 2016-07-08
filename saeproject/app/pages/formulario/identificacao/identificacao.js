@@ -1,6 +1,7 @@
-import {NavController, Page} from 'ionic-angular';
+import {NavController, Page, NavParams} from 'ionic-angular';
 import {PacientesPage} from '../../../pages/pacientes/pacientes';
 import {EntrevistaPage} from '../entrevista/entrevista';
+import {CadastroPaciente} from '../../../model/cadastroPaciente'
 /*
   Generated class for the IdentificacaoPage page.
 
@@ -12,20 +13,20 @@ import {EntrevistaPage} from '../entrevista/entrevista';
 })
 export class IdentificacaoPage {
   static get parameters() {
-    return [[NavController]];
+    return [[NavParams],[NavController]];
   }
 
-  constructor(nav, paciente) {
-
+  constructor(params,nav) {
+    this.paciente = params.get("parametro");
     this.nav = nav;
-
+    this.nome = this.paciente.nome;
   }
   cancel(){
     this.nav.setRoot(PacientesPage);
   }
   slide(passar){
     if(passar.deltaX<0){
-      this.nav.setRoot(EntrevistaPage);
+      this.nav.setRoot(EntrevistaPage,{parametro: this.pacienteCadastrado});
     }
   }
 }

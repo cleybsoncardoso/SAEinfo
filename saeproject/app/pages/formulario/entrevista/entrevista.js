@@ -1,7 +1,8 @@
-import {NavController, Page} from 'ionic-angular';
+import {NavController, Page, NavParams} from 'ionic-angular';
 import {IdentificacaoPage} from '../identificacao/identificacao';
 import {PacientesPage} from '../../../pages/pacientes/pacientes';
 import {AvaliacaoNeurologicaPage} from '../avaliacao-neurologica/avaliacao-neurologica';
+import {CadastroPaciente} from '../../../model/cadastroPaciente'
 /*
   Generated class for the EntrevistaPage page.
 
@@ -13,10 +14,12 @@ import {AvaliacaoNeurologicaPage} from '../avaliacao-neurologica/avaliacao-neuro
 })
 export class EntrevistaPage {
   static get parameters() {
-    return [[NavController]];
+    return [[NavParams],[NavController]];
   }
 
-  constructor(nav) {
+  constructor(params,nav) {
+    this.paciente = params.get("parametro");
+    this.nome = this.paciente.nome;
     this.nav = nav;
     this.myIcons = ["md-add"];
     this.qtdeOutros = 0;
@@ -119,7 +122,7 @@ export class EntrevistaPage {
   }
   slide(passar){
     if(passar.deltaX>0){
-      this.nav.setRoot(IdentificacaoPage);
+      this.nav.setRoot(IdentificacaoPage,{parametro: this.pacienteCadastrado});
     }else if(passar.deltaX<0){
       this.nav.setRoot(AvaliacaoNeurologicaPage);
     }

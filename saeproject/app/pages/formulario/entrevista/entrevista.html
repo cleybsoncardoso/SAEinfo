@@ -10,6 +10,10 @@
 <ion-content padding (swipe)="slide($event)">
   <ion-card class="mycard">
   <ion-card-header class="cardtitulo"> Entrevista </ion-card-header>
+  <ion-item>
+    <ion-label floating>Nome</ion-label>
+    <ion-input type="text" [(ngModel)]="nome"></ion-input>
+  </ion-item>
     <ion-list>
       <ion-item style="border-bottom-style: none; border-color: #D3D3D3;">
         <ion-label floating>Internação Anterior (nº de vezes)</ion-label>
