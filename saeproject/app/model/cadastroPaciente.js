@@ -77,6 +77,7 @@ export class CadastroPaciente{
     this.presencaoDeTosseSeca = false;
     this.presencaoDeTosseProdutiva = false;
     this.presencaoDeTosseExpectoracao = false;
-
+    this.glasgowMenu = false;
+    this.aspiracao ;
   }
 }

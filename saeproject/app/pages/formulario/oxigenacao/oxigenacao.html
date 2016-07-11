@@ -177,18 +177,18 @@
           </ion-list>
 
             <ion-list-header class="titulolista" (click)="toggleGroup(3)">Aspiração <p class="icone" id="icone3" style="float: right">+</p></ion-list-header>
-            <ion-list radio-group class="lista" id="dados3">
+            <ion-list no-lines radio-group class="lista"  [(ngModel)]="paciente.aspiracao" id="dados3" class="subgrupo">
             <ion-grid>
               <ion-row>
                 <ion-col>
                   <ion-item>
                     <ion-label class="label">Sim</ion-label>
-                    <ion-radio name="aspiracao" value="sim" (click)="toggleGroup2(0,'block')"></ion-radio>
+                    <ion-radio value="sim" (click)="toggleGroup2(0,'block')"></ion-radio>
                   </ion-item>
                 </ion-col>
                 <ion-col><ion-item>
                   <ion-label class="label">Não</ion-label>
-                  <ion-radio name="aspiracao" value="nao" (click)="toggleGroup2(0,'none')"></ion-radio>
+                  <ion-radio value="nao" (click)="toggleGroup2(0,'none')"></ion-radio>
                 </ion-item>
               </ion-col>
             </ion-row>

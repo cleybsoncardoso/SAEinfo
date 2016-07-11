@@ -38,6 +38,9 @@ export class AvaliacaoNeurologicaPage {
     let grupo = document.getElementById("dados"+id);
     let icone = document.getElementById("icone"+id);
     this.toggleClose(id);
+    if(id==0){
+      this.verificaGlasgow();
+    }
     if(grupo.style.display == "block"){
       grupo.style.display = "none";
       icone.innerHTML = '+';
@@ -47,6 +50,14 @@ export class AvaliacaoNeurologicaPage {
     }
   }
 
+  verificaGlasgow(){
+    let grupo = document.getElementById("glasgow");
+    if(this.paciente.glasgowMenu == true){
+      grupo.style.display = "block";
+    }else{
+      grupo.style.display = "none";
+    }
+  }
   toggleClose(id){
     var i=0;
     let grupo = document.getElementById("dados"+i);
@@ -64,7 +75,7 @@ export class AvaliacaoNeurologicaPage {
 
   toggleGlasgow(){
     let grupo = document.getElementById("glasgow");
-    if(grupo.style.display == "block"){
+    if(this.paciente.glasgowMenu == true){
       grupo.style.display = "none";
     }else{
       grupo.style.display = "block";

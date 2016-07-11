@@ -34,6 +34,9 @@ export class OxigenacaoPage {
   toggleGroup(id){
     let grupo = document.getElementById("dados"+id);
     let icone = document.getElementById("icone"+id);
+    if(id==2){
+      this.verificaExpetoracao();
+    }
     this.toggleClose(id);
     if(grupo.style.display == "block"){
       grupo.style.display = "none";
@@ -58,10 +61,18 @@ export class OxigenacaoPage {
       grupo = document.getElementById("dados"+i);
     }
   }
+  verificaExpetoracao(){
+    let grupo = document.getElementById("expetoracao");
+    if(this.paciente.presencaoDeTosseExpectoracao == true){
+      grupo.style.display = "block";
+    }else{
+      grupo.style.display = "none";
+    }
+  }
 
   toggleExpetoracao(){
     let grupo = document.getElementById("expetoracao");
-    if(grupo.style.display == "block"){
+    if(this.paciente.presencaoDeTosseExpectoracao == true){
       grupo.style.display = "none";
     }else{
       grupo.style.display = "block";
@@ -100,7 +111,7 @@ removerRespiracao() {
     }
 }
 toggleGroup2(id,status){
-
+  console.log(this.paciente.aspiracao);
   let grupo = document.getElementById("listRadio"+id);
   grupo.style.display = status;
 
