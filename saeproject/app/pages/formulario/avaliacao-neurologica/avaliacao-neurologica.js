@@ -1,4 +1,4 @@
-import {NavController,Page} from 'ionic-angular';
+import {NavController,Page, NavParams} from 'ionic-angular';
 import {EntrevistaPage} from '../entrevista/entrevista';
 import {OxigenacaoPage} from '../oxigenacao/oxigenacao';
 import {PacientesPage} from '../../pacientes/pacientes';
@@ -13,18 +13,15 @@ import {PacientesPage} from '../../pacientes/pacientes';
 })
 export class AvaliacaoNeurologicaPage {
   static get parameters() {
-    return [[NavController]];
+    return [[NavParams],[NavController]];
   }
 
-  constructor(nav) {
+  constructor(params,nav) {
+    this.paciente = params.get("parametro");
     this.nav = nav;
-    this.glasgow = 0;
-    this.glasgowOcular;
-    this.glasgowVerbal;
-    this.glasgowMotor;
   }
   somarGlasgow(){
-    this.glasgow = parseInt(this.glasgowOcular) + parseInt(this.glasgowVerbal) + parseInt(this.glasgowMotor);
+    this.paciente.glasgow = parseInt(this.paciente.glasgowOcular) + parseInt(this.paciente.glasgowVerbal) + parseInt(this.paciente.glasgowMotor);
   }
 
     cancel(){
@@ -32,9 +29,9 @@ export class AvaliacaoNeurologicaPage {
     }
     slide(passar){
       if(passar.deltaX>0){
-        this.nav.setRoot(EntrevistaPage);
+        this.nav.setRoot(EntrevistaPage,{parametro: this.paciente});
       }else if(passar.deltaX<0){
-        this.nav.setRoot(OxigenacaoPage);
+        this.nav.setRoot(OxigenacaoPage,{parametro: this.paciente});
       }
   }
   toggleGroup(id){
@@ -55,7 +52,6 @@ export class AvaliacaoNeurologicaPage {
     let grupo = document.getElementById("dados"+i);
     let icone = document.getElementById("icone"+i);
     while(grupo!=null){
-      console.log(i);
       if(i!=id){
         grupo.style.display = "none";
         icone.innerHTML = '+';

@@ -1,4 +1,4 @@
-import {NavController, Page} from 'ionic-angular';
+import {NavController, Page, NavParams} from 'ionic-angular';
 import {AvaliacaoNeurologicaPage} from '../avaliacao-neurologica/avaliacao-neurologica';
 import {PacientesPage} from '../../pacientes/pacientes';
 import {AvaliacaoCardiovascularPage} from '../avaliacao-cardiovascular/avaliacao-cardiovascular';
@@ -13,14 +13,12 @@ import {AvaliacaoCardiovascularPage} from '../avaliacao-cardiovascular/avaliacao
 })
 export class OxigenacaoPage {
   static get parameters() {
-    return [[NavController]];
+    return [[NavParams],[NavController]];
   }
 
-  constructor(nav) {
+  constructor(params,nav) {
+    this.paciente = params.get("parametro");
     this.nav = nav;
-    this.myIcons = ["md-add"];
-    this.initiateIcons();
-    this.obsRespiracao = 0;
   }
 
   cancel(){
@@ -28,15 +26,9 @@ export class OxigenacaoPage {
   }
   slide(passar){
     if(passar.deltaX>0){
-      this.nav.setRoot(AvaliacaoNeurologicaPage);
+      this.nav.setRoot(AvaliacaoNeurologicaPage,{parametro: this.paciente});
     }else if(passar.deltaX<0){
       this.nav.setRoot(AvaliacaoCardiovascularPage);
-    }
-  }
-  initiateIcons(){
-    var i = 0;
-    for(i=0;i<17;i++){
-      this.myIcons[i] = "md-add";
     }
   }
   toggleGroup(id){
@@ -57,7 +49,6 @@ export class OxigenacaoPage {
     let grupo = document.getElementById("dados"+i);
     let icone = document.getElementById("icone"+i);
     while(grupo!=null){
-      console.log(i);
       if(i!=id){
         grupo.style.display = "none";
         icone.innerHTML = '+';
@@ -85,23 +76,23 @@ addRespiracao() {
   //Criando o elemento DIV filho;
   let divFilho = document.createElement("div");
   //Definindo atributos ao campoFilho:
-  divFilho.setAttribute("id","resp"+this.obsRespiracao);
+  divFilho.setAttribute("id","resp"+this.paciente.obsRespiracao);
   divFilho.setAttribute("class", "divitem4");
   //Inserindo o elemento filho no pai:
   divPai.appendChild(divFilho);
   //Escrevendo algo no filho recém-criado:
-  document.getElementById("resp"+this.obsRespiracao).innerHTML = "<input class='divitem2' type='text' id='campoResp"+this.obsRespiracao+"'></input>";
-  this.obsRespiracao++;
+  document.getElementById("resp"+this.paciente.obsRespiracao).innerHTML = "<input class='divitem2' type='text' id='campoResp"+this.paciente.obsRespiracao+"'></input>";
+  this.paciente.obsRespiracao++;
 }
 
 /**Função que Remove um campo na relação de Respiracao*/
 removerRespiracao() {
     //só remove se já ouver um campo adicionado
-    if(this.obsRespiracao > 0){
-      this.obsRespiracao--;
+    if(this.paciente.obsRespiracao > 0){
+      this.paciente.obsRespiracao--;
       //Guardando o div pai
       let divPai = document.getElementById("respiracao");
-      let text = "resp"+this.obsRespiracao;
+      let text = "resp"+this.paciente.obsRespiracao;
       //Guardando o ultimo div filho criado
       let divFilho = document.getElementById(text);
       //Removendo o ultimo DIV do nó-pai:

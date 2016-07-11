@@ -19,14 +19,14 @@ export class IdentificacaoPage {
   constructor(params,nav) {
     this.paciente = params.get("parametro");
     this.nav = nav;
-    this.nome = this.paciente.nome;
+
   }
   cancel(){
     this.nav.setRoot(PacientesPage);
   }
   slide(passar){
     if(passar.deltaX<0){
-      this.nav.setRoot(EntrevistaPage,{parametro: this.pacienteCadastrado});
+      this.nav.setRoot(EntrevistaPage,{parametro: this.paciente});
     }
   }
 }
