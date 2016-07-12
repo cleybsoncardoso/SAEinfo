@@ -24,37 +24,40 @@ export class EntrevistaPage {
 
   }
   addAntecedente() {
+    //incrementando a quantidade de antecedentes
+    this.paciente.qtdeAntecedentes++;
     //guardando o div pai
     let divPai = document.getElementById("outrosAntecetendes");
     //Criando o elemento DIV filho;
     let divFilho = document.createElement("div");
     //Definindo atributos ao campoFilho:
-    divFilho.setAttribute("id","antecedente"+this.paciente.qtdeOutros);
+    divFilho.setAttribute("id","antecedente"+this.paciente.qtdeAntecedentes);
     divFilho.setAttribute("class", "divitem4");
     //Inserindo o elemento filho no pai:
     divPai.appendChild(divFilho);
     //Escrevendo algo no filho recém-criado:
-    document.getElementById("antecedente"+this.paciente.qtdeOutros).innerHTML = "<input class='divitem2' type='text' id='campoAntecedente"+this.paciente.qtdeOutros+"'></input>";
-    this.paciente.qtdeOutros++;
+    document.getElementById("antecedente"+this.paciente.qtdeAntecedentes).innerHTML = "<input class='divitem2' type='text' id='campoAntecedente"+this.paciente.qtdeAntecedentes+"' placeholder=' Outro Antecedente "+ this.paciente.qtdeAntecedentes+"'></input>";
   }
 
   /**Função que Remove um campo na relação de antecedentes*/
   removerAntecedente() {
       //só remove se já ouver um campo adicionado
-      if(this.paciente.qtdeOutros > 0){
-        this.paciente.qtdeOutros--;
+      if(this.paciente.qtdeAntecedentes > 0){
         //Guardando o div pai
         let divPai = document.getElementById("outrosAntecetendes");
-        let text = "antecedente"+this.paciente.qtdeOutros;
+        let text = "antecedente"+this.paciente.qtdeAntecedentes;
         //Guardando o ultimo div filho criado
         let divFilho = document.getElementById(text);
         //Removendo o ultimo DIV do nó-pai:
         divPai.removeChild(divFilho);
+        this.paciente.qtdeAntecedentes--;
       }
   }
 
   /**Função que adiciona um campo na relação de Alergia*/
   addAlergia() {
+    //incrementando a quantidade de antecedentes
+    this.paciente.qtdeAlergias++;
     //guardando o div pai
     let divPai = document.getElementById("alergias");
     //Criando o elemento DIV filho;
@@ -65,15 +68,13 @@ export class EntrevistaPage {
     //Inserindo o elemento filho no pai:
     divPai.appendChild(divFilho);
     //Escrevendo algo no filho recém-criado:
-    document.getElementById("alergia"+this.paciente.qtdeAlergias).innerHTML = "<input class='divitem2' type='text' id='campoAlergia"+this.paciente.qtdeAlergias+"'></input>";
-    this.paciente.qtdeAlergias++;
+    document.getElementById("alergia"+this.paciente.qtdeAlergias).innerHTML = "<input class='divitem2' type='text' id='campoAlergia"+this.paciente.qtdeAlergias+"' placeholder='Alergia "+ this.paciente.qtdeAlergias +"'></input>";
   }
 
   /**Função que Remove um campo na relação de Alergia*/
   removerAlergia() {
       //só remove se já ouver um campo adicionado
       if(this.paciente.qtdeAlergias > 0){
-        this.paciente.qtdeAlergias--;
         //Guardando o div pai
         let divPai = document.getElementById("alergias");
         let text = "alergia"+this.paciente.qtdeAlergias;
@@ -81,9 +82,12 @@ export class EntrevistaPage {
         let divFilho = document.getElementById(text);
         //Removendo o ultimo DIV do nó-pai:
         divPai.removeChild(divFilho);
+        this.paciente.qtdeAlergias--;
       }
   }
   addVacina() {
+    //incrementando a quantidade de vacinas
+    this.paciente.qtdeVacinas++;
     //guardando o div pai
     let divPai = document.getElementById("vacinas");
     //Criando o elemento DIV filho;
@@ -96,35 +100,70 @@ export class EntrevistaPage {
     divPai.appendChild(divFilho);
     //Escrevendo algo no filho recém-criado:
 
-    document.getElementById("vacina"+this.paciente.qtdeVacinas).innerHTML = "<input class='divitem2' type='text' id='campoVacina"+this.paciente.qtdeVacinas+"'></input>";
-    this.paciente.qtdeVacinas++;
+    document.getElementById("vacina"+this.paciente.qtdeVacinas).innerHTML = "<input class='divitem2' type='text' id='campoVacina"+this.paciente.qtdeVacinas+"' placeholder='Vacina "+this.paciente.qtdeVacinas+"'></input>";
   }
 
   /**Função que Remove um campo na relação de vacina*/
   removerVacina() {
       //só remove se já ouver um campo adicionado
       if(this.paciente.qtdeVacinas > 0){
-        this.paciente.qtdeVacinas--;
         //Guardando o div pai
         let divPai = document.getElementById("vacinas");
         let text = "vacina"+this.paciente.qtdeVacinas;
         //Guardando o ultimo div filho criado
         let divFilho = document.getElementById(text);
+        //guardando valor do input
+        let text2 = "campoVacina"+this.paciente.qtdeVacinas;
+        let input = document.getElementById(text2);
+        console.log(input.value);
         //Removendo o ultimo DIV do nó-pai:
         divPai.removeChild(divFilho);
+        this.paciente.qtdeVacinas--;
       }
   }
 
   cancel(){
     this.nav.setRoot(PacientesPage);
   }
-  slide(passar){
 
+  //funcao realizada quando o usuario desliza o dedo na tela
+  slide(passar){
     if(passar.deltaX>0){
       this.nav.setRoot(IdentificacaoPage,{parametro: this.paciente});
     }else if(passar.deltaX<0){
+      this.getAntecedentes();
+      this.getAlergias();
+      this.getVacinas();
       this.nav.setRoot(AvaliacaoNeurologicaPage,{parametro: this.paciente});
     }
+  }
+
+  getAntecedentes(){
+    let x=0;
+    while(x<this.paciente.qtdeAntecedentes){
+      x++;
+      let antecedentes = document.getElementById("campoAntecedente"+x);
+      this.paciente.antecedentes.push(antecedentes.value);
+    }
+  }
+
+  getAlergias(){
+    let x=0;
+    while(x<this.paciente.qtdeAlergias){
+      x++;
+      let alergias = document.getElementById("campoAlergia"+x);
+      this.paciente.alergias.push(alergias.value);
+    }
+  }
+
+  getVacinas(){
+    let x=0;
+    while(x<this.paciente.qtdeVacinas){
+      x++;
+      let vacinas = document.getElementById("campoVacina"+x);
+      this.paciente.vacinas.push(vacinas.value);
+    }
+    console.log(this.paciente.vacinas);
   }
 
   toggleGroup(id){
