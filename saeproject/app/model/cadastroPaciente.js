@@ -49,6 +49,7 @@ export class CadastroPaciente{
     this.movimentosLentos = false;
     this.movimentosInvoluntarios = false;
     this.obsRespiracao = 0;
+    this.respiracoes= [];
     this.espontanea = false;
     this.cateter = false;
     this.mascara = false;

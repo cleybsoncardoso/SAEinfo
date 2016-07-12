@@ -21,16 +21,11 @@ export class OxigenacaoPage {
     this.nav = nav;
   }
 
-  cancel(){
-    this.nav.setRoot(PacientesPage);
+  //funcação executada após o carregamento do html
+  ionViewLoaded(){
+    this.setRespiracoes();
   }
-  slide(passar){
-    if(passar.deltaX>0){
-      this.nav.setRoot(AvaliacaoNeurologicaPage,{parametro: this.paciente});
-    }else if(passar.deltaX<0){
-      this.nav.setRoot(AvaliacaoCardiovascularPage,{parametro: this.paciente});
-    }
-  }
+
   toggleGroup(id){
     let grupo = document.getElementById("dados"+id);
     let icone = document.getElementById("icone"+id);
@@ -87,40 +82,82 @@ export class OxigenacaoPage {
     }
   }
 
+  /**Função que adiciona um campo na relação de Respiracao*/
+  addRespiracao() {
+    this.paciente.obsRespiracao++;
+    //guardando o div pai
+    let divPai = document.getElementById("respiracao");
+    //Criando o elemento DIV filho;
+    let divFilho = document.createElement("div");
+    //Definindo atributos ao campoFilho:
+    divFilho.setAttribute("id","resp"+this.paciente.obsRespiracao);
+    divFilho.setAttribute("class", "divitem4");
+    //Inserindo o elemento filho no pai:
+    divPai.appendChild(divFilho);
+    //Escrevendo algo no filho recém-criado:
+    document.getElementById("resp"+this.paciente.obsRespiracao).innerHTML = "<input class='divitem2' type='text' id='campoResp"+this.paciente.obsRespiracao+"' placeholder='Outros "+this.paciente.obsRespiracao+"'></input>";
+  }
 
-/**Função que adiciona um campo na relação de Respiracao*/
-addRespiracao() {
-  //guardando o div pai
-  let divPai = document.getElementById("respiracao");
-  //Criando o elemento DIV filho;
-  let divFilho = document.createElement("div");
-  //Definindo atributos ao campoFilho:
-  divFilho.setAttribute("id","resp"+this.paciente.obsRespiracao);
-  divFilho.setAttribute("class", "divitem4");
-  //Inserindo o elemento filho no pai:
-  divPai.appendChild(divFilho);
-  //Escrevendo algo no filho recém-criado:
-  document.getElementById("resp"+this.paciente.obsRespiracao).innerHTML = "<input class='divitem2' type='text' id='campoResp"+this.paciente.obsRespiracao+"'></input>";
-  this.paciente.obsRespiracao++;
-}
+  /**Função que Remove um campo na relação de Respiracao*/
+  removerRespiracao() {
+      //só remove se já ouver um campo adicionado
+      if(this.paciente.obsRespiracao > 0){
+        //Guardando o div pai
+        let divPai = document.getElementById("respiracao");
+        let text = "resp"+this.paciente.obsRespiracao;
+        //Guardando o ultimo div filho criado
+        let divFilho = document.getElementById(text);
+        //Removendo o ultimo DIV do nó-pai:
+        divPai.removeChild(divFilho);
+        this.paciente.obsRespiracao--;
+      }
+  }
 
-/**Função que Remove um campo na relação de Respiracao*/
-removerRespiracao() {
-    //só remove se já ouver um campo adicionado
-    if(this.paciente.obsRespiracao > 0){
-      this.paciente.obsRespiracao--;
-      //Guardando o div pai
-      let divPai = document.getElementById("respiracao");
-      let text = "resp"+this.paciente.obsRespiracao;
-      //Guardando o ultimo div filho criado
-      let divFilho = document.getElementById(text);
-      //Removendo o ultimo DIV do nó-pai:
-      divPai.removeChild(divFilho);
+  cancel(){
+    this.nav.setRoot(PacientesPage);
+  }
+
+  slide(passar){
+    if(passar.deltaX>0){
+      this.nav.setRoot(AvaliacaoNeurologicaPage,{parametro: this.paciente});
+    }else if(passar.deltaX<0){
+      this.getRespiracoes();
+      this.nav.setRoot(AvaliacaoCardiovascularPage,{parametro: this.paciente});
     }
-}
-toggleGroup2(id,status){
-  let grupo = document.getElementById("listRadio"+id);
-  grupo.style.display = status;
+  }
 
-}
+  getRespiracoes(){
+    let x=0;
+    while(x<this.paciente.obsRespiracao){
+      x++;
+      let respiracoes = document.getElementById("campoResp"+x);
+      this.paciente.respiracoes.push(respiracoes.value);
+    }
+  }
+
+  setRespiracoes(){
+    if(this.paciente.obsRespiracao>0){
+      let x = 0;
+      while(x<this.paciente.obsRespiracao){
+        x++;
+        //guardando o div pai
+        let divPai = document.getElementById("respiracao");
+        //Criando o elemento DIV filho;
+        let divFilho = document.createElement("div");
+        //Definindo atributos ao campoFilho:
+        divFilho.setAttribute("id","resp"+x);
+        divFilho.setAttribute("class", "divitem4");
+        //Inserindo o elemento filho no pai:
+        divPai.appendChild(divFilho);
+        //Escrevendo algo no filho recém-criado:
+        document.getElementById("resp"+x).innerHTML = "<input class='divitem2' type='text' id='campoAlergia"+x+"' value='"+ this.paciente.respiracoes[x-1] +"'></input>";
+      }
+    }
+  }
+
+  toggleGroup2(id,status){
+    let grupo = document.getElementById("listRadio"+id);
+    grupo.style.display = status;
+
+  }
 }

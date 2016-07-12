@@ -21,8 +21,15 @@ export class EntrevistaPage {
     this.paciente = params.get("parametro");
     this.nav = nav;
     this.myIcons = ["md-add"];
-
   }
+
+  //funcação executada após o carregamento do html
+  ionViewLoaded(){
+    this.setAntecedentes();
+    this.setAlergias();
+    this.setVacinas();
+  }
+
   addAntecedente() {
     //incrementando a quantidade de antecedentes
     this.paciente.qtdeAntecedentes++;
@@ -163,7 +170,64 @@ export class EntrevistaPage {
       let vacinas = document.getElementById("campoVacina"+x);
       this.paciente.vacinas.push(vacinas.value);
     }
-    console.log(this.paciente.vacinas);
+  }
+
+  setAntecedentes(){
+    if(this.paciente.qtdeAntecedentes>0){
+      let x = 0;
+      while(x<this.paciente.qtdeAntecedentes){
+        x++;
+        //guardando o div pai
+        let divPai = document.getElementById("outrosAntecetendes");
+        //Criando o elemento DIV filho;
+        let divFilho = document.createElement("div");
+        //Definindo atributos ao campoFilho:
+        divFilho.setAttribute("id","antecedente"+x);
+        divFilho.setAttribute("class", "divitem4");
+        //Inserindo o elemento filho no pai:
+        divPai.appendChild(divFilho);
+        //Escrevendo algo no filho recém-criado:
+        document.getElementById("antecedente"+x).innerHTML = "<input class='divitem2' type='text' id='campoAntecedente"+x+"' value='"+this.paciente.antecedentes[x-1]+"'></input>";
+      }
+    }
+  }
+  setAlergias(){
+    if(this.paciente.qtdeAlergias>0){
+      let x = 0;
+      while(x<this.paciente.qtdeAlergias){
+        x++;
+        //guardando o div pai
+        let divPai = document.getElementById("alergias");
+        //Criando o elemento DIV filho;
+        let divFilho = document.createElement("div");
+        //Definindo atributos ao campoFilho:
+        divFilho.setAttribute("id","alergia"+x);
+        divFilho.setAttribute("class", "divitem4");
+        //Inserindo o elemento filho no pai:
+        divPai.appendChild(divFilho);
+        //Escrevendo algo no filho recém-criado:
+        document.getElementById("alergia"+x).innerHTML = "<input class='divitem2' type='text' id='campoAlergia"+x+"' value='"+ this.paciente.alergias[x-1] +"'></input>";
+      }
+    }
+  }
+  setVacinas(){
+    if(this.paciente.qtdeVacinas>0){
+      let x = 0;
+      while(x<this.paciente.qtdeVacinas){
+        x++;
+        //guardando o div pai
+        let divPai = document.getElementById("vacinas");
+        //Criando o elemento DIV filho;
+        let divFilho = document.createElement("div");
+        //Definindo atributos ao campoFilho:
+        divFilho.setAttribute("id","vacina"+x);
+        divFilho.setAttribute("class", "divitem4");
+        //Inserindo o elemento filho no pai:
+        divPai.appendChild(divFilho);
+        //Escrevendo algo no filho recém-criado:
+        document.getElementById("vacina"+x).innerHTML = "<input class='divitem2' type='text' id='campoVacina"+x+"' value='"+ this.paciente.vacinas[x-1] +"'></input>";
+      }
+    }
   }
 
   toggleGroup(id){
