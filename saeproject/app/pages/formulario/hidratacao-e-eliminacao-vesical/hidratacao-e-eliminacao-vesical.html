@@ -11,14 +11,14 @@
   <ion-card class="mycard">
     <ion-card-header class="cardtitulo"> Hidratação e Eliminação Vesical </ion-card-header>
     <ion-list-header class="titulolista" (click)="toggleGroup(0)">Turgidez da pele <p class="icone" id="icone0" style="float: right">+</p></ion-list-header>
-    <ion-list no-lines class="lista" id="dados0" class="subgrupo">
+    <ion-list radio-group no-lines [(ngModel)]="paciente.turgidezDaPele" class="lista" id="dados0" class="subgrupo">
       <ion-item>
         <ion-label class="label">Preservada </ion-label>
-        <ion-checkbox></ion-checkbox>
+        <ion-radio value="preservada"></ion-radio>
       </ion-item>
       <ion-item>
         <ion-label class="label">Diminuída </ion-label>
-        <ion-checkbox></ion-checkbox>
+        <ion-radio value="diminuida"></ion-radio>
       </ion-item>
     </ion-list>
     <ion-list-header class="titulolista" (click)="toggleGroup(1)">Eliminação urinária <p class="icone" id="icone1" style="float: right">+</p></ion-list-header>

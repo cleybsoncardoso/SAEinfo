@@ -79,5 +79,35 @@ export class CadastroPaciente{
     this.presencaoDeTosseExpectoracao = false;
     this.glasgowMenu = false;
     this.aspiracao ;
+    this.aspiracaoQuantidade = "";
+    this.aspiracaoCaracteristica = "";
+    this.drenagemToracica ;
+    this.drenagemToracicaDTE = false;
+    this.drenagemToracicaDTD = false;
+    this.drenagemToracicaQuantidade = "";
+    this.drenagemToracicaCaracteristica = "";
+    this.mamaOutros = "";
+    this.mamaSemAltecacoes = false;
+    this.mamaNodulos = false;
+    this.mamaDor = false;
+    this.mamaAssimetrica = false;
+    this.avaliacaoCardiovascularFC = "";
+    this.avaliacaoCardiovascularPA = "";
+    this.avaliacaoCardiovascularPVC = "";
+    this.avaliacaoCardiovascularPAM = "";
+    this.pulsoRegular = false;
+    this.pulsoIrregular = false;
+    this.pulsoPalpavel = false;
+    this.pulsoImpalpavel = false;
+    this.pulsoCheio = false;
+    this.pulsoFiliforme = false;
+    this.presencaDeEdemaNao = false;
+    this.presencaDeEdemaSim = false;
+    this.presencaDeEdemaPes = false;
+    this.presencaDeEdemaMMII = false;
+    this.presencaDeEdemaMMSS = false;
+    this.presencaDeEdemaAnasarca = false;
+    this.turgidezDaPele ;
+
   }
 }

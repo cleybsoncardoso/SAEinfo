@@ -1,4 +1,4 @@
-import {NavController, Page} from 'ionic-angular';
+import {NavController, Page, NavParams} from 'ionic-angular';
 import {OxigenacaoPage} from '../oxigenacao/oxigenacao';
 import {PacientesPage} from '../../pacientes/pacientes';
 import {HidratacaoEEliminacaoVesicalPage} from '../hidratacao-e-eliminacao-vesical/hidratacao-e-eliminacao-vesical';
@@ -8,10 +8,11 @@ import {HidratacaoEEliminacaoVesicalPage} from '../hidratacao-e-eliminacao-vesic
 })
 export class AvaliacaoCardiovascularPage {
   static get parameters() {
-    return [[NavController]];
+    return [[NavParams],[NavController]];
   }
 
-  constructor(nav) {
+  constructor(params,nav) {
+    this.paciente = params.get("parametro");
     this.nav = nav;
   }
   cancel(){
@@ -19,9 +20,9 @@ export class AvaliacaoCardiovascularPage {
   }
   slide(passar){
     if(passar.deltaX>0){
-      this.nav.setRoot(OxigenacaoPage);
+      this.nav.setRoot(OxigenacaoPage,{parametro: this.paciente});
     }else if(passar.deltaX<0){
-      this.nav.setRoot(HidratacaoEEliminacaoVesicalPage);
+      this.nav.setRoot(HidratacaoEEliminacaoVesicalPage,{parametro: this.paciente});
     }
 }
 }

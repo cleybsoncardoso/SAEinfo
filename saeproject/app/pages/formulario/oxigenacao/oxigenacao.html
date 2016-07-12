@@ -193,52 +193,53 @@
               </ion-col>
             </ion-row>
           </ion-grid>
-
-          <ion-list no-lines id="listRadio0" style="display: none" >
-            <ion-row style="margin: 0px">
-              <ion-col>
-                <ion-item>
-                  <ion-label style="margin: 0px" floating>quantidade</ion-label>
-                  <ion-input class="inputgrupo" type="number"></ion-input>
-                </ion-item>
-              </ion-col>
-              <ion-col>
-                <ion-item>
-                  <ion-label style="margin: 0px" floating>característica</ion-label>
-                  <ion-input class="inputgrupo" type="text"></ion-input>
-                </ion-item>
-              </ion-col>
-            </ion-row>
-          </ion-list>
+        </ion-list>
+        <ion-list no-lines id="listRadio0" style="display: none" >
+          <ion-row style="margin: 0px">
+            <ion-col>
+              <ion-item>
+                <ion-label style="margin: 0px" floating>quantidade</ion-label>
+                <ion-input class="inputgrupo" [(ngModel)]="paciente.aspiracaoQuantidade" type="number"></ion-input>
+              </ion-item>
+            </ion-col>
+            <ion-col>
+              <ion-item>
+                <ion-label style="margin: 0px" floating>característica</ion-label>
+                <ion-input class="inputgrupo" [(ngModel)]="paciente.aspiracaoCaracteristica" type="text"></ion-input>
+              </ion-item>
+            </ion-col>
+          </ion-row>
         </ion-list>
         <ion-list-header class="titulolista" (click)="toggleGroup(4)">Drenagem torácica <p class="icone" id="icone4" style="float: right">+</p></ion-list-header>
-        <ion-list radio-group class="lista" id="dados4">
+        <ion-list class="lista" id="dados4">
+          <ion-list radio-group [(ngModel)]="paciente.drenagemToracica">
             <ion-row>
               <ion-col>
                 <ion-item>
                   <ion-label class="label">Sim</ion-label>
-                  <ion-radio name="aspiracao" value="sim" (click)="toggleGroup2(1,'block')"></ion-radio>
+                  <ion-radio value="sim" (click)="toggleGroup2(1,'block')"></ion-radio>
                 </ion-item>
               </ion-col>
               <ion-col>
                 <ion-item>
                   <ion-label class="label">Não</ion-label>
-                  <ion-radio name="aspiracao" value="nao" (click)="toggleGroup2(1,'none')"></ion-radio>
+                  <ion-radio value="nao" (click)="toggleGroup2(1,'none')"></ion-radio>
               </ion-item>
             </ion-col>
           </ion-row>
+        </ion-list>
         <ion-list no-lines id="listRadio1" style="display: none">
           <ion-row style="margin: 0px">
             <ion-col>
               <ion-item style="margin: 0px">
                 <ion-label style="margin: 0px" floating>quantidade</ion-label>
-                <ion-input class="inputgrupo" type="number"></ion-input>
+                <ion-input class="inputgrupo" [(ngModel)]="paciente.drenagemToracicaQuantidade" type="number"></ion-input>
               </ion-item>
             </ion-col>
             <ion-col>
               <ion-item>
                 <ion-label  style="margin: 0px" floating>característica</ion-label>
-                <ion-input class="inputgrupo" type="text"></ion-input>
+                <ion-input class="inputgrupo" [(ngModel)]="paciente.drenagemToracicaCaracteristica" type="text"></ion-input>
               </ion-item>
             </ion-col>
           </ion-row>
@@ -246,11 +247,11 @@
           <ion-list no-lines  style="margin: 0px; padding: 0px;">
             <ion-item>
               <ion-label class="label">DTE</ion-label>
-              <ion-checkbox></ion-checkbox>
+              <ion-checkbox [(ngModel)]="paciente.drenagemToracicaDTE"></ion-checkbox>
             </ion-item>
             <ion-item>
               <ion-label class="label">DTD</ion-label>
-              <ion-checkbox></ion-checkbox>
+              <ion-checkbox [(ngModel)]="paciente.drenagemToracicaDTD"></ion-checkbox>
             </ion-item>
           </ion-list>
         </ion-list>
@@ -259,23 +260,23 @@
       <ion-list no-lines class="lista" id="dados5">
         <ion-item>
           <ion-label class="label">Sem alterações</ion-label>
-          <ion-checkbox></ion-checkbox>
+          <ion-checkbox [(ngModel)]="paciente.mamaSemAltecacoes"></ion-checkbox>
         </ion-item>
         <ion-item>
           <ion-label class="label">Nódulos</ion-label>
-          <ion-checkbox></ion-checkbox>
+          <ion-checkbox [(ngModel)]="paciente.mamaNodulos"></ion-checkbox>
         </ion-item>
         <ion-item>
           <ion-label class="label">Dor</ion-label>
-          <ion-checkbox></ion-checkbox>
+          <ion-checkbox [(ngModel)]="paciente.mamaDor"></ion-checkbox>
         </ion-item>
         <ion-item>
           <ion-label class="label">Assimétrica</ion-label>
-          <ion-checkbox></ion-checkbox>
+          <ion-checkbox [(ngModel)]="paciente.mamaAssimetrica"></ion-checkbox>
         </ion-item>
         <ion-item>
           <ion-label floating>Outros</ion-label>
-          <ion-input class="inputgrupo" type="text"></ion-input>
+          <ion-input class="inputgrupo" [(ngModel)]="paciente.mamaOutros" type="text"></ion-input>
         </ion-item>
       </ion-list>
   </ion-card>

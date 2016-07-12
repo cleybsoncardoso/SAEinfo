@@ -28,7 +28,7 @@ export class OxigenacaoPage {
     if(passar.deltaX>0){
       this.nav.setRoot(AvaliacaoNeurologicaPage,{parametro: this.paciente});
     }else if(passar.deltaX<0){
-      this.nav.setRoot(AvaliacaoCardiovascularPage);
+      this.nav.setRoot(AvaliacaoCardiovascularPage,{parametro: this.paciente});
     }
   }
   toggleGroup(id){
@@ -36,6 +36,14 @@ export class OxigenacaoPage {
     let icone = document.getElementById("icone"+id);
     if(id==2){
       this.verificaExpetoracao();
+    }
+    if(id==3 && this.paciente.aspiracao=="sim"){
+        let grupo = document.getElementById("listRadio0");
+        grupo.style.display = "block";
+    }
+    if(id==4 && this.paciente.drenagemToracica=="sim"){
+        let grupo = document.getElementById("listRadio1");
+        grupo.style.display = "block";
     }
     this.toggleClose(id);
     if(grupo.style.display == "block"){
@@ -111,7 +119,6 @@ removerRespiracao() {
     }
 }
 toggleGroup2(id,status){
-  console.log(this.paciente.aspiracao);
   let grupo = document.getElementById("listRadio"+id);
   grupo.style.display = status;
 
