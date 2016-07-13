@@ -1,4 +1,4 @@
-import {NavController, Page} from 'ionic-angular';
+import {NavController, Page, NavParams} from 'ionic-angular';
 import {PacientesPage} from '../../pacientes/pacientes';
 import {AlimentacaoEEliminacaoIntestinalPage} from '../alimentacao-e-eliminacao-intestinal/alimentacao-e-eliminacao-intestinal';
 import {SegurancaFisicaPage} from '../seguranca-fisica/seguranca-fisica';
@@ -9,10 +9,11 @@ import {SegurancaFisicaPage} from '../seguranca-fisica/seguranca-fisica';
 
 export class AspectosCutaneoMucosaPage {
   static get parameters() {
-    return [[NavController]];
+    return [[NavParams],[NavController]];
   }
 
-  constructor(nav) {
+  constructor(params,nav) {
+    this.paciente = params.get("parametro");
     this.nav = nav;
   }
 
@@ -22,9 +23,9 @@ export class AspectosCutaneoMucosaPage {
 
   slide(passar){
     if(passar.deltaX>0){
-      this.nav.setRoot(AlimentacaoEEliminacaoIntestinalPage);
+      this.nav.setRoot(AlimentacaoEEliminacaoIntestinalPage,{parametro: this.paciente});
     }else if(passar.deltaX<0){
-      this.nav.setRoot(SegurancaFisicaPage);
+      this.nav.setRoot(SegurancaFisicaPage,{parametro: this.paciente});
     }
   }
 

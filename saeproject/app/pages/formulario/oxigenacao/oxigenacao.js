@@ -63,8 +63,6 @@ export class OxigenacaoPage {
     let grupo = document.getElementById("expetoracao");
     if(this.paciente.presencaoDeTosseExpectoracao == true){
       grupo.style.display = "block";
-    }else{
-      grupo.style.display = "none";
     }
   }
 

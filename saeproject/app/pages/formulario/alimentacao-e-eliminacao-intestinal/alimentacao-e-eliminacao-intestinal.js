@@ -19,6 +19,13 @@ export class AlimentacaoEEliminacaoIntestinalPage {
   toggleGroup(id){
     let grupo = document.getElementById("dados"+id);
     let icone = document.getElementById("icone"+id);
+    if(id==2){
+      this.verificaVomito();
+    }
+    if(id==5 && this.paciente.ostomia=="sim"){
+      let grupo = document.getElementById("listRadio0");
+      grupo.style.display = "block";
+    }
     this.toggleClose(id);
     if(grupo.style.display == "block"){
       grupo.style.display = "none";
@@ -28,6 +35,14 @@ export class AlimentacaoEEliminacaoIntestinalPage {
       icone.innerHTML = '-';
     }
   }
+
+  verificaVomito(){
+    let grupo = document.getElementById("vomito");
+    if(this.paciente.presencaoDeVomito == true){
+      grupo.style.display = "block";
+    }
+  }
+
   toggleGroup2(id,status){
 
     let grupo = document.getElementById("listRadio"+id);

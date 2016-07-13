@@ -124,6 +124,33 @@ export class CadastroPaciente{
     this.caracteristicasPoliuria = false;
     this.caracteristicasHematuria = false;
     this.caracteristicasOutros = "";
+    this.tipoDeDieta = "";
+    this.glicemia = "";
+    this.apetite;
+    this.viasDeAdministracaoOral = false;
+    this.viasDeAdministracaoSNG = false;
+    this.viasDeAdministracaoSNE = false;
+    this.viasDeAdministracaoParenteral = false;
+    this.viasDeAdministracaoOutros = "";
+    this.presencaoDeNausea = false;
+    this.presencaoDeVomitoQuantidade = "";
+    this.presencaoDeVomitoCaracteristica = "";
+    this.presencaoDeVomito = false;
+    this.abdomePlano = false;
+    this.abdomeGloboso = false;
+    this.abdomeDistendido = false;
+    this.abdomeDolorosoAPalpacao = false;
+    this.abdomeOutros = "";
+    this.rhaPresentes = false;
+    this.rhaAusentes = false;
+    this.rhaDiminuido = false;
+    this.rhaAumentado = false;
+    this.ostomia ;
+    this.ostomiaLocal = "";
+    this.ostomiaCaracteristica = "";
+    this.eliminacaoIntestinal ;
+    this.eliminacaoIntestinalFrequencia = "";
+    this.eliminacaoIntestinalOutros = "";
 
   }
 }
