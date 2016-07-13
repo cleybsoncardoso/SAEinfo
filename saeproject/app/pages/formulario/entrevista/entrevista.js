@@ -150,44 +150,46 @@ export class EntrevistaPage {
 
   getAntecedentes(){
     let x=0;
-    let list = [];
+    let cont = 0;
+    this.paciente.antecedentes = [];
     while(x<this.paciente.qtdeAntecedentes){
       x++;
       let antecedentes = document.getElementById("campoAntecedente"+x);
-<<<<<<< HEAD
       if(antecedentes.value!=""){
         this.paciente.antecedentes.push(antecedentes.value);
-      }else{
-        this.paciente.qtdeAntecedentes--;
+        cont++;
       }
-    //  console.log(this.paciente.antecedentes[(this.paciente.antecedentes.length-1)]);
-=======
-      list.push(antecedentes.value);
->>>>>>> 20ba409429136f0b890e3df604343149c8751344
     }
-    this.paciente.antecedentes= list;
+    this.paciente.qtdeAntecedentes=cont;
   }
-
   getAlergias(){
     let x=0;
-    let list = [];
+    let cont = 0;
+    this.paciente.alergias = [];
     while(x<this.paciente.qtdeAlergias){
       x++;
       let alergias = document.getElementById("campoAlergia"+x);
-      list.push(alergias.value);
+      if(alergias.value!=""){
+        this.paciente.alergias.push(alergias.value);
+        cont++;
+      }
     }
-    this.paciente.alergias = list;
+    this.paciente.qtdeAlergias=cont;
   }
 
   getVacinas(){
     let x=0;
-    let list = [];
+    let cont = 0;
+    this.paciente.vacinas = [];
     while(x<this.paciente.qtdeVacinas){
       x++;
       let vacinas = document.getElementById("campoVacina"+x);
-      list.push(vacinas.value);
+      if(vacinas.value!=""){
+        this.paciente.vacinas.push(vacinas.value);
+        cont++;
+      }
     }
-    this.paciente.vacinas = list;
+    this.paciente.qtdeVacinas=cont;
   }
 
   setAntecedentes(){
