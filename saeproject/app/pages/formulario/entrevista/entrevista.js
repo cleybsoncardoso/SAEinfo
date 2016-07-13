@@ -136,6 +136,9 @@ export class EntrevistaPage {
   //funcao realizada quando o usuario desliza o dedo na tela
   slide(passar){
     if(passar.deltaX>0){
+      this.getAntecedentes();
+      this.getAlergias();
+      this.getVacinas();
       this.nav.setRoot(IdentificacaoPage,{parametro: this.paciente});
     }else if(passar.deltaX<0){
       this.getAntecedentes();
@@ -150,7 +153,12 @@ export class EntrevistaPage {
     while(x<this.paciente.qtdeAntecedentes){
       x++;
       let antecedentes = document.getElementById("campoAntecedente"+x);
-      this.paciente.antecedentes.push(antecedentes.value);
+      if(antecedentes.value!=""){
+        this.paciente.antecedentes.push(antecedentes.value);
+      }else{
+        this.paciente.qtdeAntecedentes--;
+      }
+    //  console.log(this.paciente.antecedentes[(this.paciente.antecedentes.length-1)]);
     }
   }
 
@@ -211,6 +219,7 @@ export class EntrevistaPage {
     }
   }
   setVacinas(){
+    console.log(this.paciente.qtdeVacinas)
     if(this.paciente.qtdeVacinas>0){
       let x = 0;
       while(x<this.paciente.qtdeVacinas){
