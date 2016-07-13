@@ -26,9 +26,9 @@ export class HidratacaoEEliminacaoVesicalPage {
   }
   slide(passar){
     if(passar.deltaX>0){
-      this.nav.setRoot(AvaliacaoCardiovascularPage);
+      this.nav.setRoot(AvaliacaoCardiovascularPage,{parametro: this.paciente});
     }else if(passar.deltaX<0){
-      this.nav.setRoot(AlimentacaoEEliminacaoIntestinalPage);
+      this.nav.setRoot(AlimentacaoEEliminacaoIntestinalPage,{parametro: this.paciente});
     }
 }
   toggleGroup(id){
@@ -49,7 +49,6 @@ export class HidratacaoEEliminacaoVesicalPage {
     let grupo = document.getElementById("dados"+i);
     let icone = document.getElementById("icone"+i);
     while(grupo!=null){
-      console.log(i);
       if(i!=id){
         grupo.style.display = "none";
         icone.innerHTML = '+';

@@ -24,5 +24,5 @@ export class AvaliacaoCardiovascularPage {
     }else if(passar.deltaX<0){
       this.nav.setRoot(HidratacaoEEliminacaoVesicalPage,{parametro: this.paciente});
     }
-}
+  }
 }

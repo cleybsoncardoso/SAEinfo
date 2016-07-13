@@ -2,12 +2,7 @@ import {NavController, Page, NavParams} from 'ionic-angular';
 import {AvaliacaoNeurologicaPage} from '../avaliacao-neurologica/avaliacao-neurologica';
 import {PacientesPage} from '../../pacientes/pacientes';
 import {AvaliacaoCardiovascularPage} from '../avaliacao-cardiovascular/avaliacao-cardiovascular';
-/*
-  Generated class for the OxigenacaoPage page.
 
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
-*/
 @Page({
   templateUrl: 'build/pages/formulario/oxigenacao/oxigenacao.html',
 })
@@ -119,6 +114,7 @@ export class OxigenacaoPage {
 
   slide(passar){
     if(passar.deltaX>0){
+      this.getRespiracoes();
       this.nav.setRoot(AvaliacaoNeurologicaPage,{parametro: this.paciente});
     }else if(passar.deltaX<0){
       this.getRespiracoes();
@@ -128,11 +124,17 @@ export class OxigenacaoPage {
 
   getRespiracoes(){
     let x=0;
+    let cont = 0;
+    this.paciente.respiracoes = [];
     while(x<this.paciente.obsRespiracao){
       x++;
       let respiracoes = document.getElementById("campoResp"+x);
-      this.paciente.respiracoes.push(respiracoes.value);
+      if(respiracoes.value!=""){
+        this.paciente.respiracoes.push(respiracoes.value);
+        cont++;
+      }
     }
+    this.paciente.obsRespiracao=cont;
   }
 
   setRespiracoes(){

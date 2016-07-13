@@ -1,4 +1,4 @@
-import {Page, NavController} from 'ionic-angular';
+import {Page, NavController, NavParams} from 'ionic-angular';
 import {HidratacaoEEliminacaoVesicalPage} from '../hidratacao-e-eliminacao-vesical/hidratacao-e-eliminacao-vesical';
 import {AspectosCutaneoMucosaPage} from '../aspectos-cutaneo-mucosa/aspectos-cutaneo-mucosa';
 import {PacientesPage} from '../../pacientes/pacientes';
@@ -8,10 +8,11 @@ import {PacientesPage} from '../../pacientes/pacientes';
 })
 export class AlimentacaoEEliminacaoIntestinalPage {
   static get parameters() {
-    return [[NavController]];
+    return [[NavParams],[NavController]];
   }
 
-  constructor(nav) {
+  constructor(params,nav) {
+    this.paciente = params.get("parametro");
     this.nav = nav;
   }
 
@@ -38,7 +39,6 @@ export class AlimentacaoEEliminacaoIntestinalPage {
     let grupo = document.getElementById("dados"+i);
     let icone = document.getElementById("icone"+i);
     while(grupo!=null){
-      console.log(i);
       if(i!=id){
         grupo.style.display = "none";
         icone.innerHTML = '+';
@@ -60,9 +60,9 @@ export class AlimentacaoEEliminacaoIntestinalPage {
 
   slide(passar){
     if(passar.deltaX>0){
-      this.nav.setRoot(HidratacaoEEliminacaoVesicalPage);
+      this.nav.setRoot(HidratacaoEEliminacaoVesicalPage,{parametro: this.paciente});
     }else if(passar.deltaX<0){
-      this.nav.setRoot(AspectosCutaneoMucosaPage);
+      this.nav.setRoot(AspectosCutaneoMucosaPage,{parametro: this.paciente});
     }
   }
 

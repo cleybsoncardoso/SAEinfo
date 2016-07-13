@@ -112,6 +112,18 @@ export class CadastroPaciente{
     this.presencaDeEdemaMMSS = false;
     this.presencaDeEdemaAnasarca = false;
     this.turgidezDaPele ;
+    this.eliminacaoUrinariaVolume = "";
+    this.eliminacaoUrinariaEspontanea = false;
+    this.eliminacaoUrinariaRetencao = false;
+    this.eliminacaoUrinariaIncontinencia = false;
+    this.eliminacaoUrinariaSVD = false;
+    this.eliminacaoUrinariaDispositivoUrinario = false;
+    this.caracteristicasDisuria = false;
+    this.caracteristicasOliguria = false;
+    this.caracteristicasAnuria = false;
+    this.caracteristicasPoliuria = false;
+    this.caracteristicasHematuria = false;
+    this.caracteristicasOutros = "";
 
   }
 }
