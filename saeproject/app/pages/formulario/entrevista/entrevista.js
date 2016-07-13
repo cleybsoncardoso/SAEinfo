@@ -182,7 +182,6 @@ export class EntrevistaPage {
   }
 
   setAntecedentes(){
-    console.log(this.paciente.antecedentes);
     if(this.paciente.qtdeAntecedentes>0){
       let x = 0;
       while(x<this.paciente.qtdeAntecedentes){
