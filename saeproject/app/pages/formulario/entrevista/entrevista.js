@@ -136,6 +136,9 @@ export class EntrevistaPage {
   //funcao realizada quando o usuario desliza o dedo na tela
   slide(passar){
     if(passar.deltaX>0){
+      this.getAntecedentes();
+      this.getAlergias();
+      this.getVacinas();
       this.nav.setRoot(IdentificacaoPage,{parametro: this.paciente});
     }else if(passar.deltaX<0){
       this.getAntecedentes();
@@ -147,32 +150,39 @@ export class EntrevistaPage {
 
   getAntecedentes(){
     let x=0;
+    let list = [];
     while(x<this.paciente.qtdeAntecedentes){
       x++;
       let antecedentes = document.getElementById("campoAntecedente"+x);
-      this.paciente.antecedentes.push(antecedentes.value);
+      list.push(antecedentes.value);
     }
+    this.paciente.antecedentes= list;
   }
 
   getAlergias(){
     let x=0;
+    let list = [];
     while(x<this.paciente.qtdeAlergias){
       x++;
       let alergias = document.getElementById("campoAlergia"+x);
-      this.paciente.alergias.push(alergias.value);
+      list.push(alergias.value);
     }
+    this.paciente.alergias = list;
   }
 
   getVacinas(){
     let x=0;
+    let list = [];
     while(x<this.paciente.qtdeVacinas){
       x++;
       let vacinas = document.getElementById("campoVacina"+x);
-      this.paciente.vacinas.push(vacinas.value);
+      list.push(vacinas.value);
     }
+    this.paciente.vacinas = list;
   }
 
   setAntecedentes(){
+    console.log(this.paciente.antecedentes);
     if(this.paciente.qtdeAntecedentes>0){
       let x = 0;
       while(x<this.paciente.qtdeAntecedentes){
