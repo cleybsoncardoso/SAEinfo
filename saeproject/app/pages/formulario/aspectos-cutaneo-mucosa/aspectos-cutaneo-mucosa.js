@@ -32,6 +32,21 @@ export class AspectosCutaneoMucosaPage {
   toggleGroup(id){
     let grupo = document.getElementById("dados"+id);
     let icone = document.getElementById("icone"+id);
+    if(id==2 && this.paciente.avp=="sim"){
+        let grupo = document.getElementById("listRadio0");
+        grupo.style.display = "block";
+    }
+    if(id==5){
+      this.verificaLesoes();
+    }
+    if(id==3 && this.paciente.cvc=="sim"){
+        let grupo = document.getElementById("listRadio1");
+        grupo.style.display = "block";
+    }
+    if(id==4 && this.paciente.dreno=="sim"){
+        let grupo = document.getElementById("listRadio2");
+        grupo.style.display = "block";
+    }
     this.toggleClose(id);
     if(grupo.style.display == "block"){
       grupo.style.display = "none";
@@ -47,7 +62,6 @@ export class AspectosCutaneoMucosaPage {
     let grupo = document.getElementById("dados"+i);
     let icone = document.getElementById("icone"+i);
     while(grupo!=null){
-      console.log(i);
       if(i!=id){
         grupo.style.display = "none";
         icone.innerHTML = '+';
@@ -57,6 +71,14 @@ export class AspectosCutaneoMucosaPage {
       grupo = document.getElementById("dados"+i);
     }
   }
+
+  verificaLesoes(){
+    let grupo = document.getElementById("lesoes");
+    if(this.paciente.genitaliaLesoes == true){
+      grupo.style.display = "block";
+    }
+  }
+
   toggleLesoes(){
     let grupo = document.getElementById("lesoes");
     if(grupo.style.display == "block"){

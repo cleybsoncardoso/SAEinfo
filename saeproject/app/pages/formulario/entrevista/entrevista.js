@@ -122,7 +122,6 @@ export class EntrevistaPage {
         //guardando valor do input
         let text2 = "campoVacina"+this.paciente.qtdeVacinas;
         let input = document.getElementById(text2);
-        console.log(input.value);
         //Removendo o ultimo DIV do nó-pai:
         divPai.removeChild(divFilho);
         this.paciente.qtdeVacinas--;
@@ -231,7 +230,6 @@ export class EntrevistaPage {
     }
   }
   setVacinas(){
-    console.log(this.paciente.qtdeVacinas)
     if(this.paciente.qtdeVacinas>0){
       let x = 0;
       while(x<this.paciente.qtdeVacinas){

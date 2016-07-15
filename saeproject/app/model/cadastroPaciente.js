@@ -27,6 +27,7 @@ export class CadastroPaciente{
     this.alergias = [];
     this.qtdeVacinas = 0;
     this.vacinas = [];
+    this.observacao = [];
     this.alerta = false;
     this.letargico = false;
     this.obnubilado = false;
@@ -49,6 +50,7 @@ export class CadastroPaciente{
     this.movimentosLentos = false;
     this.movimentosInvoluntarios = false;
     this.obsRespiracao = 0;
+    this.qtdeObs = 0;
     this.respiracoes= [];
     this.espontanea = false;
     this.cateter = false;
@@ -151,6 +153,40 @@ export class CadastroPaciente{
     this.eliminacaoIntestinal ;
     this.eliminacaoIntestinalFrequencia = "";
     this.eliminacaoIntestinalOutros = "";
+    this.aspectosCutaneoMucosaCianose = false;
+    this.aspectosCutaneoMucosaIctericia = false;
+    this.aspectosCutaneoMucosaPalidez = false;
+    this.aspectosCutaneoMucosaPrurido = false;
+    this.aspectosCutaneoMucosaPetequias = false;
+    this.aspectosCutaneoMucosaCorado = false;
+    this.aspectosCutaneoMucosaHipocorado = false;
+    this.aspectosCutaneoMucosaHipercorado = false;
+    this.aspectosCutaneoMucosaEquimoses = false;
+    this.aspectosCutaneoMucosaHematomas = false;
+    this.aspectosCutaneoMucosaEscoriacoes = false;
+    this.aspectosCutaneoMucosaOutros = "";
+    this.aspectosCutaneoMucosaTemperatura = "";
+    this.olhosEdemaDeConjuntiva = false;
+    this.olhosIctericia = false;
+    this.olhosOutros = "";
+    this.avp;
+    this.avpLocal = "";
+    this.avpTempoDePermanencia = "";
+    this.cvc;
+    this.cvcLocal = "";
+    this.cvcTempoDePermanencia = "";
+    this.dreno;
+    this.drenoCaracteristicas = "";
+    this.drenoTipoDeDreno = "";
+    this.genitaliaSemAnormalidades = false;
+    this.genitaliaSecrecao = false;
+    this.genitaliaLesoes = false;
+    this.genitaliaLesoesCaracteristicas = "";
+    this.genitaliaOutros = "";
+    this.segurancaFisica;
+    this.riscoParaQueda;
+    this.score = "";
+
 
   }
 }
