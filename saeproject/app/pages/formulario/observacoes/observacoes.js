@@ -14,86 +14,91 @@ export class ObservacoesPage {
     this.paciente = params.get("parametro");
     this.nav = nav;
   }
-  cancel(){
-    this.nav.setRoot(PacientesPage);
-  }
-  slide(passar){
-    if(passar.deltaX>0){
-      this.getObservacoes();
-      this.nav.setRoot(SegurancaFisicaPage,{parametro: this.paciente});
-    }
-  }
 
+  //funcação executada após o carregamento do html
   ionViewLoaded(){
-    this.setObservacoes();
+    this.setObservacao();
   }
 
-  addObservacoes() {
-    this.paciente.qtdeObs++;
+  addObservacao() {
+    //incrementa a quantidade de observacoes
+    this.paciente.qtdeObservacoes++;
     //guardando o div pai
     let divPai = document.getElementById("observacoes");
     //Criando o elemento DIV filho;
     let divFilho = document.createElement("div");
     //Definindo atributos ao campoFilho:
-    divFilho.setAttribute("id","observacoes"+this.paciente.qtdeObs);
+    divFilho.setAttribute("id","observacao"+this.paciente.qtdeObservacoes);
     divFilho.setAttribute("class", "divitem4");
     //Inserindo o elemento filho no pai:
     divPai.appendChild(divFilho);
     //Escrevendo algo no filho recém-criado:
-    document.getElementById("observacoes"+this.paciente.qtdeObs).innerHTML = "<input class='divitem2' type='text' id='campoObservacoes"+this.paciente.qtdeObs+"' placeholder='observação "+this.paciente.qtdeObs+"'></input>";
+    document.getElementById("observacao"+this.paciente.qtdeObservacoes).innerHTML = "<input class='divitem2' type='text' id='campoObservacao"+this.paciente.qtdeObservacoes+"' placeholder='observação "+this.paciente.qtdeObservacoes+"'></input>";
 
   }
 
   /**Função que Remove um campo na relação de observacoes*/
-  removerObservacoes() {
+  removerObservacao() {
       //só remove se já ouver um campo adicionado
-      if(this.paciente.qtdeObs > 0){
+      if(this.paciente.qtdeObservacoes > 0){
         //Guardando o div pai
         let divPai = document.getElementById("observacoes");
-        let text = "observacoes"+this.paciente.qtdeObs;
+        let text = "observacao"+this.paciente.qtdeObservacoes;
         //Guardando o ultimo div filho criado
         let divFilho = document.getElementById(text);
         //Removendo o ultimo DIV do nó-pai:
-        let text2 = "campoObservacoes"+this.paciente.qtdeObs;
+        let text2 = "campoObservacao"+this.paciente.qtdeObservacoes;
         let input = document.getElementById(text2);
+        //removendo o ultimo div do no-pai
         divPai.removeChild(divFilho);
-        this.paciente.qtdeObs--;
+        this.paciente.qtdeObservacoes--;
       }
   }
 
-  getObservacoes(){
+  getObservacao(){
     let x=0;
     let cont = 0;
-    this.paciente.observacao = [];
-    while(x<this.paciente.qtdeObs){
+    this.paciente.observacoes = [];
+    while(x<this.paciente.qtdeObservacoes){
       x++;
-      let observacao = document.getElementById("campoObservacoes"+x);
+      let observacao = document.getElementById("campoObservacao"+x);
       if(observacao.value!=""){
-        this.paciente.observacao.push(observacao.value);
+        this.paciente.observacoes.push(observacao.value);
         cont++;
       }
     }
-    this.paciente.qtdeObs=cont;
+    this.paciente.qtdeObservacoes=cont;
   }
 
-  setObservacoes(){
-    if(this.paciente.qtdeObs>0){
+  setObservacao(){
+    if(this.paciente.qtdeObservacoes>0){
       let x = 0;
-      while(x<this.paciente.qtdeObs){
+      while(x<this.paciente.qtdeObservacoes){
         x++;
         //guardando o div pai
-        let divPai = document.getElementById("campoObservacoes");
+        let divPai = document.getElementById("observacoes");
         //Criando o elemento DIV filho;
         let divFilho = document.createElement("div");
         //Definindo atributos ao campoFilho:
-        divFilho.setAttribute("id","observacoes"+x);
+        divFilho.setAttribute("id","observacao"+x);
         divFilho.setAttribute("class", "divitem4");
         //Inserindo o elemento filho no pai:
         divPai.appendChild(divFilho);
         //Escrevendo algo no filho recém-criado:
-        document.getElementById("observacoes"+x).innerHTML = "<input class='divitem2' type='text' id='campoObservacoes"+x+"' value='"+this.paciente.observacao[x-1]+"'></input>";
+        document.getElementById("observacao"+x).innerHTML = "<input class='divitem2' type='text' id='campoObservacao"+x+"' value='"+this.paciente.observacoes[x-1]+"'></input>";
       }
     }
   }
+
+  cancel(){
+    this.nav.setRoot(PacientesPage);
+  }
+  slide(passar){
+    if(passar.deltaX>0){
+      this.getObservacao();
+      this.nav.setRoot(SegurancaFisicaPage,{parametro: this.paciente});
+    }
+  }
+
 
 }

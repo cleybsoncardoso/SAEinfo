@@ -92,6 +92,7 @@ export class EntrevistaPage {
         this.paciente.qtdeAlergias--;
       }
   }
+
   addVacina() {
     //incrementando a quantidade de vacinas
     this.paciente.qtdeVacinas++;
@@ -128,25 +129,6 @@ export class EntrevistaPage {
       }
   }
 
-  cancel(){
-    this.nav.setRoot(PacientesPage);
-  }
-
-  //funcao realizada quando o usuario desliza o dedo na tela
-  slide(passar){
-    if(passar.deltaX>0){
-      this.getAntecedentes();
-      this.getAlergias();
-      this.getVacinas();
-      this.nav.setRoot(IdentificacaoPage,{parametro: this.paciente});
-    }else if(passar.deltaX<0){
-      this.getAntecedentes();
-      this.getAlergias();
-      this.getVacinas();
-      this.nav.setRoot(AvaliacaoNeurologicaPage,{parametro: this.paciente});
-    }
-  }
-
   getAntecedentes(){
     let x=0;
     let cont = 0;
@@ -161,6 +143,7 @@ export class EntrevistaPage {
     }
     this.paciente.qtdeAntecedentes=cont;
   }
+
   getAlergias(){
     let x=0;
     let cont = 0;
@@ -210,6 +193,7 @@ export class EntrevistaPage {
       }
     }
   }
+
   setAlergias(){
     if(this.paciente.qtdeAlergias>0){
       let x = 0;
@@ -229,6 +213,7 @@ export class EntrevistaPage {
       }
     }
   }
+
   setVacinas(){
     if(this.paciente.qtdeVacinas>0){
       let x = 0;
@@ -276,4 +261,24 @@ export class EntrevistaPage {
       grupo = document.getElementById("dados"+i);
     }
   }
+
+  cancel(){
+    this.nav.setRoot(PacientesPage);
+  }
+
+  //funcao realizada quando o usuario desliza o dedo na tela
+  slide(passar){
+    if(passar.deltaX>0){
+      this.getAntecedentes();
+      this.getAlergias();
+      this.getVacinas();
+      this.nav.setRoot(IdentificacaoPage,{parametro: this.paciente});
+    }else if(passar.deltaX<0){
+      this.getAntecedentes();
+      this.getAlergias();
+      this.getVacinas();
+      this.nav.setRoot(AvaliacaoNeurologicaPage,{parametro: this.paciente});
+    }
+  }
+
 }

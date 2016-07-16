@@ -27,7 +27,6 @@ export class CadastroPaciente{
     this.alergias = [];
     this.qtdeVacinas = 0;
     this.vacinas = [];
-    this.observacao = [];
     this.alerta = false;
     this.letargico = false;
     this.obnubilado = false;
@@ -50,7 +49,6 @@ export class CadastroPaciente{
     this.movimentosLentos = false;
     this.movimentosInvoluntarios = false;
     this.obsRespiracao = 0;
-    this.qtdeObs = 0;
     this.respiracoes= [];
     this.espontanea = false;
     this.cateter = false;
@@ -186,7 +184,7 @@ export class CadastroPaciente{
     this.segurancaFisica;
     this.riscoParaQueda;
     this.score = "";
-
-
+    this.observacoes = [];
+    this.qtdeObservacoes = 0;
   }
 }
