@@ -2,6 +2,7 @@ import {Page, NavController, NavParams} from 'ionic-angular';
 import {HidratacaoEEliminacaoVesicalPage} from '../hidratacao-e-eliminacao-vesical/hidratacao-e-eliminacao-vesical';
 import {AspectosCutaneoMucosaPage} from '../aspectos-cutaneo-mucosa/aspectos-cutaneo-mucosa';
 import {PacientesPage} from '../../pacientes/pacientes';
+import {CadastroPaciente} from '../../../model/cadastroPaciente';
 
 @Page({
   templateUrl: 'build/pages/formulario/alimentacao-e-eliminacao-intestinal/alimentacao-e-eliminacao-intestinal.html',
@@ -10,8 +11,8 @@ export class AlimentacaoEEliminacaoIntestinalPage {
   static get parameters() {
     return [[NavParams],[NavController]];
   }
-
-  constructor(params,nav) {
+private paciente:CadastroPaciente;
+  constructor(private params:NavParams,private nav: NavController) {
     this.paciente = params.get("parametro");
     this.nav = nav;
   }

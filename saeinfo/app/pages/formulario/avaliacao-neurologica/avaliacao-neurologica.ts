@@ -2,6 +2,8 @@ import {NavController,Page, NavParams} from 'ionic-angular';
 import {EntrevistaPage} from '../entrevista/entrevista';
 import {OxigenacaoPage} from '../oxigenacao/oxigenacao';
 import {PacientesPage} from '../../pacientes/pacientes';
+import {SegurancaFisicaPage} from '../seguranca-fisica/seguranca-fisica';
+import {CadastroPaciente} from '../../../model/cadastroPaciente';
 /*
   Generated class for the AvaliacaoNeurologicaPage page.
 
@@ -16,10 +18,11 @@ export class AvaliacaoNeurologicaPage {
     return [[NavParams],[NavController]];
   }
 
-  constructor(params,nav) {
-    this.paciente = params.get("parametro");
-    this.nav = nav;
-  }
+    private paciente:CadastroPaciente;
+      constructor(private params:NavParams,private nav: NavController) {
+        this.paciente = params.get("parametro");
+        this.nav = nav;
+      }
   somarGlasgow(){
     this.paciente.glasgow = parseInt(this.paciente.glasgowOcular) + parseInt(this.paciente.glasgowVerbal) + parseInt(this.paciente.glasgowMotor);
   }
