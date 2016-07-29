@@ -17,11 +17,13 @@ export class EntrevistaPage {
     return [[NavParams],[NavController]];
   }
 
-  constructor(params,nav) {
-    this.paciente = params.get("parametro");
-    this.nav = nav;
-    this.myIcons = ["md-add"];
-  }
+    private paciente:CadastroPaciente;
+    private myIcons:Array<string>;
+      constructor(private params:NavParams,private nav: NavController) {
+        this.paciente = params.get("parametro");
+        this.nav = nav;
+        this.myIcons = ["md-add"];
+      }
 
   //funcação executada após o carregamento do html
   ionViewLoaded(){

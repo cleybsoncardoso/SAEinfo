@@ -2,6 +2,7 @@ import {NavController, Page, NavParams} from 'ionic-angular';
 import {PacientesPage} from '../../pacientes/pacientes';
 import {AlimentacaoEEliminacaoIntestinalPage} from '../alimentacao-e-eliminacao-intestinal/alimentacao-e-eliminacao-intestinal';
 import {SegurancaFisicaPage} from '../seguranca-fisica/seguranca-fisica';
+import {CadastroPaciente} from '../../../model/cadastroPaciente';
 
 @Page({
   templateUrl: 'build/pages/formulario/aspectos-cutaneo-mucosa/aspectos-cutaneo-mucosa.html',
@@ -11,11 +12,12 @@ export class AspectosCutaneoMucosaPage {
   static get parameters() {
     return [[NavParams],[NavController]];
   }
-
-  constructor(params,nav) {
-    this.paciente = params.get("parametro");
-    this.nav = nav;
-  }
+  
+  private paciente:CadastroPaciente;
+    constructor(private params:NavParams,private nav: NavController) {
+      this.paciente = params.get("parametro");
+      this.nav = nav;
+    }
 
   cancel(){
     this.nav.setRoot(PacientesPage);
