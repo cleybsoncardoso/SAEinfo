@@ -137,7 +137,7 @@ export class EntrevistaPage {
     this.paciente.antecedentes = [];
     while(x<this.paciente.qtdeAntecedentes){
       x++;
-      let antecedentes = document.getElementById("campoAntecedente"+x);
+      let antecedentes = <HTMLInputElement>document.getElementById("campoAntecedente"+x);
       if(antecedentes.value!=""){
         this.paciente.antecedentes.push(antecedentes.value);
         cont++;
@@ -152,7 +152,7 @@ export class EntrevistaPage {
     this.paciente.alergias = [];
     while(x<this.paciente.qtdeAlergias){
       x++;
-      let alergias = document.getElementById("campoAlergia"+x);
+      let alergias = <HTMLInputElement>document.getElementById("campoAlergia"+x);
       if(alergias.value!=""){
         this.paciente.alergias.push(alergias.value);
         cont++;
@@ -167,7 +167,7 @@ export class EntrevistaPage {
     this.paciente.vacinas = [];
     while(x<this.paciente.qtdeVacinas){
       x++;
-      let vacinas = document.getElementById("campoVacina"+x);
+      let vacinas = <HTMLInputElement>document.getElementById("campoVacina"+x);
       if(vacinas.value!=""){
         this.paciente.vacinas.push(vacinas.value);
         cont++;

@@ -129,13 +129,13 @@ export class OxigenacaoPage {
     this.paciente.respiracoes = [];
     while(x<this.paciente.obsRespiracao){
       x++;
-      let respiracoes = document.getElementById("campoResp"+x);
+      let respiracoes = <HTMLInputElement>document.getElementById("campoResp"+x);
       if(respiracoes.value!=""){
         this.paciente.respiracoes.push(respiracoes.value);
         cont++;
       }
     }
-    this.paciente.obsRespiracao=cont;
+    this.paciente.obsRespiracao=cont;''
   }
 
   setRespiracoes(){

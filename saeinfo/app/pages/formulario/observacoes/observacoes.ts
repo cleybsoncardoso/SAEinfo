@@ -64,7 +64,7 @@ export class ObservacoesPage {
     this.paciente.observacoes = [];
     while(x<this.paciente.qtdeObservacoes){
       x++;
-      let observacao = document.getElementById("campoObservacao"+x);
+      let observacao = <HTMLInputElement>document.getElementById("campoObservacao"+x);
       if(observacao.value!=""){
         this.paciente.observacoes.push(observacao.value);
         cont++;
