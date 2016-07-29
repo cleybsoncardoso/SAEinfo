@@ -1,45 +1,22 @@
 import {Component} from '@angular/core';
+import {Platform, ionicBootstrap} from 'ionic-angular';
 import {StatusBar} from 'ionic-native';
-import {Platform, ionicBootstrap, NavController} from 'ionic-angular';
-import {ViewChild, Component} from '@angular/core';
 import {HomePage} from './pages/home/home';
-import {PacientesPage} from './pages/pacientes/pacientes';
-import {AlterarSenhaPage} from './pages/alterar-senha/alterar-senha';
-import {AddPacientePage} from './pages/add-paciente/add-paciente';
+
 
 @Component({
-  templateUrl: 'build/app.html',
-  config: {},
-  queries: {nav: new ViewChild('rootNavController')}
+  template: '<ion-nav [root]="rootPage"></ion-nav>'
 })
 export class MyApp {
+  rootPage: any = HomePage;
 
-  static get parameters() {
-    return [[Platform]];
-  }
-
-  constructor(platform) {
-
-    this.rootPage = HomePage;
-    this.pacientes = PacientesPage;
-    this.alterarsenha = AlterarSenhaPage;
-    this.homePage = HomePage;
+  constructor(platform: Platform) {
     platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
       StatusBar.styleDefault();
     });
   }
-
-  openPage(pagina){
-    //this.rootPage = pagina;
-    this.nav.setRoot(pagina);
-  }
-
-  sair(){
-    this.nav.setRoot(HomePage);
-  }
-
 }
 
 ionicBootstrap(MyApp);
