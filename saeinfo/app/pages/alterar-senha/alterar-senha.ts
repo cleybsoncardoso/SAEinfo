@@ -15,7 +15,10 @@ export class AlterarSenhaPage {
     return [[NavController]];
   }
 
-  constructor(nav) {
+  private senha1: string;
+  private senha2: string;
+
+  constructor(private nav: NavController) {
     this.nav = nav;
     this.senha1 = "";
     this.senha2 = "";

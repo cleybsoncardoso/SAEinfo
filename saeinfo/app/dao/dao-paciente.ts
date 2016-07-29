@@ -1,9 +1,16 @@
+import {CadastroPaciente} from "../model/cadastroPaciente";
+
 export class DAOPacientes {
 
-  private list: Array<Object>;
+  private list: Array<CadastroPaciente>;
 
   constructor(){
-    this.list = [{nome: "Jorge"}, {nome: "Carlos"}];
+    let carlos = new CadastroPaciente();
+    carlos.nome = "Carlos";
+    let jorge = new CadastroPaciente();
+    jorge.nome = "Jorge";
+    
+    this.list = [carlos, jorge];
 
   }
 
