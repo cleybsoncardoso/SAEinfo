@@ -1,4 +1,7 @@
 export class DAOPacientes {
+
+  private list: Array<Object>;
+
   constructor(){
     this.list = [{nome: "Jorge"}, {nome: "Carlos"}];
 
