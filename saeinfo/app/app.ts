@@ -4,7 +4,6 @@ import {StatusBar} from 'ionic-native';
 import {HomePage} from './pages/home/home';
 import {PacientesPage} from './pages/pacientes/pacientes';
 import {AlterarSenhaPage} from './pages/alterar-senha/alterar-senha';
-import {AddPacientePage} from './pages/add-paciente/add-paciente';
 
 
 @Component({
@@ -18,8 +17,8 @@ export class MyApp {
     return [[Platform]];
   }
 
-  private rootPage: HomePage;
-  private paciente = PacientesPage;
+  private rootPage: any;
+  private pacientes = PacientesPage;
   private alterarsenha = AlterarSenhaPage;
   private homePage = HomePage;
 
