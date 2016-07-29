@@ -3,7 +3,7 @@ import {DAOPacientes} from '../../dao/dao-paciente';
 import {HomePage} from '../../pages/home/home';
 //import {AddPacientePage} from '../../pages/add-paciente/add-paciente';
 import {IdentificacaoPage} from '../formulario/identificacao/identificacao';
-import {CadastroPaciente} from '../../model/cadastroPaciente'
+import {CadastroPaciente} from '../../model/cadastroPaciente';
 
 @Page({
   templateUrl: 'build/pages/pacientes/pacientes.html',
@@ -12,14 +12,18 @@ export class PacientesPage {
   static get parameters() {
     return [[NavController], [MenuController]];
   }
+  private searchQuery:string;
+  private dao:DAOPacientes;
+  private listaPacientes:Array<CadastroPaciente>;
+  private pacienteCadastrado:CadastroPaciente;
 
-  constructor(nav, menu) {
+  constructor(private nav: NavController, private menu:MenuController) {
     this.nav = nav;
     this.menu = menu;
+    this.menu.enable(true);
     this.searchQuery = '';
     this.dao = new DAOPacientes();
     this.listaPacientes = this.dao.getList();
-    this.menu.enable(true);
     this.pacienteCadastrado=new CadastroPaciente();
   }
 

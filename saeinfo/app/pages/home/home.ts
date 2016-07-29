@@ -1,11 +1,27 @@
-import {Component} from '@angular/core';
-import {NavController} from 'ionic-angular';
+import {Page, NavController} from 'ionic-angular';
+import {PacientesPage} from '../../pages/pacientes/pacientes';
+import {EsqueciSenhaPage} from '../../pages/esqueci-senha/esqueci-senha';
 
-@Component({
+@Page({
   templateUrl: 'build/pages/home/home.html'
 })
 export class HomePage {
-  constructor(private navCtrl: NavController) {
-
+  static get parameters() {
+    return [[NavController]];
   }
-}
+  constructor(private nav: NavController) {
+    this.nav = nav;
+  }
+  entrar(){
+    this.nav.setRoot(PacientesPage);
+  }
+
+  esqueci(){
+    this.nav.setRoot(EsqueciSenhaPage);
+  }
+  /*
+    pushPage(){
+      this._navController.push(SomeImportedPage, { userId: "12345"});
+    }
+  */
+  }
