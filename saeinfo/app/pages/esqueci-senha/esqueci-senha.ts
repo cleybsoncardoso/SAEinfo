@@ -15,7 +15,7 @@ export class EsqueciSenhaPage {
     return [[NavController]];
   }
 
-  constructor(nav) {
+  constructor(private nav: NavController) {
     this.nav = nav;
   }
   cancelar(){

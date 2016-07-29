@@ -15,8 +15,9 @@ export class IdentificacaoPage {
   static get parameters() {
     return [[NavParams],[NavController]];
   }
+private paciente:CadastroPaciente;
 
-  constructor(params,nav) {
+  constructor(private params:NavParams,private nav:NavController) {
     this.paciente = params.get("parametro");
     this.nav = nav;
 
