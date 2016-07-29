@@ -1,6 +1,7 @@
 import {NavController, Page, NavParams} from 'ionic-angular';
 import {PacientesPage} from '../../pacientes/pacientes';
 import {SegurancaFisicaPage} from '../seguranca-fisica/seguranca-fisica';
+import {CadastroPaciente} from "../../../model/cadastroPaciente";
 
 @Page({
   templateUrl: 'build/pages/formulario/observacoes/observacoes.html',
@@ -10,7 +11,9 @@ export class ObservacoesPage {
     return [[NavParams],[NavController]];
   }
 
-  constructor(params,nav) {
+  private paciente: CadastroPaciente;
+
+  constructor(private params: NavParams, private nav: NavController) {
     this.paciente = params.get("parametro");
     this.nav = nav;
   }

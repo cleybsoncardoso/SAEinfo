@@ -2,6 +2,7 @@ import {NavController, Page, NavParams} from 'ionic-angular';
 import {AspectosCutaneoMucosaPage} from '../aspectos-cutaneo-mucosa/aspectos-cutaneo-mucosa';
 import {PacientesPage} from '../../pacientes/pacientes';
 import {ObservacoesPage} from '../observacoes/observacoes';
+import {CadastroPaciente} from "../../../model/cadastroPaciente";
 /*
   Generated class for the SegurancaFisicaPage page.
 
@@ -16,7 +17,9 @@ export class SegurancaFisicaPage {
     return [[NavParams],[NavController]];
   }
 
-  constructor(params,nav) {
+  private paciente: CadastroPaciente;
+
+  constructor(private params: NavParams, private nav: NavController) {
     this.paciente = params.get("parametro");
     this.nav = nav;
   }

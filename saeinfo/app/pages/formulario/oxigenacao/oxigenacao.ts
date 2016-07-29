@@ -2,6 +2,7 @@ import {NavController, Page, NavParams} from 'ionic-angular';
 import {AvaliacaoNeurologicaPage} from '../avaliacao-neurologica/avaliacao-neurologica';
 import {PacientesPage} from '../../pacientes/pacientes';
 import {AvaliacaoCardiovascularPage} from '../avaliacao-cardiovascular/avaliacao-cardiovascular';
+import {CadastroPaciente} from "../../../model/cadastroPaciente";
 
 @Page({
   templateUrl: 'build/pages/formulario/oxigenacao/oxigenacao.html',
@@ -11,7 +12,9 @@ export class OxigenacaoPage {
     return [[NavParams],[NavController]];
   }
 
-  constructor(params,nav) {
+  private paciente: CadastroPaciente;
+
+  constructor(private params: NavParams, private nav: NavController) {
     this.paciente = params.get("parametro");
     this.nav = nav;
   }
