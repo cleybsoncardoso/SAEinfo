@@ -17,7 +17,7 @@ export class MyApp {
     return [[Platform]];
   }
 
-  private rootPage: any;
+  private rootPage =  HomePage;
   private pacientes = PacientesPage;
   private alterarsenha = AlterarSenhaPage;
   private homePage = HomePage;

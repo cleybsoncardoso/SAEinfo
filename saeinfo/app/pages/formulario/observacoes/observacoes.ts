@@ -36,7 +36,7 @@ export class ObservacoesPage {
     //Inserindo o elemento filho no pai:
     divPai.appendChild(divFilho);
     //Escrevendo algo no filho recém-criado:
-    document.getElementById("observacao"+this.paciente.qtdeObservacoes).innerHTML = "<input class='divitem2' type='text' id='campoObservacao"+this.paciente.qtdeObservacoes+"' placeholder='observação "+this.paciente.qtdeObservacoes+"'></input>";
+    document.getElementById("observacao"+this.paciente.qtdeObservacoes).innerHTML = "<input class='divitem2' type='text' id='campoObservacao"+this.paciente.qtdeObservacoes+"' placeholder='Observação "+this.paciente.qtdeObservacoes+"'></input>";
 
   }
 

@@ -1,17 +1,18 @@
-<ion-navbar>
-  <ion-title>
-    Bem Vinda Maria
-  </ion-title>
-
-  <button menuToggle>
-    <ion-icon name="menu"></ion-icon>
-  </button>
-  <ion-buttons end>
-  <button (click)="atualizar()" >
-    <ion-icon name="md-refresh"></ion-icon>
-  </button>
-</ion-buttons>
-</ion-navbar>
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Bem Vinda Maria
+    </ion-title>
+    <button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-buttons end>
+      <button (click)="atualizar()" >
+        <ion-icon name="md-refresh"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
 
 <ion-content>
   <ion-searchbar [(ngModel)]="searchQuery" (input)="getPacientes($event)" (cancel)="teste($event)"></ion-searchbar>

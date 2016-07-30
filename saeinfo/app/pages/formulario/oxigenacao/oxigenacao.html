@@ -1,13 +1,15 @@
-<ion-toolbar>
- <ion-title>
-   Novo Paciente
- </ion-title>
- <ion-buttons start>
-   <button round (click)="cancel()">Cancelar</button>
- </ion-buttons>
-</ion-toolbar>
-<ion-content padding class="oxigenacao" (swipe)="slide($event)">
+<ion-header>
+  <ion-toolbar>
+   <ion-title>
+     Novo Paciente
+   </ion-title>
+   <ion-buttons start>
+     <button round (click)="cancel()">Cancelar</button>
+   </ion-buttons>
+  </ion-toolbar>
+</ion-header>
 
+<ion-content padding class="oxigenacao" (swipe)="slide($event)">
   <ion-card class="mycard">
     <ion-card-header class="cardtitulo"> Oxigenação </ion-card-header>
     <ion-list-header class="titulolista" (click)="toggleGroup(0)">Respiração <p class="icone" id="icone0" style="float: right">+</p></ion-list-header>

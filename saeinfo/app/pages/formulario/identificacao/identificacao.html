@@ -1,11 +1,13 @@
-<ion-toolbar>
- <ion-title>
-   Novo Paciente
- </ion-title>
- <ion-buttons start>
-   <button round (click)="cancel()">Cancelar</button>
- </ion-buttons>
-</ion-toolbar>
+<ion-header>
+  <ion-toolbar>
+   <ion-title>
+     Novo Paciente
+   </ion-title>
+   <ion-buttons start>
+     <button round (click)="cancel()">Cancelar</button>
+   </ion-buttons>
+  </ion-toolbar>
+</ion-header>
 
 <ion-content padding class="identificacao" (swipe)="slide($event)">
   <ion-card class="mycard">
