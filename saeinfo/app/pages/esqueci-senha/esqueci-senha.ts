@@ -11,9 +11,6 @@ import {HomePage} from '../../pages/home/home';
   templateUrl: 'build/pages/esqueci-senha/esqueci-senha.html',
 })
 export class EsqueciSenhaPage {
-  static get parameters() {
-    return [[NavController]];
-  }
 
   constructor(private nav: NavController) {
     this.nav = nav;

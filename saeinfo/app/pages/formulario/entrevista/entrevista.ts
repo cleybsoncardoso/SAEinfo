@@ -13,9 +13,6 @@ import {CadastroPaciente} from '../../../model/cadastroPaciente'
   templateUrl: 'build/pages/formulario/entrevista/entrevista.html',
 })
 export class EntrevistaPage {
-  static get parameters() {
-    return [[NavParams],[NavController]];
-  }
 
     private paciente:CadastroPaciente;
     private myIcons:Array<string>;

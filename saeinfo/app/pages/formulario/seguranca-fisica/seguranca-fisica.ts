@@ -13,9 +13,6 @@ import {CadastroPaciente} from "../../../model/cadastroPaciente";
   templateUrl: 'build/pages/formulario/seguranca-fisica/seguranca-fisica.html',
 })
 export class SegurancaFisicaPage {
-  static get parameters() {
-    return [[NavParams],[NavController]];
-  }
 
   private paciente: CadastroPaciente;
 

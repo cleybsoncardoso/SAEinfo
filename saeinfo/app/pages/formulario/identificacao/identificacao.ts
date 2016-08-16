@@ -12,9 +12,7 @@ import {CadastroPaciente} from '../../../model/cadastroPaciente'
   templateUrl: 'build/pages/formulario/identificacao/identificacao.html',
 })
 export class IdentificacaoPage {
-  static get parameters() {
-    return [[NavParams],[NavController]];
-  }
+
 private paciente:CadastroPaciente;
 
   constructor(private params:NavParams,private nav:NavController) {

@@ -8,9 +8,6 @@ import {CadastroPaciente} from "../../../model/cadastroPaciente";
   templateUrl: 'build/pages/formulario/oxigenacao/oxigenacao.html',
 })
 export class OxigenacaoPage {
-  static get parameters() {
-    return [[NavParams],[NavController]];
-  }
 
   private paciente: CadastroPaciente;
 

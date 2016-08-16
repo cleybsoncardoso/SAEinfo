@@ -8,9 +8,6 @@ import {CadastroPaciente} from '../../../model/cadastroPaciente';
   templateUrl: 'build/pages/formulario/alimentacao-e-eliminacao-intestinal/alimentacao-e-eliminacao-intestinal.html',
 })
 export class AlimentacaoEEliminacaoIntestinalPage {
-  static get parameters() {
-    return [[NavParams],[NavController]];
-  }
 private paciente:CadastroPaciente;
   constructor(private params:NavParams,private nav: NavController) {
     this.paciente = params.get("parametro");

@@ -14,9 +14,6 @@ import {CadastroPaciente} from '../../../model/cadastroPaciente';
   templateUrl: 'build/pages/formulario/avaliacao-neurologica/avaliacao-neurologica.html',
 })
 export class AvaliacaoNeurologicaPage {
-  static get parameters() {
-    return [[NavParams],[NavController]];
-  }
 
     private paciente:CadastroPaciente;
       constructor(private params:NavParams,private nav: NavController) {
