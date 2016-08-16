@@ -1,5 +1,6 @@
-import {Page, NavController,AlertController} from 'ionic-angular';
+import {Page, NavController, AlertController} from 'ionic-angular';
 import {PacientesPage} from '../../pages/pacientes/pacientes';
+
 
 /*
   Generated class for the AlterarSenhaPage page.
@@ -25,7 +26,6 @@ export class AlterarSenhaPage {
   }
 
   conferir(){
-
     if(this.senha1!=this.senha2){
       let alert = this.alertController.create({
         title: 'Não foi possivel alterar senha',
