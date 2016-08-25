@@ -7,9 +7,6 @@ import {CadastroPaciente} from "../../../model/cadastroPaciente";
   templateUrl: 'build/pages/formulario/observacoes/observacoes.html',
 })
 export class ObservacoesPage {
-  static get parameters() {
-    return [[NavParams],[NavController]];
-  }
 
   private paciente: CadastroPaciente;
 

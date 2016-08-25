@@ -9,10 +9,7 @@ import {CadastroPaciente} from '../../../model/cadastroPaciente';
 })
 
 export class AspectosCutaneoMucosaPage {
-  static get parameters() {
-    return [[NavParams],[NavController]];
-  }
-  
+
   private paciente:CadastroPaciente;
     constructor(private params:NavParams,private nav: NavController) {
       this.paciente = params.get("parametro");

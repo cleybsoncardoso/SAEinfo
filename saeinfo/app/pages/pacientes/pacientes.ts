@@ -9,9 +9,7 @@ import {CadastroPaciente} from '../../model/cadastroPaciente';
   templateUrl: 'build/pages/pacientes/pacientes.html',
 })
 export class PacientesPage {
-  static get parameters() {
-    return [[NavController], [MenuController]];
-  }
+
   private searchQuery:string;
   private dao:DAOPacientes;
   private listaPacientes:Array<CadastroPaciente>;

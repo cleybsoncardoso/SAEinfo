@@ -9,9 +9,6 @@ import {CadastroPaciente} from '../../../model/cadastroPaciente';
   templateUrl: 'build/pages/formulario/avaliacao-cardiovascular/avaliacao-cardiovascular.html',
 })
 export class AvaliacaoCardiovascularPage {
-  static get parameters() {
-    return [[NavParams],[NavController]];
-  }
 
   private paciente:CadastroPaciente;
     constructor(private params:NavParams,private nav: NavController) {
