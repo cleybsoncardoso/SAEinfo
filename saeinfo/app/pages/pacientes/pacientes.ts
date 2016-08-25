@@ -1,9 +1,11 @@
+
 import {Page, NavController, Modal, MenuController} from 'ionic-angular';
 import {DAOPacientes} from '../../dao/dao-paciente';
 import {HomePage} from '../../pages/home/home';
 //import {AddPacientePage} from '../../pages/add-paciente/add-paciente';
 import {IdentificacaoPage} from '../formulario/identificacao/identificacao';
 import {CadastroPaciente} from '../../model/cadastroPaciente';
+import {PacienteAtualPage} from '../paciente-atual/paciente-atual';
 
 @Page({
   templateUrl: 'build/pages/pacientes/pacientes.html',
@@ -35,13 +37,13 @@ export class PacientesPage {
         this.dao.insert(paciente);
         this.atualizar();
       }
-    })*/
+    })*/  
   }
-  /**
+
   openPaciente(paciente){
-    this.nav.push(DadosPacientePage, {parametro: paciente});
+    this.nav.setRoot(PacienteAtualPage, {parametro: paciente});
   }
-  */
+
 
   atualizar(){
     var i;
