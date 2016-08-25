@@ -2,6 +2,7 @@ import {NavController, Page, NavParams} from 'ionic-angular';
 import {PacientesPage} from '../../pacientes/pacientes';
 import {SegurancaFisicaPage} from '../seguranca-fisica/seguranca-fisica';
 import {CadastroPaciente} from "../../../model/cadastroPaciente";
+import {SavePage} from '../save/save';
 
 @Page({
   templateUrl: 'build/pages/formulario/observacoes/observacoes.html',
@@ -97,6 +98,8 @@ export class ObservacoesPage {
     if(passar.deltaX>0){
       this.getObservacao();
       this.nav.setRoot(SegurancaFisicaPage,{parametro: this.paciente});
+    }else{
+      this.nav.setRoot(SavePage,{parametro: this.paciente});
     }
   }
 

@@ -12,7 +12,10 @@ import {PacientesPage} from '../../pages/pacientes/pacientes';
   templateUrl: 'build/pages/alterar-senha/alterar-senha.html',
 })
 export class AlterarSenhaPage {
-  
+  static get parameters() {
+    return [[NavController]];
+  }
+
   private senha1: string;
   private senha2: string;
 
