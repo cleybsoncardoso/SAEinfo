@@ -25,7 +25,7 @@ private paciente:CadastroPaciente;
   }
   slide(passar){
     if(passar.deltaX<0){
-      this.nav.setRoot(EntrevistaPage,{parametro: this.paciente});
+      this.nav.push(EntrevistaPage,{parametro: this.paciente});
     }
   }
 }

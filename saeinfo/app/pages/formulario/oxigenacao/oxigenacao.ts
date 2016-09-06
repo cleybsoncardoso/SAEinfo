@@ -113,10 +113,10 @@ export class OxigenacaoPage {
   slide(passar){
     if(passar.deltaX>0){
       this.getRespiracoes();
-      this.nav.setRoot(AvaliacaoNeurologicaPage,{parametro: this.paciente});
+      this.nav.pop();
     }else if(passar.deltaX<0){
       this.getRespiracoes();
-      this.nav.setRoot(AvaliacaoCardiovascularPage,{parametro: this.paciente});
+      this.nav.push(AvaliacaoCardiovascularPage,{parametro: this.paciente});
     }
   }
 

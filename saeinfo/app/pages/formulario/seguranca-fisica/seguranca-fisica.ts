@@ -25,9 +25,9 @@ export class SegurancaFisicaPage {
   }
   slide(passar){
     if(passar.deltaX>0){
-      this.nav.setRoot(AspectosCutaneoMucosaPage,{parametro: this.paciente});
+      this.nav.pop();
     }else if(passar.deltaX<0){
-      this.nav.setRoot(ObservacoesPage,{parametro: this.paciente});
+      this.nav.push(ObservacoesPage,{parametro: this.paciente});
     }
   }
 }

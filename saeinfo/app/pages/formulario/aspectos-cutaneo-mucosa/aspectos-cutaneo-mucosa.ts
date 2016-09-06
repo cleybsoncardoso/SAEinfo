@@ -22,9 +22,9 @@ export class AspectosCutaneoMucosaPage {
 
   slide(passar){
     if(passar.deltaX>0){
-      this.nav.setRoot(AlimentacaoEEliminacaoIntestinalPage,{parametro: this.paciente});
+      this.nav.pop();
     }else if(passar.deltaX<0){
-      this.nav.setRoot(SegurancaFisicaPage,{parametro: this.paciente});
+      this.nav.push(SegurancaFisicaPage,{parametro: this.paciente});
     }
   }
 

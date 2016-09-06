@@ -30,14 +30,14 @@ export class PacientesPage {
   novoPaciente(){
   //  let modal = Modal.create(TestePage);
     this.menu.enable(false);
-    this.nav.setRoot(IdentificacaoPage,{parametro: this.pacienteCadastrado});
+    this.nav.push(IdentificacaoPage,{parametro: this.pacienteCadastrado});
 /*
     modal.onDismiss((paciente) => {
       if(paciente){
         this.dao.insert(paciente);
         this.atualizar();
       }
-    })*/  
+    })*/
   }
 
   openPaciente(paciente){
@@ -46,6 +46,7 @@ export class PacientesPage {
 
 
   atualizar(){
+    this.searchQuery = '';
     var i;
     for (i = 0; i < this.listaPacientes.length; i++) {
       console.log(this.listaPacientes[i].nome);
@@ -53,12 +54,12 @@ export class PacientesPage {
     this.listaPacientes = this.dao.getList();
   }
 
-  getPacientes(searchbar){
+  getPacientes(searchbar:any){
     // Reset items back to all of the items
     this.listaPacientes = this.dao.getList();
 
     // set q to the value of the searchbar
-    var q = searchbar.value;
+    let q = searchbar.target.value;
 
     // if the value is an empty string don't filter the items
     if (q.trim() == '') {

@@ -20,9 +20,9 @@ export class AvaliacaoCardiovascularPage {
   }
   slide(passar){
     if(passar.deltaX>0){
-      this.nav.setRoot(OxigenacaoPage,{parametro: this.paciente});
+      this.nav.pop();
     }else if(passar.deltaX<0){
-      this.nav.setRoot(HidratacaoEEliminacaoVesicalPage,{parametro: this.paciente});
+      this.nav.push(HidratacaoEEliminacaoVesicalPage,{parametro: this.paciente});
     }
   }
 }

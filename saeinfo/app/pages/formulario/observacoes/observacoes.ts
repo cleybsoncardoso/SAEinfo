@@ -97,9 +97,9 @@ export class ObservacoesPage {
   slide(passar){
     if(passar.deltaX>0){
       this.getObservacao();
-      this.nav.setRoot(SegurancaFisicaPage,{parametro: this.paciente});
+      this.nav.pop();
     }else{
-      this.nav.setRoot(SavePage,{parametro: this.paciente});
+      this.nav.push(SavePage,{parametro: this.paciente});
     }
   }
 

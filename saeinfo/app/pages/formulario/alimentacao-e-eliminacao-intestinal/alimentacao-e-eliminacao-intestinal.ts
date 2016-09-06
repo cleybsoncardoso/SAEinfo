@@ -73,9 +73,9 @@ private paciente:CadastroPaciente;
 
   slide(passar){
     if(passar.deltaX>0){
-      this.nav.setRoot(HidratacaoEEliminacaoVesicalPage,{parametro: this.paciente});
+      this.nav.pop();
     }else if(passar.deltaX<0){
-      this.nav.setRoot(AspectosCutaneoMucosaPage,{parametro: this.paciente});
+      this.nav.push(AspectosCutaneoMucosaPage,{parametro: this.paciente});
     }
   }
 

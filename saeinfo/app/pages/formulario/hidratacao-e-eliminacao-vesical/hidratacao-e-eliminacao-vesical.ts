@@ -29,9 +29,9 @@ export class HidratacaoEEliminacaoVesicalPage {
   }
   slide(passar){
     if(passar.deltaX>0){
-      this.nav.setRoot(AvaliacaoCardiovascularPage,{parametro: this.paciente});
+      this.nav.pop();
     }else if(passar.deltaX<0){
-      this.nav.setRoot(AlimentacaoEEliminacaoIntestinalPage,{parametro: this.paciente});
+      this.nav.push(AlimentacaoEEliminacaoIntestinalPage,{parametro: this.paciente});
     }
 }
   toggleGroup(id){

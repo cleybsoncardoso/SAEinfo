@@ -271,12 +271,12 @@ export class EntrevistaPage {
       this.getAntecedentes();
       this.getAlergias();
       this.getVacinas();
-      this.nav.setRoot(IdentificacaoPage,{parametro: this.paciente});
+      this.nav.pop();
     }else if(passar.deltaX<0){
       this.getAntecedentes();
       this.getAlergias();
       this.getVacinas();
-      this.nav.setRoot(AvaliacaoNeurologicaPage,{parametro: this.paciente});
+      this.nav.push(AvaliacaoNeurologicaPage,{parametro: this.paciente});
     }
   }
 
