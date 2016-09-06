@@ -3,6 +3,7 @@ import {IdentificacaoPage} from '../identificacao/identificacao';
 import {PacientesPage} from '../../../pages/pacientes/pacientes';
 import {AvaliacaoNeurologicaPage} from '../avaliacao-neurologica/avaliacao-neurologica';
 import {CadastroPaciente} from '../../../model/cadastroPaciente'
+import {DAOPacientes} from '../../../dao/dao-paciente';
 /*
   Generated class for the EntrevistaPage page.
 
@@ -16,8 +17,11 @@ export class EntrevistaPage {
 
     private paciente:CadastroPaciente;
     private myIcons:Array<string>;
+    private dao:DAOPacientes;
+
       constructor(private params:NavParams,private nav: NavController) {
         this.paciente = params.get("parametro");
+        this.dao = params.get("data");
         this.nav = nav;
         this.myIcons = ["md-add"];
       }
@@ -276,7 +280,7 @@ export class EntrevistaPage {
       this.getAntecedentes();
       this.getAlergias();
       this.getVacinas();
-      this.nav.push(AvaliacaoNeurologicaPage,{parametro: this.paciente});
+      this.nav.push(AvaliacaoNeurologicaPage,{parametro: this.paciente, data:this.dao});
     }
   }
 

@@ -3,14 +3,18 @@ import {HidratacaoEEliminacaoVesicalPage} from '../hidratacao-e-eliminacao-vesic
 import {AspectosCutaneoMucosaPage} from '../aspectos-cutaneo-mucosa/aspectos-cutaneo-mucosa';
 import {PacientesPage} from '../../pacientes/pacientes';
 import {CadastroPaciente} from '../../../model/cadastroPaciente';
+import {DAOPacientes} from '../../../dao/dao-paciente';
 
 @Page({
   templateUrl: 'build/pages/formulario/alimentacao-e-eliminacao-intestinal/alimentacao-e-eliminacao-intestinal.html',
 })
 export class AlimentacaoEEliminacaoIntestinalPage {
-private paciente:CadastroPaciente;
+  private paciente:CadastroPaciente;
+  private dao:DAOPacientes;
+
   constructor(private params:NavParams,private nav: NavController) {
     this.paciente = params.get("parametro");
+    this.dao = params.get("data");
     this.nav = nav;
   }
 
@@ -75,7 +79,7 @@ private paciente:CadastroPaciente;
     if(passar.deltaX>0){
       this.nav.pop();
     }else if(passar.deltaX<0){
-      this.nav.push(AspectosCutaneoMucosaPage,{parametro: this.paciente});
+      this.nav.push(AspectosCutaneoMucosaPage,{parametro: this.paciente, data:this.dao});
     }
   }
 

@@ -2,6 +2,7 @@ import {NavController, Page, NavParams} from 'ionic-angular';
 import {PacientesPage} from '../../../pages/pacientes/pacientes';
 import {EntrevistaPage} from '../entrevista/entrevista';
 import {CadastroPaciente} from '../../../model/cadastroPaciente'
+import {DAOPacientes} from '../../../dao/dao-paciente';
 /*
   Generated class for the IdentificacaoPage page.
 
@@ -14,9 +15,11 @@ import {CadastroPaciente} from '../../../model/cadastroPaciente'
 export class IdentificacaoPage {
 
 private paciente:CadastroPaciente;
+private dao:DAOPacientes;
 
   constructor(private params:NavParams,private nav:NavController) {
     this.paciente = params.get("parametro");
+    this.dao=params.get("data");
     this.nav = nav;
 
   }
@@ -25,7 +28,7 @@ private paciente:CadastroPaciente;
   }
   slide(passar){
     if(passar.deltaX<0){
-      this.nav.push(EntrevistaPage,{parametro: this.paciente});
+      this.nav.push(EntrevistaPage,{parametro: this.paciente, data:this.dao});
     }
   }
 }

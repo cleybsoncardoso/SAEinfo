@@ -3,6 +3,7 @@ import {AspectosCutaneoMucosaPage} from '../aspectos-cutaneo-mucosa/aspectos-cut
 import {PacientesPage} from '../../pacientes/pacientes';
 import {ObservacoesPage} from '../observacoes/observacoes';
 import {CadastroPaciente} from "../../../model/cadastroPaciente";
+import {DAOPacientes} from '../../../dao/dao-paciente';
 /*
   Generated class for the SegurancaFisicaPage page.
 
@@ -15,9 +16,11 @@ import {CadastroPaciente} from "../../../model/cadastroPaciente";
 export class SegurancaFisicaPage {
 
   private paciente: CadastroPaciente;
+  private dao:DAOPacientes;
 
   constructor(private params: NavParams, private nav: NavController) {
     this.paciente = params.get("parametro");
+    this.dao = params.get("data");
     this.nav = nav;
   }
   cancel(){
@@ -27,7 +30,7 @@ export class SegurancaFisicaPage {
     if(passar.deltaX>0){
       this.nav.pop();
     }else if(passar.deltaX<0){
-      this.nav.push(ObservacoesPage,{parametro: this.paciente});
+      this.nav.push(ObservacoesPage,{parametro: this.paciente, data:this.dao});
     }
   }
 }

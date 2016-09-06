@@ -3,6 +3,7 @@ import {PacientesPage} from '../../pacientes/pacientes';
 import {SegurancaFisicaPage} from '../seguranca-fisica/seguranca-fisica';
 import {CadastroPaciente} from "../../../model/cadastroPaciente";
 import {SavePage} from '../save/save';
+import {DAOPacientes} from '../../../dao/dao-paciente';
 
 @Page({
   templateUrl: 'build/pages/formulario/observacoes/observacoes.html',
@@ -10,9 +11,11 @@ import {SavePage} from '../save/save';
 export class ObservacoesPage {
 
   private paciente: CadastroPaciente;
+  private dao:DAOPacientes;
 
   constructor(private params: NavParams, private nav: NavController) {
     this.paciente = params.get("parametro");
+    this.dao = params.get("data");
     this.nav = nav;
   }
 
@@ -94,12 +97,13 @@ export class ObservacoesPage {
   cancel(){
     this.nav.setRoot(PacientesPage);
   }
+
   slide(passar){
     if(passar.deltaX>0){
       this.getObservacao();
       this.nav.pop();
     }else{
-      this.nav.push(SavePage,{parametro: this.paciente});
+      this.nav.push(SavePage,{parametro: this.paciente, data:this.dao});
     }
   }
 

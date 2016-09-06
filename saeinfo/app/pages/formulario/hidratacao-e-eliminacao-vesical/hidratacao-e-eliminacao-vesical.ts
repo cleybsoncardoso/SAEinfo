@@ -3,6 +3,7 @@ import {PacientesPage} from '../../pacientes/pacientes';
 import {AvaliacaoCardiovascularPage} from '../avaliacao-cardiovascular/avaliacao-cardiovascular';
 import {AlimentacaoEEliminacaoIntestinalPage} from '../alimentacao-e-eliminacao-intestinal/alimentacao-e-eliminacao-intestinal';
 import {CadastroPaciente} from "../../../model/cadastroPaciente";
+import {DAOPacientes} from '../../../dao/dao-paciente';
 /*
   Generated class for the HidratacaoEEliminacaoVesicalPage page.
 
@@ -17,10 +18,12 @@ export class HidratacaoEEliminacaoVesicalPage {
     return [[NavParams],[NavController]];
   }
 
-  private paciente: CadastroPaciente;
+    private paciente: CadastroPaciente;
+    private dao:DAOPacientes;
 
   constructor(private params: NavParams, private nav: NavController) {
     this.paciente = params.get("parametro");
+    this.dao = params.get("data");
     this.nav = nav;
   }
 
@@ -31,7 +34,7 @@ export class HidratacaoEEliminacaoVesicalPage {
     if(passar.deltaX>0){
       this.nav.pop();
     }else if(passar.deltaX<0){
-      this.nav.push(AlimentacaoEEliminacaoIntestinalPage,{parametro: this.paciente});
+      this.nav.push(AlimentacaoEEliminacaoIntestinalPage,{parametro: this.paciente, data:this.dao});
     }
 }
   toggleGroup(id){

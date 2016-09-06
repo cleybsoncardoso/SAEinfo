@@ -1,5 +1,5 @@
 
-import {Page, NavController, Modal, MenuController} from 'ionic-angular';
+import {Page, NavController, ModalController , MenuController} from 'ionic-angular';
 import {DAOPacientes} from '../../dao/dao-paciente';
 import {HomePage} from '../../pages/home/home';
 //import {AddPacientePage} from '../../pages/add-paciente/add-paciente';
@@ -17,7 +17,7 @@ export class PacientesPage {
   private listaPacientes:Array<CadastroPaciente>;
   private pacienteCadastrado:CadastroPaciente;
 
-  constructor(private nav: NavController, private menu:MenuController) {
+  constructor(private nav: NavController, private menu:MenuController, public modalCtrl: ModalController) {
     this.nav = nav;
     this.menu = menu;
     this.menu.enable(true);
@@ -30,7 +30,7 @@ export class PacientesPage {
   novoPaciente(){
   //  let modal = Modal.create(TestePage);
     this.menu.enable(false);
-    this.nav.push(IdentificacaoPage,{parametro: this.pacienteCadastrado});
+    this.nav.push(IdentificacaoPage,{parametro: this.pacienteCadastrado, data:this.dao} );
 /*
     modal.onDismiss((paciente) => {
       if(paciente){
@@ -41,7 +41,8 @@ export class PacientesPage {
   }
 
   openPaciente(paciente){
-    this.nav.setRoot(PacienteAtualPage, {parametro: paciente});
+    let modal = this.modalCtrl.create(PacienteAtualPage, {parametro: paciente});
+    modal.present();
   }
 
 
