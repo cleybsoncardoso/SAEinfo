@@ -13,21 +13,28 @@ import {IdentificacaoPage} from '../pages/formulario/identificacao/identificacao
 import {EntrevistaPage} from '../pages/formulario/entrevista/entrevista';
 import {SegurancaFisicaPage} from '../pages/formulario/seguranca-fisica/seguranca-fisica';
 import {ObservacoesPage} from '../pages/formulario/observacoes/observacoes';
+import {OxigenacaoPage} from '../pages/formulario/oxigenacao/oxigenacao';
+import {HidratacaoEEliminacaoVesicalPage} from '../pages/formulario/hidratacao-e-eliminacao-vesical/hidratacao-e-eliminacao-vesical';
+import {AvaliacaoNeurologicaPage} from '../pages/formulario/avaliacao-neurologica/avaliacao-neurologica';
+import {AvaliacaoCardiovascularPage} from '../pages/formulario/avaliacao-cardiovascular/avaliacao-cardiovascular';
+import {AspectosCutaneoMucosaPage} from '../pages/formulario/aspectos-cutaneo-mucosa/aspectos-cutaneo-mucosa';
+import {AlimentacaoEEliminacaoIntestinalPage} from '../pages/formulario/alimentacao-e-eliminacao-intestinal/alimentacao-e-eliminacao-intestinal';
 
+import {SavePage} from '../pages/formulario/save/save';
 
 
 
 @NgModule({
   declarations: [
-    MyApp,
-    HelloIonicPage,
-    ItemDetailsPage,
+    MyApp,OxigenacaoPage,HidratacaoEEliminacaoVesicalPage,AvaliacaoNeurologicaPage,
+    HelloIonicPage,AvaliacaoCardiovascularPage,AspectosCutaneoMucosaPage,
+    ItemDetailsPage,AlimentacaoEEliminacaoIntestinalPage,
     ListPage,
     HomePage,
     EsqueciSenhaPage,
     PacientesPage,
     AlterarSenhaPage,
-    CadastroPaciente,
+    CadastroPaciente,SavePage,
     IdentificacaoPage,EntrevistaPage, ObservacoesPage,SegurancaFisicaPage
   ],
   imports: [
@@ -35,10 +42,10 @@ import {ObservacoesPage} from '../pages/formulario/observacoes/observacoes';
   ],
   bootstrap: [IonicApp],
   entryComponents: [
-    MyApp,
-    HelloIonicPage,
-    ItemDetailsPage,
-    ListPage,
+    MyApp,OxigenacaoPage,HidratacaoEEliminacaoVesicalPage,AvaliacaoNeurologicaPage,
+    HelloIonicPage,AvaliacaoCardiovascularPage,AspectosCutaneoMucosaPage,
+    ItemDetailsPage,AlimentacaoEEliminacaoIntestinalPage,
+    ListPage,SavePage,
     HomePage,
     EsqueciSenhaPage,
     PacientesPage,
