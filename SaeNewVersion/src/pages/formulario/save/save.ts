@@ -1,11 +1,12 @@
-import {NavController, Page, NavParams} from 'ionic-angular';
+import {NavController, NavParams} from 'ionic-angular';
+import { Component } from '@angular/core';
 import {PacientesPage} from '../../pacientes/pacientes';
 import {DAOPacientes} from '../../../dao/dao-paciente';
 import {SegurancaFisicaPage} from '../seguranca-fisica/seguranca-fisica';
 import {ObservacoesPage} from '../observacoes/observacoes';
 import {CadastroPaciente} from "../../../model/cadastroPaciente";
 
-@Page({
+@Component({
   templateUrl: 'build/pages/formulario/save/save.html'
 })
 export class SavePage {

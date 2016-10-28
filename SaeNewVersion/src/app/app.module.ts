@@ -11,7 +11,11 @@ import {AlterarSenhaPage} from '../pages/alterar-senha/alterar-senha';
 import {CadastroPaciente} from '../model/cadastroPaciente';
 import {IdentificacaoPage} from '../pages/formulario/identificacao/identificacao';
 import {EntrevistaPage} from '../pages/formulario/entrevista/entrevista';
+import {SegurancaFisicaPage} from '../pages/formulario/seguranca-fisica/seguranca-fisica';
 import {ObservacoesPage} from '../pages/formulario/observacoes/observacoes';
+
+
+
 
 @NgModule({
   declarations: [
@@ -24,7 +28,7 @@ import {ObservacoesPage} from '../pages/formulario/observacoes/observacoes';
     PacientesPage,
     AlterarSenhaPage,
     CadastroPaciente,
-    IdentificacaoPage,EntrevistaPage, ObservacoesPage
+    IdentificacaoPage,EntrevistaPage, ObservacoesPage,SegurancaFisicaPage
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -40,7 +44,7 @@ import {ObservacoesPage} from '../pages/formulario/observacoes/observacoes';
     PacientesPage,
     AlterarSenhaPage,
     CadastroPaciente,
-    IdentificacaoPage,EntrevistaPage, ObservacoesPage
+    IdentificacaoPage,EntrevistaPage, ObservacoesPage, SegurancaFisicaPage
   ],
   providers: []
 })
