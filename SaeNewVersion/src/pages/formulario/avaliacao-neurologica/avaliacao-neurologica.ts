@@ -1,26 +1,27 @@
-import {NavController,Page, NavParams} from 'ionic-angular';
+import {NavController, NavParams} from 'ionic-angular';
+import { Component } from '@angular/core';
 import {EntrevistaPage} from '../entrevista/entrevista';
 import {OxigenacaoPage} from '../oxigenacao/oxigenacao';
 import {PacientesPage} from '../../pacientes/pacientes';
 import {SegurancaFisicaPage} from '../seguranca-fisica/seguranca-fisica';
 import {CadastroPaciente} from '../../../model/cadastroPaciente';
-import {DAOPacientes} from '../../../dao/dao-paciente';
+//import {DAOPacientes} from '../../../dao/dao-paciente';
 /*
   Generated class for the AvaliacaoNeurologicaPage page.
 
   See http://ionicframework.com/docs/v2/components/#navigation for more info on
   Ionic pages and navigation.
 */
-@Page({
+@Component({
   templateUrl: 'build/pages/formulario/avaliacao-neurologica/avaliacao-neurologica.html',
 })
 export class AvaliacaoNeurologicaPage {
 
     private paciente:CadastroPaciente;
-    private dao:DAOPacientes;
+    //private dao:DAOPacientes;
       constructor(private params:NavParams,private nav: NavController) {
         this.paciente = params.get("parametro");
-        this.dao = params.get("data");
+        //this.dao = params.get("data");
         this.nav = nav;
       }
   somarGlasgow(){
@@ -34,7 +35,7 @@ export class AvaliacaoNeurologicaPage {
       if(passar.deltaX>0){
         this.nav.pop();
       }else if(passar.deltaX<0){
-        this.nav.push(OxigenacaoPage,{parametro: this.paciente, data:this.dao});
+        this.nav.push(OxigenacaoPage,{parametro: this.paciente});
       }
   }
   toggleGroup(id){
