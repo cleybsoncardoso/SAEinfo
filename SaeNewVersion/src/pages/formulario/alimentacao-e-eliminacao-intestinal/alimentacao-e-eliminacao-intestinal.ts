@@ -7,7 +7,7 @@ import {CadastroPaciente} from '../../../model/cadastroPaciente';
 //import {DAOPacientes} from '../../../dao/dao-paciente';
 
 @Component({
-  templateUrl: 'build/pages/formulario/alimentacao-e-eliminacao-intestinal/alimentacao-e-eliminacao-intestinal.html',
+  templateUrl: 'alimentacao-e-eliminacao-intestinal.html',
 })
 export class AlimentacaoEEliminacaoIntestinalPage {
   private paciente:CadastroPaciente;

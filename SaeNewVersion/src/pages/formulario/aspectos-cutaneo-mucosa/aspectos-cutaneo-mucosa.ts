@@ -7,7 +7,7 @@ import {CadastroPaciente} from '../../../model/cadastroPaciente';
 //import {DAOPacientes} from '../../../dao/dao-paciente';
 
 @Component({
-  templateUrl: 'build/pages/formulario/aspectos-cutaneo-mucosa/aspectos-cutaneo-mucosa.html',
+  templateUrl: 'aspectos-cutaneo-mucosa.html',
 })
 
 export class AspectosCutaneoMucosaPage {

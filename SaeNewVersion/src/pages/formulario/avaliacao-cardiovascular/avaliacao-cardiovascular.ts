@@ -8,7 +8,7 @@ import {CadastroPaciente} from '../../../model/cadastroPaciente';
 //import {DAOPacientes} from '../../../dao/dao-paciente';
 
 @Component({
-  templateUrl: 'build/pages/formulario/avaliacao-cardiovascular/avaliacao-cardiovascular.html',
+  templateUrl: 'avaliacao-cardiovascular.html',
 })
 export class AvaliacaoCardiovascularPage {
 

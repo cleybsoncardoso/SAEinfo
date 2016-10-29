@@ -13,7 +13,7 @@ import {CadastroPaciente} from '../../../model/cadastroPaciente';
   Ionic pages and navigation.
 */
 @Component({
-  templateUrl: 'build/pages/formulario/avaliacao-neurologica/avaliacao-neurologica.html',
+  templateUrl: 'avaliacao-neurologica.html',
 })
 export class AvaliacaoNeurologicaPage {
 
