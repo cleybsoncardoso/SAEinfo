@@ -5,7 +5,10 @@ import { HelloIonicPage } from '../pages/hello-ionic/hello-ionic';
 import { ItemDetailsPage } from '../pages/item-details/item-details';
 import { ListPage } from '../pages/list/list';
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 8326e4fb69f478f60d2621372a221ab77d6f0383
 import { HomePage } from '../pages/home/home';
 import { EsqueciSenhaPage } from '../pages/esqueci-senha/esqueci-senha';
 import {PacientesPage} from '../pages/pacientes/pacientes';
@@ -13,6 +16,9 @@ import {AlterarSenhaPage} from '../pages/alterar-senha/alterar-senha';
 import {CadastroPaciente} from '../model/cadastroPaciente';
 import {IdentificacaoPage} from '../pages/formulario/identificacao/identificacao';
 import {EntrevistaPage} from '../pages/formulario/entrevista/entrevista';
+<<<<<<< HEAD
+>>>>>>> 8326e4fb69f478f60d2621372a221ab77d6f0383
+=======
 >>>>>>> 8326e4fb69f478f60d2621372a221ab77d6f0383
 
 @NgModule({
@@ -21,8 +27,11 @@ import {EntrevistaPage} from '../pages/formulario/entrevista/entrevista';
     HelloIonicPage,
     ItemDetailsPage,
 <<<<<<< HEAD
+<<<<<<< HEAD
     ListPage
 =======
+=======
+>>>>>>> 8326e4fb69f478f60d2621372a221ab77d6f0383
     ListPage,
     HomePage,
     EsqueciSenhaPage,
@@ -30,6 +39,9 @@ import {EntrevistaPage} from '../pages/formulario/entrevista/entrevista';
     AlterarSenhaPage,
     CadastroPaciente,
     IdentificacaoPage,EntrevistaPage
+<<<<<<< HEAD
+>>>>>>> 8326e4fb69f478f60d2621372a221ab77d6f0383
+=======
 >>>>>>> 8326e4fb69f478f60d2621372a221ab77d6f0383
   ],
   imports: [
@@ -41,8 +53,11 @@ import {EntrevistaPage} from '../pages/formulario/entrevista/entrevista';
     HelloIonicPage,
     ItemDetailsPage,
 <<<<<<< HEAD
+<<<<<<< HEAD
     ListPage
 =======
+=======
+>>>>>>> 8326e4fb69f478f60d2621372a221ab77d6f0383
     ListPage,
     HomePage,
     EsqueciSenhaPage,
@@ -50,6 +65,9 @@ import {EntrevistaPage} from '../pages/formulario/entrevista/entrevista';
     AlterarSenhaPage,
     CadastroPaciente,
     IdentificacaoPage,EntrevistaPage
+<<<<<<< HEAD
+>>>>>>> 8326e4fb69f478f60d2621372a221ab77d6f0383
+=======
 >>>>>>> 8326e4fb69f478f60d2621372a221ab77d6f0383
   ],
   providers: []
