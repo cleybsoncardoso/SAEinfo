@@ -4,7 +4,7 @@ import {AspectosCutaneoMucosaPage} from '../aspectos-cutaneo-mucosa/aspectos-cut
 import {PacientesPage} from '../../pacientes/pacientes';
 import {ObservacoesPage} from '../observacoes/observacoes';
 import {CadastroPaciente} from "../../../model/cadastroPaciente";
-import {DAOPacientes} from '../../../dao/dao-paciente';
+//import {DAOPacientes} from '../../../dao/dao-paciente';
 /*
   Generated class for the SegurancaFisicaPage page.
 

@@ -1,17 +1,18 @@
-import {NavController, Page, NavParams} from 'ionic-angular';
+import {NavController, NavParams} from 'ionic-angular';
+import { Component } from '@angular/core';
 import {PacientesPage} from '../../pacientes/pacientes';
 import {AvaliacaoCardiovascularPage} from '../avaliacao-cardiovascular/avaliacao-cardiovascular';
 import {AlimentacaoEEliminacaoIntestinalPage} from '../alimentacao-e-eliminacao-intestinal/alimentacao-e-eliminacao-intestinal';
 import {CadastroPaciente} from "../../../model/cadastroPaciente";
-import {DAOPacientes} from '../../../dao/dao-paciente';
+//import {DAOPacientes} from '../../../dao/dao-paciente';
 /*
   Generated class for the HidratacaoEEliminacaoVesicalPage page.
 
   See http://ionicframework.com/docs/v2/components/#navigation for more info on
   Ionic pages and navigation.
 */
-@Page({
-  templateUrl: 'build/pages/formulario/hidratacao-e-eliminacao-vesical/hidratacao-e-eliminacao-vesical.html',
+@Component({
+  templateUrl: 'hidratacao-e-eliminacao-vesical.html',
 })
 export class HidratacaoEEliminacaoVesicalPage {
   static get parameters() {
@@ -19,11 +20,11 @@ export class HidratacaoEEliminacaoVesicalPage {
   }
 
     private paciente: CadastroPaciente;
-    private dao:DAOPacientes;
+    //private dao:DAOPacientes;
 
   constructor(private params: NavParams, private nav: NavController) {
     this.paciente = params.get("parametro");
-    this.dao = params.get("data");
+    //this.dao = params.get("data");
     this.nav = nav;
   }
 
@@ -34,7 +35,7 @@ export class HidratacaoEEliminacaoVesicalPage {
     if(passar.deltaX>0){
       this.nav.pop();
     }else if(passar.deltaX<0){
-      this.nav.push(AlimentacaoEEliminacaoIntestinalPage,{parametro: this.paciente, data:this.dao});
+      this.nav.push(AlimentacaoEEliminacaoIntestinalPage,{parametro: this.paciente});
     }
 }
   toggleGroup(id){

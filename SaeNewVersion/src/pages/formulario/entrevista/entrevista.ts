@@ -1,27 +1,28 @@
-import {NavController, Page, NavParams} from 'ionic-angular';
+import {NavController, NavParams} from 'ionic-angular';
+import { Component } from '@angular/core';
 import {IdentificacaoPage} from '../identificacao/identificacao';
 import {PacientesPage} from '../../../pages/pacientes/pacientes';
 import {AvaliacaoNeurologicaPage} from '../avaliacao-neurologica/avaliacao-neurologica';
 import {CadastroPaciente} from '../../../model/cadastroPaciente'
-import {DAOPacientes} from '../../../dao/dao-paciente';
+//import {DAOPacientes} from '../../../dao/dao-paciente';
 /*
   Generated class for the EntrevistaPage page.
 
   See http://ionicframework.com/docs/v2/components/#navigation for more info on
   Ionic pages and navigation.
 */
-@Page({
-  templateUrl: 'build/pages/formulario/entrevista/entrevista.html',
+@Component({
+  templateUrl: 'entrevista.html',
 })
 export class EntrevistaPage {
 
     private paciente:CadastroPaciente;
     private myIcons:Array<string>;
-    private dao:DAOPacientes;
+    //private dao:DAOPacientes;
 
       constructor(private params:NavParams,private nav: NavController) {
         this.paciente = params.get("parametro");
-        this.dao = params.get("data");
+        //this.dao = params.get("data");
         this.nav = nav;
         this.myIcons = ["md-add"];
       }
@@ -280,7 +281,7 @@ export class EntrevistaPage {
       this.getAntecedentes();
       this.getAlergias();
       this.getVacinas();
-      this.nav.push(AvaliacaoNeurologicaPage,{parametro: this.paciente, data:this.dao});
+      this.nav.push(AvaliacaoNeurologicaPage,{parametro: this.paciente});
     }
   }
 

@@ -11,7 +11,7 @@ import {CadastroPaciente} from '../../../model/cadastroPaciente'
   Ionic pages and navigation.
 */
 @Component({
-  templateUrl: 'build/pages/formulario/identificacao/identificacao.html',
+  templateUrl: 'identificacao.html',
 })
 export class IdentificacaoPage {
 

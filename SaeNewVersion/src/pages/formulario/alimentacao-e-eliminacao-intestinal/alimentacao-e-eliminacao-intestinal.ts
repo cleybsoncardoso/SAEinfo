@@ -1,20 +1,21 @@
-import {Page, NavController, NavParams} from 'ionic-angular';
+import {NavController, NavParams} from 'ionic-angular';
+import { Component } from '@angular/core';
 import {HidratacaoEEliminacaoVesicalPage} from '../hidratacao-e-eliminacao-vesical/hidratacao-e-eliminacao-vesical';
 import {AspectosCutaneoMucosaPage} from '../aspectos-cutaneo-mucosa/aspectos-cutaneo-mucosa';
 import {PacientesPage} from '../../pacientes/pacientes';
 import {CadastroPaciente} from '../../../model/cadastroPaciente';
-import {DAOPacientes} from '../../../dao/dao-paciente';
+//import {DAOPacientes} from '../../../dao/dao-paciente';
 
-@Page({
+@Component({
   templateUrl: 'build/pages/formulario/alimentacao-e-eliminacao-intestinal/alimentacao-e-eliminacao-intestinal.html',
 })
 export class AlimentacaoEEliminacaoIntestinalPage {
   private paciente:CadastroPaciente;
-  private dao:DAOPacientes;
+  //private dao:DAOPacientes;
 
   constructor(private params:NavParams,private nav: NavController) {
     this.paciente = params.get("parametro");
-    this.dao = params.get("data");
+    //this.dao = params.get("data");
     this.nav = nav;
   }
 
@@ -79,7 +80,7 @@ export class AlimentacaoEEliminacaoIntestinalPage {
     if(passar.deltaX>0){
       this.nav.pop();
     }else if(passar.deltaX<0){
-      this.nav.push(AspectosCutaneoMucosaPage,{parametro: this.paciente, data:this.dao});
+      this.nav.push(AspectosCutaneoMucosaPage,{parametro: this.paciente});
     }
   }
 

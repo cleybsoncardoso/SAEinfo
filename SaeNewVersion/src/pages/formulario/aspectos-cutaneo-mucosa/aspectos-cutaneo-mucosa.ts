@@ -1,21 +1,22 @@
-import {NavController, Page, NavParams} from 'ionic-angular';
+import {NavController, NavParams} from 'ionic-angular';
+import { Component } from '@angular/core';
 import {PacientesPage} from '../../pacientes/pacientes';
 import {AlimentacaoEEliminacaoIntestinalPage} from '../alimentacao-e-eliminacao-intestinal/alimentacao-e-eliminacao-intestinal';
 import {SegurancaFisicaPage} from '../seguranca-fisica/seguranca-fisica';
 import {CadastroPaciente} from '../../../model/cadastroPaciente';
-import {DAOPacientes} from '../../../dao/dao-paciente';
+//import {DAOPacientes} from '../../../dao/dao-paciente';
 
-@Page({
+@Component({
   templateUrl: 'build/pages/formulario/aspectos-cutaneo-mucosa/aspectos-cutaneo-mucosa.html',
 })
 
 export class AspectosCutaneoMucosaPage {
 
   private paciente:CadastroPaciente;
-    private dao:DAOPacientes;
+    //private dao:DAOPacientes;
     constructor(private params:NavParams,private nav: NavController) {
       this.paciente = params.get("parametro");
-      this.dao = params.get("data");
+      //this.dao = params.get("data");
       this.nav = nav;
     }
 
@@ -27,7 +28,7 @@ export class AspectosCutaneoMucosaPage {
     if(passar.deltaX>0){
       this.nav.pop();
     }else if(passar.deltaX<0){
-      this.nav.push(SegurancaFisicaPage,{parametro: this.paciente, data:this.dao});
+      this.nav.push(SegurancaFisicaPage,{parametro: this.paciente});
     }
   }
 

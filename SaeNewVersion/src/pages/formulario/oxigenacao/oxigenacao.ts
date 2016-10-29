@@ -1,21 +1,22 @@
-import {NavController, Page, NavParams} from 'ionic-angular';
+import {NavController, NavParams} from 'ionic-angular';
+import { Component } from '@angular/core';
 import {AvaliacaoNeurologicaPage} from '../avaliacao-neurologica/avaliacao-neurologica';
 import {PacientesPage} from '../../pacientes/pacientes';
 import {AvaliacaoCardiovascularPage} from '../avaliacao-cardiovascular/avaliacao-cardiovascular';
 import {CadastroPaciente} from "../../../model/cadastroPaciente";
-import {DAOPacientes} from '../../../dao/dao-paciente';
+//import {DAOPacientes} from '../../../dao/dao-paciente';
 
-@Page({
-  templateUrl: 'build/pages/formulario/oxigenacao/oxigenacao.html',
+@Component({
+  templateUrl: 'oxigenacao.html',
 })
 export class OxigenacaoPage {
 
   private paciente: CadastroPaciente;
-  private dao:DAOPacientes;
+  //private dao:DAOPacientes;
 
   constructor(private params: NavParams, private nav: NavController) {
     this.paciente = params.get("parametro");
-    this.dao = params.get("data");
+    //this.dao = params.get("data");
     this.nav = nav;
   }
 
@@ -119,7 +120,7 @@ export class OxigenacaoPage {
       this.nav.pop();
     }else if(passar.deltaX<0){
       this.getRespiracoes();
-      this.nav.push(AvaliacaoCardiovascularPage,{parametro: this.paciente, data:this.dao});
+      this.nav.push(AvaliacaoCardiovascularPage,{parametro: this.paciente});
     }
   }
 
