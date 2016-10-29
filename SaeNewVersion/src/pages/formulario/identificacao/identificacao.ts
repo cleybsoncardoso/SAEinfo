@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 import {PacientesPage} from '../../../pages/pacientes/pacientes';
 import {EntrevistaPage} from '../entrevista/entrevista';
 import {CadastroPaciente} from '../../../model/cadastroPaciente'
-import {DAOPacientes} from '../../../dao/dao-paciente';
+
 /*
   Generated class for the IdentificacaoPage page.
 
