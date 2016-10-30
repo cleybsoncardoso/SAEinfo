@@ -14,7 +14,6 @@ import { Component } from '@angular/core';
 export class EsqueciSenhaPage {
 
   constructor(private nav: NavController) {
-
   }
 
   enviar(){

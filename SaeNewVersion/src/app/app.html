@@ -1,21 +1,13 @@
 <ion-menu [content]="content">
-
   <ion-header>
     <ion-toolbar>
-      <ion-title>Pages</ion-title>
+      <ion-title>Menu</ion-title>
     </ion-toolbar>
   </ion-header>
 
   <ion-content>
     <ion-list>
-<<<<<<< HEAD
-<<<<<<< HEAD
-      <button ion-item *ngFor="let p of pages" (click)="openPage(p)">
-        {{p.title}}
-=======
-=======
->>>>>>> 8326e4fb69f478f60d2621372a221ab77d6f0383
-      <button  ion-item (click)="openPage(pacientes)" menuClose>
+      <button ion-item (click)="openPage(pacientes)" menuClose>
         <button ion-button item-left>
           <ion-icon name="md-people"></ion-icon>
         </button>
@@ -29,19 +21,16 @@
           Alterar Senha
       </button>
       <!-- Botao Menu 1 Sair -->
-      <button ion-item menuClose (click)="sair()">
+      <button ion-item menuClose (click)="openPage(home)">
         <button ion-button item-left>
           <ion-icon name="md-exit"></ion-icon>
         </button>
           Sair
-<<<<<<< HEAD
->>>>>>> 8326e4fb69f478f60d2621372a221ab77d6f0383
-=======
->>>>>>> 8326e4fb69f478f60d2621372a221ab77d6f0383
       </button>
     </ion-list>
   </ion-content>
 
 </ion-menu>
 
+<!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
 <ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>
