@@ -1,12 +1,12 @@
 
 import {NavController, ModalController , MenuController} from 'ionic-angular';
-import {HomePage} from '../home/home';
+//import {HomePage} from '../home/home';
 import { Component } from '@angular/core';
 import {IdentificacaoPage} from '../identificacao/identificacao';
 
 //import {AddPacientePage} from '../../pages/add-paciente/add-paciente';
 //import {IdentificacaoPage} from '../formulario/identificacao/identificacao';
-//import {CadastroPaciente} from '../../model/cadastroPaciente';
+import {CadastroPaciente} from '../../model/cadastroPaciente';
 //import {PacienteAtualPage} from '../paciente-atual/paciente-atual';
 
 @Component({
@@ -14,10 +14,10 @@ import {IdentificacaoPage} from '../identificacao/identificacao';
 })
 export class PacientesPage {
 
-  private searchQuery:string;
+  private searchQuery : string;
 //  private dao:DAOPacientes;
 //  private listaPacientes:Array<CadastroPaciente>;
-//  private pacienteCadastrado:CadastroPaciente;
+  private paciente : CadastroPaciente;
 
   constructor(private nav: NavController, private menu:MenuController, public modalCtrl: ModalController) {
     this.nav = nav;
@@ -26,14 +26,16 @@ export class PacientesPage {
     this.searchQuery = '';
 //    this.dao = new DAOPacientes();
 //    this.listaPacientes = this.dao.getList();
-//    this.pacienteCadastrado=new CadastroPaciente();
+
   }
 
   novoPaciente(){
 
     this.menu.enable(false);
-    this.nav.push(IdentificacaoPage);
-    //this.nav.push(IdentificacaoPage,{parametro: this.pacienteCadastrado} );
+    //this.nav.push(IdentificacaoPage);
+    this.paciente = new CadastroPaciente();
+    this.paciente.nome = "lucas";
+    this.nav.push(IdentificacaoPage,{paciente: this.paciente} );
 /*
     modal.onDismiss((paciente) => {
       if(paciente){

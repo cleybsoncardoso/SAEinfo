@@ -1,6 +1,7 @@
 import {NavController,  NavParams} from 'ionic-angular';
 import { Component } from '@angular/core';
 import {PacientesPage} from '../../pages/pacientes/pacientes';
+import {CadastroPaciente}from '../../model/cadastroPaciente';
 //import {EntrevistaPage} from '../entrevista/entrevista';
 //import {CadastroPaciente} from '../../model/cadastroPaciente'
 
@@ -15,13 +16,16 @@ import {PacientesPage} from '../../pages/pacientes/pacientes';
 })
 export class IdentificacaoPage {
 
+private paciente : CadastroPaciente;
 //private paciente:CadastroPaciente;
 //private paciente:CadastroPaciente;
 //private dao:DAOPacientes;
 
-  constructor(private params:NavParams,private nav:NavController) {
-//    this.paciente = params.get("parametro");
-
+  constructor(private params : NavParams, private nav : NavController) {
+    this.paciente = params.get('paciente');
+    //this.paciente = new CadastroPaciente();
+    //this.paciente.nome = "lucas";
+    console.log(this.paciente.nome);
   }
   cancel(){
     this.nav.setRoot(PacientesPage);

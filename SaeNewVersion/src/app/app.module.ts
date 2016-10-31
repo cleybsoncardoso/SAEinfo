@@ -6,7 +6,7 @@ import { EsqueciSenhaPage } from '../pages/esqueci-senha/esqueci-senha';
 import {IdentificacaoPage} from '../pages/identificacao/identificacao';
 import {PacientesPage} from '../pages/pacientes/pacientes';
 import {AlterarSenhaPage} from '../pages/alterar-senha/alterar-senha';
-import {CadastroPaciente} from '../model/cadastroPaciente/cadastroPaciente';
+//import {CadastroPaciente} from '../model/cadastroPaciente/cadastroPaciente';
 
 
 @NgModule({
