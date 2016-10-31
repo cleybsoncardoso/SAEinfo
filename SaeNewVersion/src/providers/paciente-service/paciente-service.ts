@@ -17,6 +17,12 @@ export class PacienteService {
 
   }
 
+
+  carregar(){
+      let url= "http://localhost/saeApi.php?pacientes";
+      return this.http.get(url).map(res => res.json());
+  }
+
   getPacientes(){
     return new Promise(resolve => {
       let url= "http://localhost/getusers.php?pacientes";

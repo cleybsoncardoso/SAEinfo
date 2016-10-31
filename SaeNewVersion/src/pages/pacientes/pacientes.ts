@@ -8,9 +8,11 @@ import 'rxjs/add/operator/map';
 //import {IdentificacaoPage} from '../formulario/identificacao/identificacao';
 import {CadastroPaciente} from '../../model/cadastroPaciente';
 //import {PacienteAtualPage} from '../paciente-atual/paciente-atual';
+import {PacienteService} from "../../providers/paciente-service/paciente-service";
 
 @Component({
   templateUrl: 'pacientes.html',
+  providers: [PacienteService]
 })
 export class PacientesPage {
 
@@ -19,14 +21,25 @@ export class PacientesPage {
   private listaPacientes : any;
   private paciente : CadastroPaciente;
 
-  constructor(private nav: NavController, private menu:MenuController, public modalCtrl: ModalController) {
+  constructor(private nav: NavController, private menu:MenuController, public modalCtrl: ModalController, private service : PacienteService) {
     this.nav = nav;
     this.menu = menu;
     this.menu.enable(true);
     this.searchQuery = '';
 //    this.dao = new DAOPacientes();
 //    this.listaPacientes = this.dao.getList();
+    this.carregarPacientes();
+  }
 
+  carregarPacientes(){
+    this.service.carregar()
+    .subscribe(data=>{
+      this.listaPacientes = data;
+      console.log(this.listaPacientes);
+    },error => {
+      console.log(this.listaPacientes);
+      console.log("Não foi possível se conectar ao servidor");
+    });
   }
 
   novoPaciente(){
