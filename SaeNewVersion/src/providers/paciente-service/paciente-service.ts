@@ -1,0 +1,44 @@
+import { Injectable } from '@angular/core';
+import { Http } from '@angular/http';
+import 'rxjs/add/operator/map';
+import {Observable} from 'rxjs/Observable';
+import {CadastroPaciente} from '../../model/cadastroPaciente';
+
+/*
+  Generated class for the MyService provider.
+
+  See https://angular.io/docs/ts/latest/guide/dependency-injection.html
+  for more info on providers and Angular 2 DI.
+*/
+@Injectable()
+export class PacienteService {
+  private pacientes : Array<CadastroPaciente>;
+  constructor(private http: Http) {
+
+  }
+
+  getPacientes(){
+    return new Promise(resolve => {
+      let url= "http://localhost/getusers.php?pacientes";
+      this.http.get(url)
+      .map(res=>res.json())
+      .subscribe(data=>{
+        this.pacientes = data;
+        resolve(this.pacientes);
+      });
+    });
+  }
+
+  addPaciente(){
+
+  }
+
+  deletePaciente(){
+
+  }
+
+  editPaciente(){
+
+  }
+
+}

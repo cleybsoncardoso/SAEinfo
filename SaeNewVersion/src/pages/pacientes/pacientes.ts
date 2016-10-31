@@ -3,7 +3,7 @@ import {NavController, ModalController , MenuController} from 'ionic-angular';
 //import {HomePage} from '../home/home';
 import { Component } from '@angular/core';
 import {IdentificacaoPage} from '../identificacao/identificacao';
-
+import 'rxjs/add/operator/map';
 //import {AddPacientePage} from '../../pages/add-paciente/add-paciente';
 //import {IdentificacaoPage} from '../formulario/identificacao/identificacao';
 import {CadastroPaciente} from '../../model/cadastroPaciente';
@@ -16,7 +16,7 @@ export class PacientesPage {
 
   private searchQuery : string;
 //  private dao:DAOPacientes;
-//  private listaPacientes:Array<CadastroPaciente>;
+  private listaPacientes : any;
   private paciente : CadastroPaciente;
 
   constructor(private nav: NavController, private menu:MenuController, public modalCtrl: ModalController) {
