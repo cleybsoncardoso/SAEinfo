@@ -15,7 +15,7 @@
 </ion-header>
 
 <ion-content>
-  <ion-searchbar [(ngModel)]="searchQuery" (input)="getPacientes($event)" (cancel)="teste($event)"></ion-searchbar>
+  <ion-searchbar [(ngModel)]="searchQuery" (ionInput)="getPacientes($event)"></ion-searchbar>
   <ion-list>
     <ion-item *ngFor="let paciente of listaPacientes" (click)="openPaciente(paciente)">
       {{paciente.nome}}

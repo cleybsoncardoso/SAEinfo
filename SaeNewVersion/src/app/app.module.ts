@@ -6,7 +6,8 @@ import { EsqueciSenhaPage } from '../pages/esqueci-senha/esqueci-senha';
 import {IdentificacaoPage} from '../pages/identificacao/identificacao';
 import {PacientesPage} from '../pages/pacientes/pacientes';
 import {AlterarSenhaPage} from '../pages/alterar-senha/alterar-senha';
-//import {CadastroPaciente} from '../model/cadastroPaciente/cadastroPaciente';
+import {Entrevista} from '../pages/entrevista/entrevista';
+import {AvaliacaoNeurologica} from '../pages/avaliacao-neurologica/avaliacao-neurologica';
 import {PacienteService} from '../providers/paciente-service/paciente-service';
 
 
@@ -17,7 +18,9 @@ import {PacienteService} from '../providers/paciente-service/paciente-service';
     EsqueciSenhaPage,
     PacientesPage,
     AlterarSenhaPage,
-    IdentificacaoPage
+    IdentificacaoPage,
+    Entrevista,
+    AvaliacaoNeurologica
 
   ],
   imports: [
@@ -30,7 +33,9 @@ import {PacienteService} from '../providers/paciente-service/paciente-service';
     EsqueciSenhaPage,
     PacientesPage,
     AlterarSenhaPage,
-    IdentificacaoPage
+    IdentificacaoPage,
+    Entrevista,
+    AvaliacaoNeurologica
 
   ],
   providers: [
