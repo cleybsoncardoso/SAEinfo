@@ -88,7 +88,7 @@ export class AlimentacaoEEliminacaoIntestinal {
     }
 
     cancel(){
-      this.nav.setRoot(PacientesPage);
+      this.nav.popToRoot();
     }
 
 

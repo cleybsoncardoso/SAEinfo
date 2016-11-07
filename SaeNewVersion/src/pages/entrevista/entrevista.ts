@@ -264,7 +264,7 @@ export class Entrevista {
   }
 
   cancel(){
-    this.nav.setRoot(PacientesPage);
+    this.nav.popToRoot();
   }
 
   //funcao realizada quando o usuario desliza o dedo na tela

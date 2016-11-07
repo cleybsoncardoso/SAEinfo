@@ -1,4 +1,4 @@
-import {NavController, AlertController} from 'ionic-angular';
+import {NavController, AlertController, NavParams} from 'ionic-angular';
 import {PacientesPage} from '../pacientes/pacientes';
 import { Component } from '@angular/core';
 
@@ -17,13 +17,15 @@ export class AlterarSenhaPage {
     return [[NavController]];
   }
 
+private id:number;
   private senha1: string;
   private senha2: string;
 
-  constructor(private nav: NavController, private alertController: AlertController) {
+  constructor(private nav: NavController, private alertController: AlertController,private params:NavParams) {
     this.nav = nav;
     this.senha1 = "";
     this.senha2 = "";
+    this.id = params.get("parametro");
   }
 
   showAlert() {
@@ -58,6 +60,6 @@ export class AlterarSenhaPage {
 
   }
   redirecionar(){
-    this.nav.setRoot(PacientesPage);
+    this.nav.setRoot(PacientesPage, {parametro: this.id});
   }
 }

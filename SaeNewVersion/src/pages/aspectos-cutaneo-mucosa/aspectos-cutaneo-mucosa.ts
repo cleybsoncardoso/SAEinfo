@@ -24,7 +24,7 @@ export class AspectosCutaneoMucosa {
       }
 
     cancel(){
-      this.nav.setRoot(PacientesPage);
+      this.nav.popToRoot();
     }
 
     slide(passar){

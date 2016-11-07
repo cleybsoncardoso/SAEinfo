@@ -24,7 +24,7 @@ export class SegurancaFisica {
       this.nav = nav;
     }
     cancel(){
-      this.nav.setRoot(PacientesPage);
+      this.nav.popToRoot();
     }
     slide(passar){
       if(passar.deltaX>0){

@@ -3,16 +3,20 @@ import {PacientesPage} from '../pacientes/pacientes';
 import {Http} from "@angular/http";
 import { EsqueciSenhaPage } from '../esqueci-senha/esqueci-senha';
 import { Component } from '@angular/core';
+import {PacienteService} from "../../providers/paciente-service/paciente-service";
+import 'rxjs/add/operator/map';
 
 @Component({
-  templateUrl: 'home.html'
+  templateUrl: 'home.html',
+  providers: [PacienteService]
 })
 export class HomePage {
 
   private coren : string;
   private senha : string;
+  private id:any;
 
-  constructor(private nav: NavController, private http : Http, private alert :AlertController, private loading : LoadingController) {
+  constructor(private nav: NavController, private http : Http, private alert :AlertController, private loading : LoadingController, private service : PacienteService) {
   }
 
   entrar(){
@@ -27,9 +31,19 @@ export class HomePage {
             let loader = this.loading.create({
                 content: "Checking ! Please wait...",
                 duration: 1000
+
             });
             loader.present();
-          this.nav.setRoot(PacientesPage);
+            this.service.getIdEnfermeiro(username)
+            .subscribe(respostaID=>{
+              this.id = respostaID[0].id;
+              console.log("id" + " = " + this.id);
+            },error => {
+              console.log("Não foi possível se conectar ao servidor");
+            });
+
+
+          this.nav.setRoot(PacientesPage, {parametro: this.id});
         },error => {
             let alert = this.alert.create({
                 title: 'Warning',
@@ -38,6 +52,8 @@ export class HomePage {
             });
             alert.present();
         });
+
+
   }
 
   esqueci(){

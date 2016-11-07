@@ -26,7 +26,7 @@ export class HidratacaoEEliminacaoVesical {
     }
 
     cancel(){
-      this.nav.setRoot(PacientesPage);
+      this.nav.popToRoot();
     }
     slide(passar){
       if(passar.deltaX>0){

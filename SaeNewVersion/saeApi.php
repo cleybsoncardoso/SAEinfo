@@ -17,7 +17,8 @@ switch($_SERVER['REQUEST_METHOD']){
 		//se for um get login ex: http://localhost/saeApi.php?login=lucas
 		}elseif(isset($_GET["login"])){
 			$login = $_GET["login"];
-			$st = "SELECT * FROM tb_cadastros WHERE login = '$login'";//retorna os cadastros por login
+			$st = "SELECT id FROM tb_cadastros WHERE login = '$login'";//retorna os cadastros por login
+			echo json_encode($st);
 		//se for um get paciente sem especificar o nome, ex: http://localhost/saeApi.php?pacientes
 		}elseif(isset($_GET["pacientes"])){
 			if($_GET["pacientes"]==""){

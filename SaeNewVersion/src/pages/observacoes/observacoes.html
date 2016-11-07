@@ -10,7 +10,7 @@
      Novo Paciente
    </ion-title>
    <ion-buttons start>
-     <button round (click)="cancel()">Cancelar</button>
+     <button ion-button round (click)="cancel()">Cancelar</button>
    </ion-buttons>
   </ion-toolbar>
 </ion-header>
@@ -22,8 +22,8 @@
     </ion-list>
     <ion-list no-lines class="listitem">
       <ion-item style="margin: 0px;">
-        <button class="buttons" (click)="addObservacao()">Adicionar Observações</button>
-        <button class="buttons" (click)="removerObservacao()">Remover</button>
+        <button ion-button class="buttons" (click)="addObservacao()">Adicionar Observações</button>
+        <button ion-button class="buttons" (click)="removerObservacao()">Remover</button>
       </ion-item>
     </ion-list>
     </ion-card>

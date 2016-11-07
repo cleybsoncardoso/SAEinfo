@@ -17,6 +17,10 @@ export class PacienteService {
 
   }
 
+  getIdEnfermeiro(inputLogin){
+      let url= "http://localhost/saeApi.php?login="+ inputLogin;
+      return this.http.get(url).map(res => res.json());
+  }
 
   carregar(){
       let url= "http://localhost/saeApi.php?pacientes";

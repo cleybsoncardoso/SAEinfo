@@ -113,7 +113,7 @@ export class Oxigenacao {
   }
 
   cancel(){
-    this.nav.setRoot(PacientesPage);
+    this.nav.popToRoot();
   }
 
   slide(passar){

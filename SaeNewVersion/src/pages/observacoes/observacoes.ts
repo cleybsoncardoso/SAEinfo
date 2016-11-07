@@ -99,7 +99,7 @@ export class Observacoes {
     }
 
     cancel(){
-      this.nav.setRoot(PacientesPage);
+      this.nav.popToRoot();
     }
 
     slide(passar){

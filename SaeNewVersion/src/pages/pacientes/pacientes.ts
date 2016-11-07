@@ -1,14 +1,11 @@
 
-import {NavController, ModalController , MenuController} from 'ionic-angular';
-//import {HomePage} from '../home/home';
+import {NavController, ModalController , MenuController, NavParams} from 'ionic-angular';
 import { Component } from '@angular/core';
 import {IdentificacaoPage} from '../identificacao/identificacao';
 import 'rxjs/add/operator/map';
-//import {AddPacientePage} from '../../pages/add-paciente/add-paciente';
-//import {IdentificacaoPage} from '../formulario/identificacao/identificacao';
 import {CadastroPaciente} from '../../model/cadastroPaciente';
-//import {PacienteAtualPage} from '../paciente-atual/paciente-atual';
 import {PacienteService} from "../../providers/paciente-service/paciente-service";
+
 
 @Component({
   templateUrl: 'pacientes.html',
@@ -20,8 +17,10 @@ export class PacientesPage {
   private listaPacientes : any;
   private listaPacientesAtualizada : any;
   private paciente : CadastroPaciente;
+  private id:number;
 
-  constructor(private nav: NavController, private menu:MenuController, public modalCtrl: ModalController, private service : PacienteService) {
+  constructor(private nav: NavController, private menu:MenuController, public modalCtrl: ModalController, private service : PacienteService,private params:NavParams) {
+    this.id = params.get("parametro");
     this.nav = nav;
     this.menu = menu;
     this.menu.enable(true);
@@ -31,6 +30,7 @@ export class PacientesPage {
 
 
   carregarPacientes(){
+
     this.service.carregar()
     .subscribe(data=>{
       this.listaPacientes = data;
@@ -48,7 +48,7 @@ export class PacientesPage {
   }
 
   novoPaciente(){
-
+console.log(this.id);
     this.menu.enable(false);
     this.paciente = new CadastroPaciente();
     this.nav.push(IdentificacaoPage,{paciente: this.paciente} );

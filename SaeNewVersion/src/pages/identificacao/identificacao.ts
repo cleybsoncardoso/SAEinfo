@@ -21,7 +21,7 @@ private paciente : CadastroPaciente;
     this.paciente = params.get('paciente');
   }
   cancel(){
-    this.nav.setRoot(PacientesPage);
+    this.nav.popToRoot();
   }
 
   slide(passar){
