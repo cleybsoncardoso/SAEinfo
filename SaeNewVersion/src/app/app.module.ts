@@ -9,6 +9,16 @@ import {AlterarSenhaPage} from '../pages/alterar-senha/alterar-senha';
 import {Entrevista} from '../pages/entrevista/entrevista';
 import {AvaliacaoNeurologica} from '../pages/avaliacao-neurologica/avaliacao-neurologica';
 import {PacienteService} from '../providers/paciente-service/paciente-service';
+import {Oxigenacao} from '../pages/oxigenacao/oxigenacao';
+import {AvaliacaoCardiovascular} from '../pages/avaliacao-cardiovascular/avaliacao-cardiovascular';
+import {HidratacaoEEliminacaoVesical} from '../pages/hidratacao-e-eliminacao-vesical/hidratacao-e-eliminacao-vesical';
+import {AlimentacaoEEliminacaoIntestinal} from '../pages/alimentacao-e-eliminacao-intestinal/alimentacao-e-eliminacao-intestinal';
+import {AspectosCutaneoMucosa} from '../pages/aspectos-cutaneo-mucosa/aspectos-cutaneo-mucosa';
+import {SegurancaFisica} from '../pages/seguranca-fisica/seguranca-fisica';
+import {Observacoes} from '../pages/observacoes/observacoes';
+import {Save} from '../pages/save/save';
+
+
 
 
 @NgModule({
@@ -20,7 +30,15 @@ import {PacienteService} from '../providers/paciente-service/paciente-service';
     AlterarSenhaPage,
     IdentificacaoPage,
     Entrevista,
-    AvaliacaoNeurologica
+    AvaliacaoNeurologica,
+    Oxigenacao,
+    AvaliacaoCardiovascular,
+    HidratacaoEEliminacaoVesical,
+    AlimentacaoEEliminacaoIntestinal,
+    AspectosCutaneoMucosa,
+    SegurancaFisica,
+    Observacoes,
+    Save
 
   ],
   imports: [
@@ -35,7 +53,15 @@ import {PacienteService} from '../providers/paciente-service/paciente-service';
     AlterarSenhaPage,
     IdentificacaoPage,
     Entrevista,
-    AvaliacaoNeurologica
+    AvaliacaoNeurologica,
+    Oxigenacao,
+    AvaliacaoCardiovascular,
+    HidratacaoEEliminacaoVesical,
+    AlimentacaoEEliminacaoIntestinal,
+    AspectosCutaneoMucosa,
+    SegurancaFisica,
+    Observacoes,
+    Save
 
   ],
   providers: [

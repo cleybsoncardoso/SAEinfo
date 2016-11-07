@@ -1,9 +1,8 @@
 import {NavController, NavParams} from 'ionic-angular';
 import { Component } from '@angular/core';
 import {Entrevista} from '../entrevista/entrevista';
-//import {OxigenacaoPage} from '../oxigenacao/oxigenacao';
+import {Oxigenacao} from '../oxigenacao/oxigenacao';
 import {PacientesPage} from '../pacientes/pacientes';
-import {SegurancaFisicaPage} from '../seguranca-fisica/seguranca-fisica';
 import {CadastroPaciente}from '../../model/cadastroPaciente';
 /*
   Generated class for the AvaliacaoNeurologicaPage page.
@@ -34,7 +33,7 @@ export class AvaliacaoNeurologica {
         if(passar.deltaX>0){
           this.nav.pop();
         }else if(passar.deltaX<0){
-          //this.nav.push(OxigenacaoPage,{parametro: this.paciente});
+          this.nav.push(Oxigenacao,{parametro: this.paciente});
         }
     }
     toggleGroup(id){
