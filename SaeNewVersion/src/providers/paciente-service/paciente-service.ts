@@ -17,6 +17,12 @@ export class PacienteService {
 
   }
 
+  getUser(idUser){
+    let url= "http://localhost/saeApi.php?id="+ idUser;
+    console.log(url);
+    return this.http.get(url).map(res => res.json());
+  }
+
   getIdEnfermeiro(inputLogin){
       let url= "http://localhost/saeApi.php?login="+ inputLogin;
       return this.http.get(url).map(res => res.json());

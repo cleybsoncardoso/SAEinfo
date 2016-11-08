@@ -18,6 +18,7 @@ export class PacientesPage {
   private listaPacientesAtualizada : any;
   private paciente : CadastroPaciente;
   private id:number;
+  private nomeUser:any;
 
   constructor(private nav: NavController, private menu:MenuController, public modalCtrl: ModalController, private service : PacienteService,private params:NavParams) {
     this.id = params.get("parametro");
@@ -26,6 +27,23 @@ export class PacientesPage {
     this.menu.enable(true);
     this.searchQuery = '';
     this.carregarPacientes();
+    this.nomeUser=this.getNomeUser;
+
+  }
+
+  ionViewWillEnter(){
+    this.carregarPacientes;
+  }
+
+  getNomeUser(){
+
+    this.service.getUser(this.id)
+    .subscribe(user=>{
+      console.log(user);
+      return user[0].nome;
+    },error => {
+      console.log("Não foi possível se conectar ao servidor");
+    });
   }
 
 
