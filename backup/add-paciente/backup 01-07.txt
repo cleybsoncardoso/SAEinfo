@@ -1,0 +1,1 @@
+pagina add-paciente com sliders e ion-icons + e -
