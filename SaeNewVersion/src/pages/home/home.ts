@@ -6,6 +6,7 @@ import { Component } from '@angular/core';
 import {PacienteService} from "../../providers/paciente-service/paciente-service";
 import 'rxjs/add/operator/map';
 
+
 @Component({
   templateUrl: 'home.html',
   providers: [PacienteService]
@@ -37,13 +38,11 @@ export class HomePage {
             this.service.getIdEnfermeiro(username)
             .subscribe(respostaID=>{
               this.id = respostaID[0].id;
-              console.log("id" + " = " + this.id);
+              console.log("enviando" + " = " + this.id);
+              this.nav.setRoot(PacientesPage, {setid: this.id});
             },error => {
               console.log("Não foi possível se conectar ao servidor");
             });
-
-
-          this.nav.setRoot(PacientesPage, {parametro: this.id});
         },error => {
             let alert = this.alert.create({
                 title: 'Warning',

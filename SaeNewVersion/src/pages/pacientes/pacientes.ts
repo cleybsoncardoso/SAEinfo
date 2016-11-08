@@ -17,17 +17,17 @@ export class PacientesPage {
   private listaPacientes : any;
   private listaPacientesAtualizada : any;
   private paciente : CadastroPaciente;
-  private id:number;
+  private id:any;
   private nomeUser:any;
 
   constructor(private nav: NavController, private menu:MenuController, public modalCtrl: ModalController, private service : PacienteService,private params:NavParams) {
-    this.id = params.get("parametro");
+    this.id = params.get("setid");
     this.nav = nav;
     this.menu = menu;
     this.menu.enable(true);
     this.searchQuery = '';
     this.carregarPacientes();
-    this.nomeUser=this.getNomeUser;
+    this.getNomeUser();
 
   }
 
@@ -36,11 +36,11 @@ export class PacientesPage {
   }
 
   getNomeUser(){
-
+    console.log("id esta sendo"+ this.id);
     this.service.getUser(this.id)
     .subscribe(user=>{
-      console.log(user);
-      return user[0].nome;
+      this.nomeUser = user[0].nome;
+      console.log(this.nomeUser);
     },error => {
       console.log("Não foi possível se conectar ao servidor");
     });
@@ -66,7 +66,7 @@ export class PacientesPage {
   }
 
   novoPaciente(){
-console.log(this.id);
+    console.log(this.id);
     this.menu.enable(false);
     this.paciente = new CadastroPaciente();
     this.nav.push(IdentificacaoPage,{paciente: this.paciente} );
