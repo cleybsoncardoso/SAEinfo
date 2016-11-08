@@ -1,20 +1,3 @@
-<<<<<<< HEAD
-import { Component } from '@angular/core';
-
-import { NavController } from 'ionic-angular';
-
-@Component({
-  selector: 'page-home',
-  templateUrl: 'home.html'
-})
-export class HomePage {
-
-  constructor(public navCtrl: NavController) {
-
-  }
-
-}
-=======
 import {NavController, AlertController, LoadingController } from 'ionic-angular';
 import {PacientesPage} from '../pacientes/pacientes';
 import {Http} from "@angular/http";
@@ -25,6 +8,7 @@ import 'rxjs/add/operator/map';
 
 
 @Component({
+  selector: 'page-home',
   templateUrl: 'home.html',
   providers: [PacienteService]
 })
@@ -82,4 +66,3 @@ export class HomePage {
     }
   */
   }
->>>>>>> 9f689313513c33d5074cb522000e7c3075934e9a

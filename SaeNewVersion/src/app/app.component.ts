@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import { Component } from '@angular/core';
 import { Platform } from 'ionic-angular';
 import { StatusBar, Splashscreen } from 'ionic-native';
@@ -14,7 +13,6 @@ export class MyApp {
 
   constructor(platform: Platform) {
     platform.ready().then(() => {
-=======
 import { Component, ViewChild } from '@angular/core';
 import { Nav, Platform, MenuController } from 'ionic-angular';
 import { StatusBar, Splashscreen } from 'ionic-native';
@@ -40,15 +38,12 @@ export class MyApp {
 
   initializeApp() {
     this.platform.ready().then(() => {
->>>>>>> 9f689313513c33d5074cb522000e7c3075934e9a
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
       StatusBar.styleDefault();
       Splashscreen.hide();
     });
   }
-<<<<<<< HEAD
-=======
 
   openPage(page) {
     // close the menu when clicking a link from the menu
@@ -56,7 +51,4 @@ export class MyApp {
     // navigate to the new page if it is not the current page
     this.nav.setRoot(page);
   }
-
-
->>>>>>> 9f689313513c33d5074cb522000e7c3075934e9a
 }

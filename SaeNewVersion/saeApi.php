@@ -3,7 +3,7 @@
 header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");
 
-$conn = new mysqli("localhost", "root", "cley", "myTest");
+$conn = new mysqli("localhost", "root", "lucas123", "myTest");
 
 //Switch case que identifica qual método de acesso ao servidor GET, POST, PUT...
 switch($_SERVER['REQUEST_METHOD']){
@@ -18,6 +18,7 @@ switch($_SERVER['REQUEST_METHOD']){
 		}elseif(isset($_GET["login"])){
 			$login = $_GET["login"];
 			$st = "SELECT id FROM tb_cadastros WHERE login = '$login'";//retorna os cadastros por login
+			echo json_encode($st);
 		//se for um get paciente sem especificar o nome, ex: http://localhost/saeApi.php?pacientes
 		}elseif(isset($_GET["pacientes"])){
 			if($_GET["pacientes"]==""){
@@ -57,19 +58,6 @@ switch($_SERVER['REQUEST_METHOD']){
 						header('HTTP/1.1 401 Unauthorized', true, 401);
 					}
 					break;
-					
-				case 'cadastroPaciente':
-					$nome = $request->nome;
-					$leito = $request->leito;
-					if ($nome != "" && $leito != "") {
-						$sel = "INSERT INTO tb_pacientes (nome, leito) VALUES ('$nome', '$leito')";
-				    		$result = $conn->query($sel);
-					    	$numrow = $result->num_rows;
-					}else {
-						header('HTTP/1.1 401 Unauthorized', true, 401);
-					}
-					break;
-				
 				default:
 					$username = $request->username;
 					$password = $request->password;
