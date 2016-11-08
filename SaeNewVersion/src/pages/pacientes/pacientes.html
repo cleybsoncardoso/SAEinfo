@@ -1,13 +1,13 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Bem Vinda Maria
+      Bem Vinda {{nomeUser}}
     </ion-title>
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
     <ion-buttons end>
-      <button ion-button (click)="atualizar()">
+      <button ion-button (click)="carregarPacientes()">
         <ion-icon name="md-refresh"></ion-icon>
       </button>
     </ion-buttons>
